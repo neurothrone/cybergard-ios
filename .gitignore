@@ -1,0 +1,85 @@
+# IDE files
+.idea
+
+# Xcode
+*.xcworkspace
+!default.xcworkspace
+*.xcuserdata
+*.xcuserstate
+*.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+*.xcodeproj/xcuserdata/
+
+# Build artifacts
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# SwiftPM
+.swiftpm
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+Carthage.build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# Swift Package Plugins (e.g. SwiftLint)
+PluginSandbox/
+.swiftpm/xcode/
+
+# Logs
+*.log
+
+# User & system settings
+*.DS_Store
+*.swp
+.idea/
+.vscode/
+*.orig
+*.hmap
+
+# Test & preview data
+GeneratedInterface/
+
+# Firebase / GoogleService
+GoogleService-Info.plist
+
+# Environment / secrets
+.env
+.env.*
+
+# Local tools
+*.xctestplan
+*.moved-aside
+
+# Preview assets
+.preview-thumbnails/
+
+# Ignore Playgrounds if you're not versioning them
+*.playground/
+*.playgroundbook/
+
+# Git-specific
+*.rej
+*.patch
+*.merge_backup
+*.orig
+
+# Ignore by extension
+*.xcbackups
