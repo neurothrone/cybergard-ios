@@ -1,11 +1,11 @@
 import Foundation
 
-extension DateFormatter {
-  static let apiFormat: DateFormatter = {
+extension Date {
+  var formattedDateTime24h: String {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    formatter.dateFormat = "yyyy-MM-dd HH:mm"
     formatter.locale = Locale(identifier: "en_US_POSIX")
-    formatter.timeZone = TimeZone(secondsFromGMT: 0)
-    return formatter
-  }()
+    formatter.timeZone = TimeZone.current
+    return formatter.string(from: self)
+  }
 }

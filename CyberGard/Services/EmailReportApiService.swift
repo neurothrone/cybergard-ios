@@ -1,16 +1,6 @@
 import Foundation
 
-enum ReportError: Error {
-  case notFound
-  case serverError
-  case createFailed
-  case updateFailed
-  case deleteFailed
-  case decodingFailed
-  case invalidURL
-}
-
-class EmailReportService: EmailReportHandling {
+class EmailReportApiService: EmailReportHandling {
   private let baseURL: URL
 
   init(baseURL: URL = URL(string: "http://localhost:5001/api")!) {

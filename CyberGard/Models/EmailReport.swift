@@ -1,11 +1,13 @@
 import Foundation
 
-struct EmailReport: Codable {
+struct EmailReport: Identifiable, Codable  {
   var email: String
   var scamType: String
   var country: String
   var reportedDate: Date
   var reports: [ReportItem]
+  
+  var id: String { email }
 
   enum CodingKeys: String, CodingKey {
     case email

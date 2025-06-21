@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct EmailScreen: View {
-  @State private var reports: [EmailReport]
+  @Environment(\.emailReportService) private var emailReportService
+  
+  @State private var reports: [EmailReport] = []
   @State private var isLoading = false
   @State private var loadError: String?
 
-  init(reports: [EmailReport] = []) {
-    _reports = State(initialValue: reports)
-  }
+  @State private var selectedReport: EmailReport? = nil
 
   var body: some View {
     VStack {
@@ -27,6 +27,9 @@ struct EmailScreen: View {
             Text("Reported: \(report.reportedDate.formattedDateTime24h)")
           }
           .padding(.vertical, 4)
+          .onTapGesture {
+            selectedReport = report
+          }
         }
         .refreshable {
           await loadReports(isRefresh: true)
@@ -38,6 +41,7 @@ struct EmailScreen: View {
         await loadReports()
       }
     }
+    .sheet(item: $selectedReport, content: EmailReportDetailView.init)
   }
 
   private func loadReports(isRefresh: Bool = false) async {
@@ -45,15 +49,14 @@ struct EmailScreen: View {
       isLoading = true
     }
     loadError = nil
-    
+
     do {
-      try await Task.sleep(nanoseconds: 1_000_000_000) // simulate delay
-      let repo = EmailReportService()
-      reports = try await repo.getAllAsync()
+      try await Task.sleep(for: .seconds(1)) // simulate network delay
+      reports = try await emailReportService.getAllAsync()
     } catch {
       loadError = "Failed to fetch reports: \(error.localizedDescription)"
     }
-    
+
     if !isRefresh {
       isLoading = false
     }
@@ -61,15 +64,6 @@ struct EmailScreen: View {
 }
 
 #Preview {
-  EmailScreen(reports: EmailReport.samples)
-}
-
-private extension Date {
-  var formattedDateTime24h: String {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:mm"
-    formatter.locale = Locale(identifier: "en_US_POSIX")
-    formatter.timeZone = TimeZone.current
-    return formatter.string(from: self)
-  }
+  EmailScreen()
+    .environment(\.emailReportService, EmailReportInMemoryService())
 }
