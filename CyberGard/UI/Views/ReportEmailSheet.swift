@@ -1,17 +1,19 @@
 import SwiftUI
 
 struct ReportEmailSheet: View {
-  @Environment(\.emailReportService) private var emailReportService
+  @StateObject private var viewModel: EmailReportDetailViewModel
 
   @State private var scamType: ScamType = .spamOrTelemarketing
   @State private var comment: String = ""
-  
+
   @State private var isLoading = false
   @State private var showAlert = false
   @State private var alertTitle = ""
   @State private var alertMessage = ""
 
-  let report: EmailReport
+  init(viewModel: EmailReportDetailViewModel) {
+    _viewModel = StateObject(wrappedValue: viewModel)
+  }
 
   var body: some View {
     Form {
@@ -71,29 +73,14 @@ struct ReportEmailSheet: View {
 
   private func reportEmail() async {
     isLoading = true
-    let comment: String
-    if scamType == .other {
-      comment = self.comment
-    } else {
-      comment = scamType.title
-    }
-    do {
-      try await Task.sleep(for: .seconds(1))  // simulate network delay
-      //throw URLError(.badURL) // simulate network error for testing
-      let updatedReport =
-        try await emailReportService.addCommentToEmailReportAsync(
-          email: report.email,
-          comment: comment
-        )
+    let commentToSend: String = (scamType == .other) ? comment : scamType.title
+    let success = await viewModel.addComment(commentToSend)
+    if success {
       alertTitle = "Success"
-      if updatedReport != nil {
-        alertMessage = "Email reported successfully."
-      } else {
-        alertMessage = "Email report updated with new comment."
-      }
-    } catch {
+      alertMessage = "Email reported successfully."
+    } else {
       alertTitle = "Error"
-      alertMessage = "Failed to report email: \(error.localizedDescription)"
+      alertMessage = viewModel.error ?? "Unknown error."
     }
     isLoading = false
     showAlert = true
@@ -101,6 +88,10 @@ struct ReportEmailSheet: View {
 }
 
 #Preview {
-  ReportEmailSheet(report: EmailReport.sample)
-    .environment(\.emailReportService, EmailReportInMemoryService())
+  ReportEmailSheet(
+    viewModel: EmailReportDetailViewModel(
+      email: EmailReport.sample.email,
+      service: EmailReportInMemoryService()
+    )
+  )
 }

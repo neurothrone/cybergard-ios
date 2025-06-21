@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct EmailReportDetailScreen: View {
-  @Environment(\.emailReportService) private var emailReportService
-
+  @StateObject private var viewModel: EmailReportDetailViewModel
   @State private var isReporting = false
 
-  let report: EmailReport
+  init(viewModel: EmailReportDetailViewModel) {
+    self._viewModel = StateObject(wrappedValue: viewModel)
+  }
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -22,21 +23,30 @@ struct EmailReportDetailScreen: View {
       }
       .padding(.horizontal, 20)
 
-      VStack(alignment: .leading, spacing: 4) {
-        Text(report.email)
-          .bold()
-        Text("Scam Type: \(report.scamType)")
-        Text("Country: \(report.country)")
-        Text("Reported: \(report.reportedDate.formattedDateTime24h)")
-        Text("Reports: \(report.reports.count)")
-      }
-      .padding(20)
+      if viewModel.isLoading {
+        ProgressView("Loading...")
+          .padding()
+      } else if let error = viewModel.error {
+        Text(error)
+          .foregroundColor(.red)
+          .padding()
+      } else if let report = viewModel.report {
+        VStack(alignment: .leading, spacing: 4) {
+          Text(report.email)
+            .bold()
+          Text("Scam Type: \(report.scamType)")
+          Text("Country: \(report.country)")
+          Text("Reported: \(report.reportedDate.formattedDateTime24h)")
+          Text("Reports: \(report.reports.count)")
+        }
+        .padding(20)
 
-      List {
-        Section(header: Text("Comments")) {
-          ForEach(report.reports, id: \.date) { reportItem in
-            CommentCellView(reportItem: reportItem)
-              .listRowBackground(Color.blue.opacity(0.1))
+        List {
+          Section(header: Text("Comments")) {
+            ForEach(report.reports, id: \.date) { reportItem in
+              CommentCellView(reportItem: reportItem)
+                .listRowBackground(Color.blue.opacity(0.1))
+            }
           }
         }
       }
@@ -44,14 +54,25 @@ struct EmailReportDetailScreen: View {
     .navigationTitle("Email Report")
     .navigationBarTitleDisplayMode(.inline)
     .sheet(isPresented: $isReporting) {
-      ReportEmailSheet(report: report)
+      if viewModel.report != nil {
+        ReportEmailSheet(viewModel: viewModel)
+      }
+    }
+    .task {
+      await viewModel.loadReport()
     }
   }
 }
 
 #Preview {
-  NavigationStack {
-    EmailReportDetailScreen(report: EmailReport.sample)
+  let emailReport = EmailReport.samples.first ?? EmailReport.sample
+  let viewModel = EmailReportDetailViewModel(
+    email: emailReport.email,
+    service: EmailReportInMemoryService()
+  )
+  viewModel.report = emailReport
+
+  return NavigationStack {
+    EmailReportDetailScreen(viewModel: viewModel)
   }
-  .environment(\.emailReportService, EmailReportInMemoryService())
 }

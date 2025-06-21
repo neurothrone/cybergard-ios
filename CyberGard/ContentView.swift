@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
   @Environment(\.emailReportService) private var emailReportService
-  
+
   @State private var selectedTab: ScreenTab = .home
 
   var body: some View {
@@ -13,7 +13,7 @@ struct ContentView: View {
         }
         .tag(ScreenTab.home)
 
-      EmailScreen()
+      EmailScreen(service: emailReportService)
         .tabItem {
           Label(ScreenTab.email.title, systemImage: "envelope")
         }
