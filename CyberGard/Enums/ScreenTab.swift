@@ -1,9 +1,11 @@
 import Foundation
 
-enum ScreenTab: CaseIterable, Identifiable {
-  case home,
-       email;
-  
+enum ScreenTab: Identifiable, CaseIterable {
+  case home
+  case email
+
+  var id: Self { self }
+
   var title: String {
     switch self {
     case .home:
@@ -12,6 +14,4 @@ enum ScreenTab: CaseIterable, Identifiable {
       return "Email"
     }
   }
-  
-  var id: Self { self }
 }
