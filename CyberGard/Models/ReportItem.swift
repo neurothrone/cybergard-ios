@@ -9,3 +9,12 @@ struct ReportItem: Codable {
     case date
   }
 }
+
+extension ReportItem {
+  static var sample: ReportItem {
+    ReportItem(
+      comment: "This looks suspicious.",
+      date: .now
+    )
+  }
+}
