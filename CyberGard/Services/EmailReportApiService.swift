@@ -86,7 +86,7 @@ class EmailReportApiService: EmailReportHandling {
     email: String,
     comment: String
   ) async throws -> EmailReport? {
-    let url = baseURL.appendingPathComponent("email-reports/\(email)/comment")
+    let url = baseURL.appendingPathComponent("email-reports/\(email)/comments")
     var request = URLRequest(url: url)
     request.httpMethod = "PUT"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
