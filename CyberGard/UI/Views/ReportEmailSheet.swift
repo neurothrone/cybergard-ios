@@ -73,8 +73,10 @@ struct ReportEmailSheet: View {
 
   private func reportEmail() async {
     isLoading = true
+    
     let commentToSend: String = (scamType == .other) ? comment : scamType.title
     let success = await viewModel.addComment(commentToSend)
+    
     if success {
       alertTitle = "Success"
       alertMessage = "Email reported successfully."
@@ -82,6 +84,7 @@ struct ReportEmailSheet: View {
       alertTitle = "Error"
       alertMessage = viewModel.error ?? "Unknown error."
     }
+    
     isLoading = false
     showAlert = true
   }

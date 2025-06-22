@@ -12,13 +12,28 @@ enum ReportError: Error {
 }
 
 class EmailReportInMemoryService: EmailReportHandling {
-  private var reports: [EmailReport] = EmailReport.samples
+  private var reports: [EmailReportDetails] = EmailReportDetails.samples
 
-  func getAllAsync() async throws -> [EmailReport] {
-    reports
+  func getAllAsync(
+    page: Int = 1,
+    pageSize: Int = 10
+  ) async throws -> [EmailReport] {
+    let startIndex = (page - 1) * pageSize
+    let endIndex = startIndex + pageSize
+    let paginatedReports = reports[startIndex..<min(endIndex, reports.count)]
+    
+    return paginatedReports.map { report in
+      EmailReport(
+        email: report.email,
+        scamType: report.scamType,
+        country: report.country,
+        reportedDate: report.reportedDate,
+        commentsCount: report.comments.count
+      )
+    }
   }
 
-  func getByEmailAsync(email: String) async throws -> EmailReport? {
+  func getByEmailAsync(email: String) async throws -> EmailReportDetails? {
     reports.first { $0.email == email }
   }
   
@@ -27,32 +42,32 @@ class EmailReportInMemoryService: EmailReportHandling {
     scamType: String,
     country: String,
     comment: String
-  ) async throws -> EmailReport {
+  ) async throws -> EmailReportDetails {
     guard ReportValidator.isValidEmail(email) else {
       throw ReportError.badRequest(message: "Invalid email address.")
     }
     
     if let index = reports.firstIndex(where: { $0.email == email }) {
       var existingReport = reports[index]
-      existingReport.reports.append(
-        ReportItem(
-          comment: comment,
-          date: .now
+      existingReport.comments.append(
+        Comment(
+          text: comment,
+          postedDate: .now
         )
       )
       reports[index] = existingReport
       return existingReport
     } else {
       let timeOfReport: Date = .now
-      let report = EmailReport(
+      let report = EmailReportDetails(
         email: email,
         scamType: scamType,
         country: country,
         reportedDate: timeOfReport,
-        reports: [
-          ReportItem(
-            comment: comment,
-            date: timeOfReport
+        comments: [
+          Comment(
+            text: comment,
+            postedDate: timeOfReport
           )
         ]
       )
@@ -64,7 +79,7 @@ class EmailReportInMemoryService: EmailReportHandling {
   func addCommentToEmailReportAsync(
     email: String,
     comment: String
-  ) async throws -> EmailReport? {
+  ) async throws -> EmailReportDetails? {
     guard ReportValidator.isValidEmail(email) else {
       throw ReportError.badRequest(message: "Invalid email address.")
     }
@@ -74,10 +89,10 @@ class EmailReportInMemoryService: EmailReportHandling {
     }
     
     var updatedReport = reports[index]
-    updatedReport.reports.append(
-      ReportItem(
-        comment: comment,
-        date: .now
+    updatedReport.comments.append(
+      Comment(
+        text: comment,
+        postedDate: .now
       )
     )
     reports[index] = updatedReport

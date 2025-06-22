@@ -37,14 +37,14 @@ struct EmailReportDetailScreen: View {
           Text("Scam Type: \(report.scamType)")
           Text("Country: \(report.country)")
           Text("Reported: \(report.reportedDate.formattedDateTime24h)")
-          Text("Reports: \(report.reports.count)")
+          Text("Reports: \(report.comments.count)")
         }
         .padding(20)
 
         List {
           Section(header: Text("Comments")) {
-            ForEach(report.reports, id: \.date) { reportItem in
-              CommentCellView(reportItem: reportItem)
+            ForEach(report.comments, id: \.postedDate) { comment in
+              CommentCellView(comment: comment)
                 .listRowBackground(Color.blue.opacity(0.1))
             }
           }
@@ -65,7 +65,7 @@ struct EmailReportDetailScreen: View {
 }
 
 #Preview {
-  let emailReport = EmailReport.samples.first ?? EmailReport.sample
+  let emailReport = EmailReportDetails.samples.first ?? EmailReportDetails.sample
   let viewModel = EmailReportDetailViewModel(
     email: emailReport.email,
     service: EmailReportInMemoryService()

@@ -19,7 +19,7 @@ struct EmailReportCellView: View {
       
       Spacer()
       
-      Text("\(report.reports.count) reports")
+      Text("\(report.commentsCount) reports")
         .fontWeight(.semibold)
         .foregroundColor(.primary)
         .padding(8)

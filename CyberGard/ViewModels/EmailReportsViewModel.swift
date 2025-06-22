@@ -7,7 +7,7 @@ class EmailReportsViewModel: ObservableObject {
   @Published var isLoading = false
   @Published var error: String?
 
-  let reportUpdateSubject = PassthroughSubject<EmailReport, Never>()
+  let reportUpdateSubject = PassthroughSubject<EmailReportDetails, Never>()
   private var cancellables = Set<AnyCancellable>()
 
   private let service: EmailReportHandling
@@ -21,12 +21,12 @@ class EmailReportsViewModel: ObservableObject {
       .store(in: &cancellables)
   }
 
-  func loadReports() async {
+  func loadReports(page: Int = 1, pageSize: Int = 10) async {
     isLoading = true
     error = nil
 
     do {
-      reports = try await service.getAllAsync()
+      reports = try await service.getAllAsync(page: page, pageSize: pageSize)
     } catch {
       self.error = "Failed to load reports: \(error.localizedDescription)"
     }
@@ -34,9 +34,13 @@ class EmailReportsViewModel: ObservableObject {
     isLoading = false
   }
 
-  private func updateReport(_ updated: EmailReport) {
+  private func updateReport(_ updated: EmailReportDetails) {
     if let index = reports.firstIndex(where: { $0.email == updated.email }) {
-      reports[index] = updated
+      // Update the existing report with the new details
+      //reports[index].scamType = updated.scamType
+      //reports[index].country = updated.country
+      //reports[index].reportedDate = updated.reportedDate
+      reports[index].commentsCount = updated.comments.count
     }
   }
 }

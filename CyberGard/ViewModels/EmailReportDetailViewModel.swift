@@ -3,18 +3,18 @@ import Foundation
 
 @MainActor
 class EmailReportDetailViewModel: ObservableObject {
-  @Published var report: EmailReport?
+  @Published var report: EmailReportDetails?
   @Published var isLoading = false
   @Published var error: String?
 
   private let service: EmailReportHandling
   private let email: String
-  private let reportUpdateSubject: PassthroughSubject<EmailReport, Never>?
+  private let reportUpdateSubject: PassthroughSubject<EmailReportDetails, Never>?
 
   init(
     email: String,
     service: EmailReportHandling,
-    reportUpdateSubject: PassthroughSubject<EmailReport, Never>? = nil
+    reportUpdateSubject: PassthroughSubject<EmailReportDetails, Never>? = nil
   ) {
     self.email = email
     self.service = service
