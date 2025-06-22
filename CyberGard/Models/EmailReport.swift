@@ -5,7 +5,7 @@ struct EmailReport: Identifiable, Codable  {
   var scamType: String
   var country: String
   var reportedDate: Date
-  var reports: [ReportItem]
+  var commentsCount: Int
   
   var id: String { email }
 
@@ -14,7 +14,7 @@ struct EmailReport: Identifiable, Codable  {
     case scamType = "scam-type"
     case country
     case reportedDate = "reported-date"
-    case reports
+    case commentsCount = "comments-count"
   }
 }
 
@@ -24,29 +24,27 @@ extension EmailReport {
       email: "john.doe@example.com",
       scamType: "Phishing",
       country: "US",
-      reportedDate: Date(),
-      reports: [
-        ReportItem(
-          comment: "This looks suspicious.",
-          date: Date()
-        )
-      ]
+      reportedDate: .now,
+      commentsCount: 5
     )
   }
 
   static var samples: [EmailReport] {
-    (1...5).map { index in
-      let reportItem = ReportItem(
-        comment: "Report #\(index)",
-        date: Date().addingTimeInterval(-Double(index) * 3600)
-      )
+    (1...5).compactMap { index in
+      let email = "user\(index)@example.com"
+      let scamType = index.isMultiple(of: 2) ? "Phishing" : "Malware"
+      let country = index.isMultiple(of: 2) ? "SE" : "DE"
+      let date = Calendar.current.date(byAdding: .day, value: -index, to: .now)
+      let comments = index * 2
+
+      guard let reportedDate = date else { return nil }
 
       return EmailReport(
-        email: "user\(index)@example.com",
-        scamType: index % 2 == 0 ? "Phishing" : "Malware",
-        country: index % 2 == 0 ? "SE" : "DE",
-        reportedDate: Date().addingTimeInterval(-Double(index) * 86400),
-        reports: [reportItem]
+        email: email,
+        scamType: scamType,
+        country: country,
+        reportedDate: reportedDate,
+        commentsCount: comments
       )
     }
   }
