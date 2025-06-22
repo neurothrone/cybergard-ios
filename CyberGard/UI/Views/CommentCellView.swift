@@ -1,29 +1,29 @@
 import SwiftUI
 
 struct CommentCellView: View {
-  let reportItem: ReportItem
-  
+  let comment: Comment
+
   var body: some View {
     VStack(alignment: .leading, spacing: 8) {
       HStack {
         Text("Anonymous")
           .font(.headline)
           .fontWeight(.bold)
-        
+
         Spacer()
-        
-        Text(reportItem.date.formattedDateTime24h)
+
+        Text(comment.postedDate.formattedDateTime24h)
           .foregroundStyle(.secondary)
           .fontWeight(.semibold)
       }
-      
-      Text(reportItem.comment)
+
+      Text(comment.text)
     }
   }
 }
 
 #Preview {
-  List(0 ..< 5) { item in
-    CommentCellView(reportItem: ReportItem.sample)
+  List(0..<5) { _ in
+    CommentCellView(comment: Comment.sample)
   }
 }
