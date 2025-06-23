@@ -2,7 +2,7 @@ import Combine
 import Foundation
 
 @MainActor
-class NewEmailReportViewModel: ObservableObject {
+final class NewEmailReportViewModel: ObservableObject {
   @Published var isLoading = false
   @Published var error: String?
 
