@@ -3,10 +3,24 @@ import Foundation
 
 @MainActor
 final class EmailReportsViewModel: ObservableObject {
-  @Published var reports: [EmailReport] = []
-  
   @Published var isLoading = false
   @Published var error: String?
+  
+  @Published var reports: [EmailReport] = []
+  @Published var searchText: String = ""
+
+  var filteredReports: [EmailReport] {
+    guard !searchText.isEmpty else {
+      return reports
+    }
+
+    let query = searchText.lowercased()
+    return reports.filter { report in
+      report.email.lowercased().contains(query)
+        || report.country.lowercased().contains(query)
+        || report.scamType.lowercased().contains(query)
+    }
+  }
 
   private let service: EmailReportHandling
   let reportCreateSubject = PassthroughSubject<EmailReportDetails, Never>()
