@@ -51,19 +51,6 @@ final class EmailReportsViewModel: ObservableObject {
       .store(in: &cancellables)
   }
 
-  func loadReports(page: Int = 1, pageSize: Int = 10) async {
-    isLoading = true
-    error = nil
-
-    do {
-      reports = try await service.getAllAsync(page: page, pageSize: pageSize)
-    } catch {
-      self.error = "Failed to load reports: \(error.localizedDescription)"
-    }
-
-    isLoading = false
-  }
-
   private func addReport(_ report: EmailReportDetails) {
     reports.append(EmailReport.from(details: report))
   }
@@ -76,5 +63,18 @@ final class EmailReportsViewModel: ObservableObject {
       //reports[index].country = updated.country
       reports[index].commentsCount = updatedReport.comments.count
     }
+  }
+
+  func loadReports(page: Int = 1, pageSize: Int = 10) async {
+    isLoading = true
+    error = nil
+
+    do {
+      reports = try await service.getAllAsync(page: page, pageSize: pageSize)
+    } catch {
+      self.error = "Failed to load reports: \(error.localizedDescription)"
+    }
+
+    isLoading = false
   }
 }
