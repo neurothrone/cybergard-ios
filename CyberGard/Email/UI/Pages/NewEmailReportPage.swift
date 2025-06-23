@@ -1,21 +1,31 @@
 import SwiftUI
 
-struct ReportEmailSheet: View {
+struct NewEmailReportPage: View {
   @Environment(\.dismiss) private var dismiss
   
-  @StateObject private var viewModel: EmailReportDetailViewModel
+  @StateObject private var viewModel: NewEmailReportViewModel
 
   @State private var showAlert = false
   @State private var alertTitle = ""
   @State private var alertMessage = ""
 
-  init(viewModel: EmailReportDetailViewModel) {
+  init(viewModel: NewEmailReportViewModel) {
     _viewModel = StateObject(wrappedValue: viewModel)
   }
 
   var body: some View {
     Form {
-      Section(header: Text("Report Email")) {
+      Section(header: Text("Report details")) {
+        TextField("Email Address", text: $viewModel.email)
+          .keyboardType(.emailAddress)
+          .autocapitalization(.none)
+          .disableAutocorrection(true)
+          .textContentType(.emailAddress)
+        
+        TextField("Country", text: $viewModel.country)
+          .disableAutocorrection(true)
+          .textContentType(.countryName)
+
         Picker("Scam Type", selection: $viewModel.scamType) {
           ForEach(ScamType.allCases) { scamType in
             Text(scamType.title)
@@ -55,6 +65,8 @@ struct ReportEmailSheet: View {
         .disabled(!viewModel.isValid || viewModel.isLoading)
       }
     }
+    .navigationTitle("Add New Email Report")
+    .navigationBarTitleDisplayMode(.inline)
     .alert(alertTitle, isPresented: $showAlert) {
       Button("OK", role: .cancel) {
         if viewModel.error == nil {
@@ -67,7 +79,7 @@ struct ReportEmailSheet: View {
   }
 
   private func reportEmail() async {
-    let success = await viewModel.addComment()
+    let success = await viewModel.addNewReport()
     
     if success {
       alertTitle = "Success"
@@ -76,16 +88,17 @@ struct ReportEmailSheet: View {
       alertTitle = "Error"
       alertMessage = viewModel.error ?? "Unknown error."
     }
-    
+
     showAlert = true
   }
 }
 
 #Preview {
-  ReportEmailSheet(
-    viewModel: EmailReportDetailViewModel(
-      email: EmailReport.sample.email,
-      service: EmailReportInMemoryService()
+  NavigationStack {
+    NewEmailReportPage(
+      viewModel: NewEmailReportViewModel(
+        service: EmailReportInMemoryService()
+      )
     )
-  )
+  }
 }

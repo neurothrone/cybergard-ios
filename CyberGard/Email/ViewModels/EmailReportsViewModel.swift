@@ -4,9 +4,11 @@ import Foundation
 @MainActor
 class EmailReportsViewModel: ObservableObject {
   @Published var reports: [EmailReport] = []
+  
   @Published var isLoading = false
   @Published var error: String?
 
+  let reportCreateSubject = PassthroughSubject<EmailReportDetails, Never>()
   let reportUpdateSubject = PassthroughSubject<EmailReportDetails, Never>()
   private var cancellables = Set<AnyCancellable>()
 
@@ -14,6 +16,11 @@ class EmailReportsViewModel: ObservableObject {
 
   init(service: EmailReportHandling) {
     self.service = service
+    reportCreateSubject
+      .sink { [weak self] newReport in
+        self?.reports.append(EmailReport.from(details: newReport))
+      }
+      .store(in: &cancellables)
     reportUpdateSubject
       .sink { [weak self] updated in
         self?.updateReport(updated)
