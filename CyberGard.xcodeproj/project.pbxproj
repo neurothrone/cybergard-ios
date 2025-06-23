@@ -46,6 +46,11 @@
 			path = Url;
 			sourceTree = "<group>";
 		};
+		2FED3D1D2E09006A00F7473C /* Settings */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 				2FED3CDB2E08FE1F00F7473C /* Email */,
 				2FED3D0F2E08FED600F7473C /* Phone */,
 				2FED3D102E08FEDB00F7473C /* Url */,
+				2FED3D1D2E09006A00F7473C /* Settings */,
 			);
 			path = CyberGard;
 			sourceTree = "<group>";
@@ -112,6 +118,7 @@
 				2FED3CDB2E08FE1F00F7473C /* Email */,
 				2FED3D0F2E08FED600F7473C /* Phone */,
 				2FED3D102E08FEDB00F7473C /* Url */,
+				2FED3D1D2E09006A00F7473C /* Settings */,
 			);
 			name = CyberGard;
 			packageProductDependencies = (
