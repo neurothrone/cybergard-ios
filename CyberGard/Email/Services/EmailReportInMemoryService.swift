@@ -1,17 +1,6 @@
 import Foundation
 
-enum ReportError: Error {
-  case badRequest(message: String)
-  case notFound
-  case serverError
-  case createFailed
-  case updateFailed
-  case deleteFailed
-  case decodingFailed
-  case invalidURL
-}
-
-class EmailReportInMemoryService: EmailReportHandling {
+final class EmailReportInMemoryService: EmailReportHandling {
   private var reports: [EmailReportDetails] = EmailReportDetails.samples
 
   func getAllAsync(
