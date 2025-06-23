@@ -3,6 +3,7 @@ import SwiftUI
 struct EmailReportDetailScreen: View {
   @StateObject private var viewModel: EmailReportDetailViewModel
   @State private var isReporting = false
+  
 
   init(viewModel: EmailReportDetailViewModel) {
     self._viewModel = StateObject(wrappedValue: viewModel)

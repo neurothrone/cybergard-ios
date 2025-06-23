@@ -8,57 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		2FED3CC12E07B1F900F7473C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FED3CBD2E07B1F900F7473C /* Assets.xcassets */; };
-		2FED3CC32E07B1F900F7473C /* ScamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3C9E2E07B1F900F7473C /* ScamType.swift */; };
-		2FED3CC42E07B1F900F7473C /* ScreenTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3C9F2E07B1F900F7473C /* ScreenTab.swift */; };
-		2FED3CC52E07B1F900F7473C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CA12E07B1F900F7473C /* DateExtensions.swift */; };
-		2FED3CC62E07B1F900F7473C /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CA22E07B1F900F7473C /* DateFormatterExtensions.swift */; };
-		2FED3CC72E07B1F900F7473C /* EnvironmentValuesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CA32E07B1F900F7473C /* EnvironmentValuesExtensions.swift */; };
-		2FED3CC82E07B1F900F7473C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CA52E07B1F900F7473C /* Comment.swift */; };
-		2FED3CC92E07B1F900F7473C /* EmailReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CA62E07B1F900F7473C /* EmailReport.swift */; };
-		2FED3CCA2E07B1F900F7473C /* EmailReportDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CA72E07B1F900F7473C /* EmailReportDetails.swift */; };
-		2FED3CCB2E07B1F900F7473C /* EmailReportHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CA92E07B1F900F7473C /* EmailReportHandling.swift */; };
-		2FED3CCC2E07B1F900F7473C /* EmailReportApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CAB2E07B1F900F7473C /* EmailReportApiService.swift */; };
-		2FED3CCD2E07B1F900F7473C /* EmailReportInMemoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CAC2E07B1F900F7473C /* EmailReportInMemoryService.swift */; };
-		2FED3CCE2E07B1F900F7473C /* EmailReportDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CAE2E07B1F900F7473C /* EmailReportDetailScreen.swift */; };
-		2FED3CCF2E07B1F900F7473C /* EmailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CAF2E07B1F900F7473C /* EmailScreen.swift */; };
-		2FED3CD02E07B1F900F7473C /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CB02E07B1F900F7473C /* HomeScreen.swift */; };
-		2FED3CD12E07B1F900F7473C /* CommentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CB22E07B1F900F7473C /* CommentCellView.swift */; };
-		2FED3CD22E07B1F900F7473C /* EmailReportCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CB32E07B1F900F7473C /* EmailReportCellView.swift */; };
-		2FED3CD32E07B1F900F7473C /* ReportEmailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CB42E07B1F900F7473C /* ReportEmailSheet.swift */; };
-		2FED3CD42E07B1F900F7473C /* ReportValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CB72E07B1F900F7473C /* ReportValidator.swift */; };
-		2FED3CD52E07B1F900F7473C /* EmailReportDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CB92E07B1F900F7473C /* EmailReportDetailViewModel.swift */; };
-		2FED3CD62E07B1F900F7473C /* EmailReportsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CBA2E07B1F900F7473C /* EmailReportsViewModel.swift */; };
 		2FED3CD72E07B1F900F7473C /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CBC2E07B1F900F7473C /* AppMain.swift */; };
 		2FED3CD82E07B1F900F7473C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED3CBE2E07B1F900F7473C /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F4487192E0244BC0080651E /* CyberGard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyberGard.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FED3C9E2E07B1F900F7473C /* ScamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamType.swift; sourceTree = "<group>"; };
-		2FED3C9F2E07B1F900F7473C /* ScreenTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTab.swift; sourceTree = "<group>"; };
-		2FED3CA12E07B1F900F7473C /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
-		2FED3CA22E07B1F900F7473C /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
-		2FED3CA32E07B1F900F7473C /* EnvironmentValuesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValuesExtensions.swift; sourceTree = "<group>"; };
-		2FED3CA52E07B1F900F7473C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		2FED3CA62E07B1F900F7473C /* EmailReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReport.swift; sourceTree = "<group>"; };
-		2FED3CA72E07B1F900F7473C /* EmailReportDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportDetails.swift; sourceTree = "<group>"; };
-		2FED3CA92E07B1F900F7473C /* EmailReportHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportHandling.swift; sourceTree = "<group>"; };
-		2FED3CAB2E07B1F900F7473C /* EmailReportApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportApiService.swift; sourceTree = "<group>"; };
-		2FED3CAC2E07B1F900F7473C /* EmailReportInMemoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportInMemoryService.swift; sourceTree = "<group>"; };
-		2FED3CAE2E07B1F900F7473C /* EmailReportDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportDetailScreen.swift; sourceTree = "<group>"; };
-		2FED3CAF2E07B1F900F7473C /* EmailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailScreen.swift; sourceTree = "<group>"; };
-		2FED3CB02E07B1F900F7473C /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		2FED3CB22E07B1F900F7473C /* CommentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellView.swift; sourceTree = "<group>"; };
-		2FED3CB32E07B1F900F7473C /* EmailReportCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportCellView.swift; sourceTree = "<group>"; };
-		2FED3CB42E07B1F900F7473C /* ReportEmailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEmailSheet.swift; sourceTree = "<group>"; };
-		2FED3CB72E07B1F900F7473C /* ReportValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportValidator.swift; sourceTree = "<group>"; };
-		2FED3CB92E07B1F900F7473C /* EmailReportDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportDetailViewModel.swift; sourceTree = "<group>"; };
-		2FED3CBA2E07B1F900F7473C /* EmailReportsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportsViewModel.swift; sourceTree = "<group>"; };
 		2FED3CBC2E07B1F900F7473C /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		2FED3CBD2E07B1F900F7473C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FED3CBE2E07B1F900F7473C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2FED3CBF2E07B1F900F7473C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2FED3CD92E08FE0A00F7473C /* Core */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2FED3CDA2E08FE1100F7473C /* Home */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2FED3CDB2E08FE1F00F7473C /* Email */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Email;
+			sourceTree = "<group>";
+		};
+		2FED3D0F2E08FED600F7473C /* Phone */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Phone;
+			sourceTree = "<group>";
+		};
+		2FED3D102E08FEDB00F7473C /* Url */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Url;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2F4487162E0244BC0080651E /* Frameworks */ = {
@@ -87,98 +75,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2FED3CA02E07B1F900F7473C /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3C9E2E07B1F900F7473C /* ScamType.swift */,
-				2FED3C9F2E07B1F900F7473C /* ScreenTab.swift */,
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
-		2FED3CA42E07B1F900F7473C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CA12E07B1F900F7473C /* DateExtensions.swift */,
-				2FED3CA22E07B1F900F7473C /* DateFormatterExtensions.swift */,
-				2FED3CA32E07B1F900F7473C /* EnvironmentValuesExtensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		2FED3CA82E07B1F900F7473C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CA52E07B1F900F7473C /* Comment.swift */,
-				2FED3CA62E07B1F900F7473C /* EmailReport.swift */,
-				2FED3CA72E07B1F900F7473C /* EmailReportDetails.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2FED3CAA2E07B1F900F7473C /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CA92E07B1F900F7473C /* EmailReportHandling.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		2FED3CAD2E07B1F900F7473C /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CAB2E07B1F900F7473C /* EmailReportApiService.swift */,
-				2FED3CAC2E07B1F900F7473C /* EmailReportInMemoryService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		2FED3CB12E07B1F900F7473C /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CAE2E07B1F900F7473C /* EmailReportDetailScreen.swift */,
-				2FED3CAF2E07B1F900F7473C /* EmailScreen.swift */,
-				2FED3CB02E07B1F900F7473C /* HomeScreen.swift */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		2FED3CB52E07B1F900F7473C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CB22E07B1F900F7473C /* CommentCellView.swift */,
-				2FED3CB32E07B1F900F7473C /* EmailReportCellView.swift */,
-				2FED3CB42E07B1F900F7473C /* ReportEmailSheet.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		2FED3CB62E07B1F900F7473C /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CB12E07B1F900F7473C /* Screens */,
-				2FED3CB52E07B1F900F7473C /* Views */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		2FED3CB82E07B1F900F7473C /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CB72E07B1F900F7473C /* ReportValidator.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		2FED3CBB2E07B1F900F7473C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				2FED3CB92E07B1F900F7473C /* EmailReportDetailViewModel.swift */,
-				2FED3CBA2E07B1F900F7473C /* EmailReportsViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		2FED3CC02E07B1F900F7473C /* CyberGard */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,14 +82,11 @@
 				2FED3CBE2E07B1F900F7473C /* ContentView.swift */,
 				2FED3CBD2E07B1F900F7473C /* Assets.xcassets */,
 				2FED3CBF2E07B1F900F7473C /* Info.plist */,
-				2FED3CA02E07B1F900F7473C /* Enums */,
-				2FED3CA42E07B1F900F7473C /* Extensions */,
-				2FED3CA82E07B1F900F7473C /* Models */,
-				2FED3CAA2E07B1F900F7473C /* Protocols */,
-				2FED3CAD2E07B1F900F7473C /* Services */,
-				2FED3CB62E07B1F900F7473C /* UI */,
-				2FED3CB82E07B1F900F7473C /* Utils */,
-				2FED3CBB2E07B1F900F7473C /* ViewModels */,
+				2FED3CD92E08FE0A00F7473C /* Core */,
+				2FED3CDA2E08FE1100F7473C /* Home */,
+				2FED3CDB2E08FE1F00F7473C /* Email */,
+				2FED3D0F2E08FED600F7473C /* Phone */,
+				2FED3D102E08FEDB00F7473C /* Url */,
 			);
 			path = CyberGard;
 			sourceTree = "<group>";
@@ -212,6 +105,13 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2FED3CD92E08FE0A00F7473C /* Core */,
+				2FED3CDA2E08FE1100F7473C /* Home */,
+				2FED3CDB2E08FE1F00F7473C /* Email */,
+				2FED3D0F2E08FED600F7473C /* Phone */,
+				2FED3D102E08FEDB00F7473C /* Url */,
 			);
 			name = CyberGard;
 			packageProductDependencies = (
@@ -270,26 +170,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FED3CC32E07B1F900F7473C /* ScamType.swift in Sources */,
-				2FED3CC42E07B1F900F7473C /* ScreenTab.swift in Sources */,
-				2FED3CC52E07B1F900F7473C /* DateExtensions.swift in Sources */,
-				2FED3CC62E07B1F900F7473C /* DateFormatterExtensions.swift in Sources */,
-				2FED3CC72E07B1F900F7473C /* EnvironmentValuesExtensions.swift in Sources */,
-				2FED3CC82E07B1F900F7473C /* Comment.swift in Sources */,
-				2FED3CC92E07B1F900F7473C /* EmailReport.swift in Sources */,
-				2FED3CCA2E07B1F900F7473C /* EmailReportDetails.swift in Sources */,
-				2FED3CCB2E07B1F900F7473C /* EmailReportHandling.swift in Sources */,
-				2FED3CCC2E07B1F900F7473C /* EmailReportApiService.swift in Sources */,
-				2FED3CCD2E07B1F900F7473C /* EmailReportInMemoryService.swift in Sources */,
-				2FED3CCE2E07B1F900F7473C /* EmailReportDetailScreen.swift in Sources */,
-				2FED3CCF2E07B1F900F7473C /* EmailScreen.swift in Sources */,
-				2FED3CD02E07B1F900F7473C /* HomeScreen.swift in Sources */,
-				2FED3CD12E07B1F900F7473C /* CommentCellView.swift in Sources */,
-				2FED3CD22E07B1F900F7473C /* EmailReportCellView.swift in Sources */,
-				2FED3CD32E07B1F900F7473C /* ReportEmailSheet.swift in Sources */,
-				2FED3CD42E07B1F900F7473C /* ReportValidator.swift in Sources */,
-				2FED3CD52E07B1F900F7473C /* EmailReportDetailViewModel.swift in Sources */,
-				2FED3CD62E07B1F900F7473C /* EmailReportsViewModel.swift in Sources */,
 				2FED3CD72E07B1F900F7473C /* AppMain.swift in Sources */,
 				2FED3CD82E07B1F900F7473C /* ContentView.swift in Sources */,
 			);
