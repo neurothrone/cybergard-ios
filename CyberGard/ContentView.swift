@@ -3,39 +3,39 @@ import SwiftUI
 struct ContentView: View {
   @Environment(\.emailReportService) private var emailReportService
 
-  @State private var selectedTab: ScreenTab = .home
+  @State private var selectedTab: AppTab = .home
 
   var body: some View {
     TabView(selection: $selectedTab) {
-      HomeScreen()
+      HomePage()
         .tabItem {
-          Label(ScreenTab.home.title, systemImage: "house")
+          Label(AppTab.home.title, systemImage: "house")
         }
-        .tag(ScreenTab.home)
+        .tag(AppTab.home)
 
-      EmailLookupScreen(service: emailReportService)
+      EmailLookupPage(service: emailReportService)
         .tabItem {
-          Label(ScreenTab.emailLookup.title, systemImage: "envelope")
+          Label(AppTab.emailLookup.title, systemImage: "envelope")
         }
-        .tag(ScreenTab.emailLookup)
+        .tag(AppTab.emailLookup)
       
-      PhoneLookupScreen()
+      PhoneLookupPage()
         .tabItem {
-          Label(ScreenTab.phoneLookup.title, systemImage: "phone")
+          Label(AppTab.phoneLookup.title, systemImage: "phone")
         }
-        .tag(ScreenTab.phoneLookup)
+        .tag(AppTab.phoneLookup)
       
-      UrlLookupScreen()
+      UrlLookupPage()
         .tabItem {
-          Label(ScreenTab.urlLookup.title, systemImage: "link")
+          Label(AppTab.urlLookup.title, systemImage: "link")
         }
-        .tag(ScreenTab.urlLookup)
+        .tag(AppTab.urlLookup)
       
-      SettingsScreen()
+      SettingsPage()
         .tabItem {
-          Label(ScreenTab.settings.title, systemImage: "gear")
+          Label(AppTab.settings.title, systemImage: "gear")
         }
-        .tag(ScreenTab.settings)
+        .tag(AppTab.settings)
     }
   }
 }
