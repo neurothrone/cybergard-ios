@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct EmailScreen: View {
+struct EmailLookupScreen: View {
   @Environment(\.emailReportService) private var emailReportService
   @StateObject private var viewModel: EmailReportsViewModel
 
@@ -50,5 +50,5 @@ struct EmailScreen: View {
 }
 
 #Preview {
-  EmailScreen(service: EmailReportInMemoryService())
+  EmailLookupScreen(service: EmailReportInMemoryService())
 }

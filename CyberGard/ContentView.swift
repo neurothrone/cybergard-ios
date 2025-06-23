@@ -13,7 +13,7 @@ struct ContentView: View {
         }
         .tag(ScreenTab.home)
 
-      EmailLookupPage(service: emailReportService)
+      EmailLookupScreen(service: emailReportService)
         .tabItem {
           Label(ScreenTab.emailLookup.title, systemImage: "envelope")
         }
