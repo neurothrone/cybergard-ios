@@ -7,7 +7,6 @@ final class EmailReportDetailViewModel: ObservableObject {
   @Published var error: String?
 
   @Published var report: EmailReportDetails?
-
   @Published var comment: String = ""
   @Published var scamType: ScamType = .spamOrTelemarketing
 
