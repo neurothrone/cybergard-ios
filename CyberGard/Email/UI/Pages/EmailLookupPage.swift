@@ -22,9 +22,9 @@ struct EmailLookupPage: View {
             .foregroundColor(.red)
             .padding()
         } else {
-          List(viewModel.filteredReports) { report in
-            NavigationLink(
-              destination:
+          List {
+            ForEach(viewModel.filteredReports) { report in
+              NavigationLink {
                 EmailReportDetailPage(
                   viewModel: EmailReportDetailViewModel(
                     email: report.email,
@@ -32,8 +32,9 @@ struct EmailLookupPage: View {
                     reportUpdateSubject: viewModel.reportUpdateSubject
                   )
                 )
-            ) {
-              EmailReportCellView(report: report)
+              } label: {
+                EmailReportCellView(report: report)
+              }
             }
           }
           .refreshable {
