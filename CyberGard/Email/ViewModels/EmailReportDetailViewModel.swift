@@ -7,8 +7,8 @@ class EmailReportDetailViewModel: ObservableObject {
   @Published var isLoading = false
   @Published var error: String?
 
-  private let service: EmailReportHandling
   private let email: String
+  private let service: EmailReportHandling
   private let reportUpdateSubject: PassthroughSubject<EmailReportDetails, Never>?
 
   init(
