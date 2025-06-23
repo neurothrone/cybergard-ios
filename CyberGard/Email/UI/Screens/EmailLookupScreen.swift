@@ -37,9 +37,14 @@ struct EmailLookupScreen: View {
           .refreshable {
             await viewModel.loadReports()
           }
+          .searchable(
+            text: .constant(""),
+            prompt: "Search by email, scam, or country"
+          )
         }
       }
-      .navigationTitle("Email Reports")
+      .navigationTitle("Email Lookup")
+      .navigationBarTitleDisplayMode(.inline)
       .task {
         if viewModel.reports.isEmpty {
           await viewModel.loadReports()
