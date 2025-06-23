@@ -13,11 +13,29 @@ struct ContentView: View {
         }
         .tag(ScreenTab.home)
 
-      EmailScreen(service: emailReportService)
+      EmailLookupPage(service: emailReportService)
         .tabItem {
-          Label(ScreenTab.email.title, systemImage: "envelope")
+          Label(ScreenTab.emailLookup.title, systemImage: "envelope")
         }
-        .tag(ScreenTab.email)
+        .tag(ScreenTab.emailLookup)
+      
+      PhoneLookupScreen()
+        .tabItem {
+          Label(ScreenTab.phoneLookup.title, systemImage: "phone")
+        }
+        .tag(ScreenTab.phoneLookup)
+      
+      UrlLookupScreen()
+        .tabItem {
+          Label(ScreenTab.urlLookup.title, systemImage: "link")
+        }
+        .tag(ScreenTab.urlLookup)
+      
+      SettingsScreen()
+        .tabItem {
+          Label(ScreenTab.settings.title, systemImage: "gear")
+        }
+        .tag(ScreenTab.settings)
     }
   }
 }
