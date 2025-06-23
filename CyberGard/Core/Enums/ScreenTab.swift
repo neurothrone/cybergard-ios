@@ -2,7 +2,10 @@ import Foundation
 
 enum ScreenTab: Identifiable, CaseIterable {
   case home
-  case email
+  case emailLookup
+  case phoneLookup
+  case urlLookup
+  case settings
 
   var id: Self { self }
 
@@ -10,8 +13,14 @@ enum ScreenTab: Identifiable, CaseIterable {
     switch self {
     case .home:
       return "Home"
-    case .email:
+    case .emailLookup:
       return "Email"
+    case .phoneLookup:
+      return "Phone"
+    case .urlLookup:
+      return "URL"
+    case .settings:
+      return "Settings"
     }
   }
 }
