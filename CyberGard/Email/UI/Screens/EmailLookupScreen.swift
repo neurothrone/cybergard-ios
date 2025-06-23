@@ -46,6 +46,21 @@ struct EmailLookupScreen: View {
       }
       .navigationTitle("Email Lookup")
       .navigationBarTitleDisplayMode(.inline)
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          NavigationLink(
+            destination: NewEmailReportPage(
+              viewModel: NewEmailReportViewModel(
+                service: emailReportService,
+                reportCreateSubject: viewModel.reportCreateSubject
+              )
+            )
+          ) {
+            Label("Report Email", systemImage: "flag")
+              .foregroundColor(.red)
+          }
+        }
+      }
       .task {
         if viewModel.reports.isEmpty {
           await viewModel.loadReports()
