@@ -2,28 +2,27 @@ import Combine
 import Foundation
 
 @MainActor
-class EmailReportsViewModel: ObservableObject {
+final class EmailReportsViewModel: ObservableObject {
   @Published var reports: [EmailReport] = []
   
   @Published var isLoading = false
   @Published var error: String?
 
+  private let service: EmailReportHandling
   let reportCreateSubject = PassthroughSubject<EmailReportDetails, Never>()
   let reportUpdateSubject = PassthroughSubject<EmailReportDetails, Never>()
   private var cancellables = Set<AnyCancellable>()
-
-  private let service: EmailReportHandling
 
   init(service: EmailReportHandling) {
     self.service = service
     reportCreateSubject
       .sink { [weak self] newReport in
-        self?.reports.append(EmailReport.from(details: newReport))
+        self?.addReport(newReport)
       }
       .store(in: &cancellables)
     reportUpdateSubject
-      .sink { [weak self] updated in
-        self?.updateReport(updated)
+      .sink { [weak self] updatedReport in
+        self?.updateReport(updatedReport)
       }
       .store(in: &cancellables)
   }
@@ -40,14 +39,18 @@ class EmailReportsViewModel: ObservableObject {
 
     isLoading = false
   }
+  
+  private func addReport(_ report: EmailReportDetails) {
+    reports.append(EmailReport.from(details: report))
+  }
 
-  private func updateReport(_ updated: EmailReportDetails) {
-    if let index = reports.firstIndex(where: { $0.email == updated.email }) {
+  private func updateReport(_ updatedReport: EmailReportDetails) {
+    if let index = reports.firstIndex(where: { $0.email == updatedReport.email }) {
       // Update the existing report with the new details
+      // NOTE: If we let the user update the scam type or country, we would need to uncomment these lines:
       //reports[index].scamType = updated.scamType
       //reports[index].country = updated.country
-      //reports[index].reportedDate = updated.reportedDate
-      reports[index].commentsCount = updated.comments.count
+      reports[index].commentsCount = updatedReport.comments.count
     }
   }
 }
