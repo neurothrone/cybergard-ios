@@ -65,7 +65,7 @@ struct EmailReportDetailPage: View {
 }
 
 #Preview {
-  let emailReport = EmailReportDetails.samples.first ?? EmailReportDetails.sample
+  let emailReport = EmailReportDetails.sample
   let viewModel = EmailReportDetailViewModel(
     email: emailReport.email,
     service: EmailReportInMemoryService()

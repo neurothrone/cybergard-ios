@@ -1,6 +1,6 @@
 import Foundation
 
-class EmailReportApiService: EmailReportHandling {
+final class EmailReportApiService: EmailReportHandling {
   private let baseURL: URL
 
   init(baseURL: URL = URL(string: "http://localhost:5001/api")!) {

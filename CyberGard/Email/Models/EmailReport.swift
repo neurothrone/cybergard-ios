@@ -1,12 +1,12 @@
 import Foundation
 
-struct EmailReport: Identifiable, Decodable  {
+struct EmailReport: Identifiable, Decodable {
   var email: String
   var scamType: String
   var country: String
   var reportedDate: Date
   var commentsCount: Int
-  
+
   var id: String { email }
 
   enum CodingKeys: String, CodingKey {
@@ -42,22 +42,21 @@ extension EmailReport {
   }
 
   static var samples: [EmailReport] {
-    (1...5).compactMap { index in
-      let email = "user\(index)@example.com"
-      let scamType = index.isMultiple(of: 2) ? "Phishing" : "Malware"
-      let country = index.isMultiple(of: 2) ? "SE" : "DE"
-      let date = Calendar.current.date(byAdding: .day, value: -index, to: .now)
-      let comments = index * 2
+    [sample]
+      + (1...5).compactMap { index in
+        let email = "user\(index)@example.com"
+        let scamType = index.isMultiple(of: 2) ? "Phishing" : "Malware"
+        let country = index.isMultiple(of: 2) ? "SE" : "DE"
+        let reportedDate = Calendar.current.date(byAdding: .day, value: -index, to: .now) ?? .now
+        let commentsCount = Int.random(in: 1...6)
 
-      guard let reportedDate = date else { return nil }
-
-      return EmailReport(
-        email: email,
-        scamType: scamType,
-        country: country,
-        reportedDate: reportedDate,
-        commentsCount: comments
-      )
-    }
+        return EmailReport(
+          email: email,
+          scamType: scamType,
+          country: country,
+          reportedDate: reportedDate,
+          commentsCount: commentsCount
+        )
+      }
   }
 }

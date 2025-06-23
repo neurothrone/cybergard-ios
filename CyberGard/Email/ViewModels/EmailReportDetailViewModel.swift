@@ -2,12 +2,11 @@ import Combine
 import Foundation
 
 @MainActor
-class EmailReportDetailViewModel: ObservableObject {
+final class EmailReportDetailViewModel: ObservableObject {
   @Published var isLoading = false
   @Published var error: String?
 
   @Published var report: EmailReportDetails?
-
   @Published var comment: String = ""
   @Published var scamType: ScamType = .spamOrTelemarketing
 

@@ -22,9 +22,9 @@ struct EmailLookupPage: View {
             .foregroundColor(.red)
             .padding()
         } else {
-          List(viewModel.reports, id: \.email) { report in
-            NavigationLink(
-              destination:
+          List {
+            ForEach(viewModel.filteredReports) { report in
+              NavigationLink {
                 EmailReportDetailPage(
                   viewModel: EmailReportDetailViewModel(
                     email: report.email,
@@ -32,15 +32,16 @@ struct EmailLookupPage: View {
                     reportUpdateSubject: viewModel.reportUpdateSubject
                   )
                 )
-            ) {
-              EmailReportCellView(report: report)
+              } label: {
+                EmailReportCellView(report: report)
+              }
             }
           }
           .refreshable {
             await viewModel.loadReports()
           }
           .searchable(
-            text: .constant(""),
+            text: $viewModel.searchText,
             placement: .navigationBarDrawer(displayMode: .always),
             prompt: "Search by email, scam, or country"
           )
