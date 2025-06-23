@@ -2,7 +2,17 @@ import SwiftUI
 
 struct PhoneLookupScreen: View {
   var body: some View {
-    Text("Phone Lookup")
+    NavigationStack {
+      VStack {
+        Text("Phone Lookup")
+      }
+      .navigationTitle("Phone Lookup")
+      .navigationBarTitleDisplayMode(.inline)
+      .searchable(
+        text: .constant(""),
+        prompt: "Search by phone, scam, or country"
+      )
+    }
   }
 }
 
