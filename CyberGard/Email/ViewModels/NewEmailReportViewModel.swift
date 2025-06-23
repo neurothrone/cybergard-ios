@@ -5,7 +5,7 @@ import Foundation
 class NewEmailReportViewModel: ObservableObject {
   @Published var isLoading = false
   @Published var error: String?
-  
+
   @Published var email: String = ""
   @Published var country: String = ""
   @Published var comment: String = ""
