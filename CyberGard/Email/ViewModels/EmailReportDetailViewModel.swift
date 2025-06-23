@@ -3,12 +3,16 @@ import Foundation
 
 @MainActor
 class EmailReportDetailViewModel: ObservableObject {
-  @Published var report: EmailReportDetails?
   @Published var isLoading = false
   @Published var error: String?
 
-  private let service: EmailReportHandling
+  @Published var report: EmailReportDetails?
+
+  @Published var comment: String = ""
+  @Published var scamType: ScamType = .spamOrTelemarketing
+
   private let email: String
+  private let service: EmailReportHandling
   private let reportUpdateSubject: PassthroughSubject<EmailReportDetails, Never>?
 
   init(
@@ -21,31 +25,42 @@ class EmailReportDetailViewModel: ObservableObject {
     self.reportUpdateSubject = reportUpdateSubject
   }
 
+  var isValid: Bool {
+    if scamType == .other {
+      return !comment.isEmpty
+    }
+
+    return true
+  }
+
   func loadReport() async {
     isLoading = true
     error = nil
-    
+
     do {
       report = try await service.getByEmailAsync(email: email)
     } catch {
       self.error = "Failed to load report: \(error.localizedDescription)"
     }
-    
+
     isLoading = false
   }
 
-  func addComment(_ comment: String) async -> Bool {
+  func addComment() async -> Bool {
     isLoading = true
     error = nil
-    
+
+    defer {
+      isLoading = false
+    }
+
     do {
       if let updated = try await service.addCommentToEmailReportAsync(
         email: email,
-        comment: comment
+        comment: scamType == .other ? comment : scamType.title
       ) {
         report = updated
         reportUpdateSubject?.send(updated)
-        isLoading = false
         return true
       } else {
         error = "Report not found."
@@ -53,8 +68,7 @@ class EmailReportDetailViewModel: ObservableObject {
     } catch {
       self.error = "Failed to add comment: \(error.localizedDescription)"
     }
-    
-    isLoading = false
+
     return false
   }
 }

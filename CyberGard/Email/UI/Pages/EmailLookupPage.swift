@@ -1,10 +1,12 @@
 import SwiftUI
 
-struct EmailLookupScreen: View {
-  @Environment(\.emailReportService) private var emailReportService
+struct EmailLookupPage: View {
   @StateObject private var viewModel: EmailReportsViewModel
 
+  let service: EmailReportHandling
+
   init(service: EmailReportHandling) {
+    self.service = service
     _viewModel = StateObject(
       wrappedValue: EmailReportsViewModel(service: service)
     )
@@ -23,10 +25,10 @@ struct EmailLookupScreen: View {
           List(viewModel.reports, id: \.email) { report in
             NavigationLink(
               destination:
-                EmailReportDetailScreen(
+                EmailReportDetailPage(
                   viewModel: EmailReportDetailViewModel(
                     email: report.email,
-                    service: emailReportService,
+                    service: service,
                     reportUpdateSubject: viewModel.reportUpdateSubject
                   )
                 )
@@ -46,6 +48,21 @@ struct EmailLookupScreen: View {
       }
       .navigationTitle("Email Lookup")
       .navigationBarTitleDisplayMode(.inline)
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          NavigationLink(
+            destination: NewEmailReportPage(
+              viewModel: NewEmailReportViewModel(
+                service: service,
+                reportCreateSubject: viewModel.reportCreateSubject
+              )
+            )
+          ) {
+            Label("Report Email", systemImage: "flag")
+              .foregroundColor(.red)
+          }
+        }
+      }
       .task {
         if viewModel.reports.isEmpty {
           await viewModel.loadReports()
@@ -56,5 +73,5 @@ struct EmailLookupScreen: View {
 }
 
 #Preview {
-  EmailLookupScreen(service: EmailReportInMemoryService())
+  EmailLookupPage(service: EmailReportInMemoryService())
 }

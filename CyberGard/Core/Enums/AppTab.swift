@@ -1,6 +1,6 @@
 import Foundation
 
-enum ScreenTab: Identifiable, CaseIterable {
+enum AppTab: Identifiable, CaseIterable {
   case home
   case emailLookup
   case phoneLookup

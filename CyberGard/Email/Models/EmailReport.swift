@@ -19,6 +19,18 @@ struct EmailReport: Identifiable, Decodable  {
 }
 
 extension EmailReport {
+  static func from(details: EmailReportDetails) -> EmailReport {
+    EmailReport(
+      email: details.email,
+      scamType: details.scamType,
+      country: details.country,
+      reportedDate: details.reportedDate,
+      commentsCount: details.comments.count
+    )
+  }
+}
+
+extension EmailReport {
   static var sample: EmailReport {
     EmailReport(
       email: "john.doe@example.com",
