@@ -10,6 +10,7 @@ struct PhoneLookupScreen: View {
       .navigationBarTitleDisplayMode(.inline)
       .searchable(
         text: .constant(""),
+        placement: .navigationBarDrawer(displayMode: .always),
         prompt: "Search by phone, scam, or country"
       )
     }

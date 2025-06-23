@@ -39,6 +39,7 @@ struct EmailLookupScreen: View {
           }
           .searchable(
             text: .constant(""),
+            placement: .navigationBarDrawer(displayMode: .always),
             prompt: "Search by email, scam, or country"
           )
         }

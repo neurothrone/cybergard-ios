@@ -10,6 +10,7 @@ struct UrlLookupScreen: View {
       .navigationBarTitleDisplayMode(.inline)
       .searchable(
         text: .constant(""),
+        placement: .navigationBarDrawer(displayMode: .always),
         prompt: "Search by URL, scam, or country"
       )
     }
