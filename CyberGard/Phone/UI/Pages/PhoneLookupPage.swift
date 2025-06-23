@@ -1,22 +1,22 @@
 import SwiftUI
 
-struct UrlLookupScreen: View {
+struct PhoneLookupPage: View {
   var body: some View {
     NavigationStack {
       VStack {
-        Text("URL Lookup")
+        Text("Phone Lookup")
       }
-      .navigationTitle("URL Lookup")
+      .navigationTitle("Phone Lookup")
       .navigationBarTitleDisplayMode(.inline)
       .searchable(
         text: .constant(""),
         placement: .navigationBarDrawer(displayMode: .always),
-        prompt: "Search by URL, scam, or country"
+        prompt: "Search by phone, scam, or country"
       )
     }
   }
 }
 
 #Preview {
-  UrlLookupScreen()
+  PhoneLookupPage()
 }

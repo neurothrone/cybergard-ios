@@ -1,12 +1,11 @@
 import SwiftUI
 
-struct EmailReportDetailScreen: View {
+struct EmailReportDetailPage: View {
   @StateObject private var viewModel: EmailReportDetailViewModel
   @State private var isReporting = false
-  
 
   init(viewModel: EmailReportDetailViewModel) {
-    self._viewModel = StateObject(wrappedValue: viewModel)
+    _viewModel = StateObject(wrappedValue: viewModel)
   }
 
   var body: some View {
@@ -74,6 +73,6 @@ struct EmailReportDetailScreen: View {
   viewModel.report = emailReport
 
   return NavigationStack {
-    EmailReportDetailScreen(viewModel: viewModel)
+    EmailReportDetailPage(viewModel: viewModel)
   }
 }

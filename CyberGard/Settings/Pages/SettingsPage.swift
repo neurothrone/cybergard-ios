@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SettingsScreen: View {
+struct SettingsPage: View {
   var body: some View {
     NavigationStack {
       Form {
@@ -35,5 +35,5 @@ struct SettingsScreen: View {
 }
 
 #Preview {
-  SettingsScreen()
+  SettingsPage()
 }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct HomeScreen: View {
+struct HomePage: View {
   var body: some View {
     NavigationStack {
       VStack(alignment: .center, spacing: 8) {
@@ -26,5 +26,5 @@ struct HomeScreen: View {
 }
 
 #Preview {
-  HomeScreen()
+  HomePage()
 }
