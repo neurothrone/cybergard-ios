@@ -4,6 +4,7 @@ import Foundation
 @MainActor
 final class EmailReportDetailViewModel: ObservableObject {
   @Published var isLoading = false
+  @Published var shouldRefresh = false
   @Published var error: String?
 
   @Published var report: EmailReportDetails?
@@ -69,5 +70,15 @@ final class EmailReportDetailViewModel: ObservableObject {
     }
 
     return false
+  }
+
+  func refreshReport() async {
+    await loadReport()
+
+    if shouldRefresh && report != nil {
+      reportUpdateSubject?.send(report!)
+    }
+    
+    shouldRefresh = false
   }
 }
