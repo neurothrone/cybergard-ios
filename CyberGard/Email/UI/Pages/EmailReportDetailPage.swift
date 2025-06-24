@@ -10,19 +10,6 @@ struct EmailReportDetailPage: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-      HStack {
-        Image(systemName: "envelope")
-          .foregroundColor(.blue)
-        Spacer()
-        Button {
-          isReporting = true
-        } label: {
-          Label("Report Email", systemImage: "flag")
-        }
-        .tint(.red)
-      }
-      .padding(.horizontal, 20)
-
       if viewModel.isLoading {
         ProgressView("Loading...")
           .padding()
@@ -31,31 +18,42 @@ struct EmailReportDetailPage: View {
           .foregroundColor(.red)
           .padding()
       } else if let report = viewModel.report {
-        VStack(alignment: .leading, spacing: 4) {
-          Text(report.email)
-            .bold()
-          Text("Scam Type: \(report.scamType)")
-          Text("Country: \(report.country)")
-          Text("Reported: \(report.reportedDate.formattedDateTime24h)")
-          Text("Reports: \(report.comments.count)")
-        }
-        .padding(20)
-
         List {
-          Section(header: Text("Comments")) {
+          Section {
+            LabeledContent("Email", value: report.email)
+            LabeledContent("Scam", value: report.scamType)
+            LabeledContent("Country", value: report.country)
+            LabeledContent("Reports", value: report.commentsCount.description)
+          } header: {
+            Text("Details")
+          }
+
+          Section {
             ForEach(report.comments, id: \.postedDate) { comment in
               CommentCellView(comment: comment)
                 .listRowBackground(Color.blue.opacity(0.1))
             }
+          } header: {
+            Text("Comments")
           }
         }
       }
     }
-    .navigationTitle("Email Report")
+    .navigationTitle("Report Details")
     .navigationBarTitleDisplayMode(.inline)
     .sheet(isPresented: $isReporting) {
       if viewModel.report != nil {
         ReportEmailSheet(viewModel: viewModel)
+      }
+    }
+    .toolbar {
+      ToolbarItem(placement: .topBarTrailing) {
+        Button {
+          isReporting = true
+        } label: {
+          Text("Report")
+            .foregroundColor(.red)
+        }
       }
     }
     .task {
