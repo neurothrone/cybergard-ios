@@ -8,6 +8,8 @@ struct EmailReportDetails: Identifiable, Codable {
   var comments: [Comment]
 
   var id: String { email }
+  
+  var commentsCount: Int { comments.count }
 
   enum CodingKeys: String, CodingKey {
     case email
