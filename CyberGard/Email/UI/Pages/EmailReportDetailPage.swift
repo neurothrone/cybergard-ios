@@ -37,6 +37,9 @@ struct EmailReportDetailPage: View {
             Text("Comments")
           }
         }
+        .refreshable {
+          viewModel.shouldRefresh = true
+        }
       }
     }
     .navigationTitle("Report Details")
@@ -58,6 +61,10 @@ struct EmailReportDetailPage: View {
     }
     .task {
       await viewModel.loadReport()
+    }
+    .onChange(of: viewModel.shouldRefresh) {
+      guard viewModel.shouldRefresh else { return }
+      Task { await viewModel.refreshReport() }
     }
   }
 }
