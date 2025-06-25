@@ -1,5 +1,5 @@
 protocol EmailReportHandling {
-  func getAllAsync(
+  func searchReportsAsync(
     page: Int,
     pageSize: Int,
     query: String?

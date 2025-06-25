@@ -3,7 +3,7 @@ import Foundation
 final class EmailReportInMemoryService: EmailReportHandling {
   private var reports: [EmailReportDetails] = EmailReportDetails.samples
 
-  func getAllAsync(
+  func searchReportsAsync(
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
