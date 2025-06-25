@@ -6,9 +6,15 @@ final class EmailReportsViewModel: ObservableObject {
   @Published var isLoading = false
   @Published var error: String?
 
-  @Published var searchText: String = ""
   @Published var reports: [EmailReport] = []
   @Published private(set) var filteredReports: [EmailReport] = []
+
+  // Pagination state
+  @Published var searchText: String = ""
+  @Published var isLoadingMore = false
+  @Published var hasMorePages = true
+  private(set) var currentPage = 1
+  private let pageSize = 10
 
   private let service: EmailReportHandling
   let reportCreateSubject = PassthroughSubject<EmailReportDetails, Never>()
@@ -22,20 +28,20 @@ final class EmailReportsViewModel: ObservableObject {
   }
 
   private func setupSearchDebouncer() {
-    Publishers.CombineLatest(
-      $reports,
-      $searchText.debounce(for: .milliseconds(300), scheduler: RunLoop.main)
-    )
-    .map { reports, searchText in
-      guard !searchText.isEmpty else { return reports }
-      let query = searchText.lowercased()
-      return reports.filter { report in
-        report.email.lowercased().contains(query)
-          || report.country.lowercased().contains(query)
-          || report.scamType.lowercased().contains(query)
+    $searchText
+      .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
+      .removeDuplicates()
+      .sink { [weak self] text in
+        guard let self = self else { return }
+        self.reports = []
+        self.filteredReports = []
+        self.currentPage = 1
+        self.hasMorePages = true
+        if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+          Task { await self.loadReports(reset: true) }
+        }
       }
-    }
-    .assign(to: &$filteredReports)
+      .store(in: &cancellables)
   }
 
   private func setupReportSubjects() {
@@ -65,16 +71,86 @@ final class EmailReportsViewModel: ObservableObject {
     }
   }
 
-  func loadReports(page: Int = 1, pageSize: Int = 10) async {
+  func loadReports(reset: Bool = false) async {
+    guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+
+    if reset {
+      currentPage = 1
+      hasMorePages = true
+      reports = []
+      filteredReports = []
+    }
+
     isLoading = true
     error = nil
 
+    try? await Task.sleep(for: .seconds(1))  // Simulate network delay
+
     do {
-      reports = try await service.getAllAsync(page: page, pageSize: pageSize)
+      let newReports = try await service.getAllAsync(page: 1, pageSize: pageSize, query: searchText)
+      reports = newReports
+      filteredReports = newReports
+      hasMorePages = newReports.count == pageSize
+      currentPage = 1
     } catch {
       self.error = "Failed to load reports: \(error.localizedDescription)"
     }
 
     isLoading = false
+  }
+
+  func loadNextPage() async {
+    guard !isLoadingMore, hasMorePages,
+      !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    else { return }
+    isLoadingMore = true
+    error = nil
+
+    try? await Task.sleep(for: .seconds(1))  // Simulate network delay
+
+    do {
+      let nextPage = currentPage + 1
+      let newReports = try await service.getAllAsync(
+        page: nextPage,
+        pageSize: pageSize,
+        query: searchText
+      )
+      if newReports.isEmpty {
+        hasMorePages = false
+      } else {
+        reports.append(contentsOf: newReports)
+        filteredReports.append(contentsOf: newReports)
+        currentPage = nextPage
+        hasMorePages = newReports.count == pageSize
+      }
+    } catch {
+      self.error = "Failed to load more reports: \(error.localizedDescription)"
+    }
+
+    isLoadingMore = false
+  }
+
+  func deleteReport(_ report: EmailReport) async {
+    error = nil
+
+    guard let index = reports.firstIndex(where: { $0.email == report.email }) else {
+      error = "Report not found."
+      return
+    }
+
+    isLoading = true
+    defer { isLoading = false }
+
+    do {
+      let success = try await service.deleteEmailReportAsync(email: report.email)
+      guard success else {
+        error = "Failed to delete report"
+        return
+      }
+
+      reports.remove(at: index)
+    } catch {
+      self.error = "Failed to delete report: \(error.localizedDescription)"
+    }
   }
 }
