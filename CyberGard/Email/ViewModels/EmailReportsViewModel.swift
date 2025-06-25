@@ -87,6 +87,7 @@ final class EmailReportsViewModel: ObservableObject {
     isLoading = true
     error = nil
 
+    // TODO: Remove this delay in production code
     try? await Task.sleep(for: .seconds(1))  // Simulate network delay
 
     do {
@@ -114,6 +115,7 @@ final class EmailReportsViewModel: ObservableObject {
     isLoadingMore = true
     error = nil
 
+    // TODO: Remove this delay in production code
     try? await Task.sleep(for: .seconds(1))  // Simulate network delay
 
     do {
