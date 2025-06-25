@@ -87,7 +87,12 @@ final class EmailReportsViewModel: ObservableObject {
     try? await Task.sleep(for: .seconds(1))  // Simulate network delay
 
     do {
-      let newReports = try await service.getAllAsync(page: 1, pageSize: pageSize, query: searchText)
+      let newReports = try await service.searchReportsAsync(
+        page: 1,
+        pageSize: pageSize,
+        query: searchText
+      )
+      
       reports = newReports
       filteredReports = newReports
       hasMorePages = newReports.count == pageSize
@@ -103,6 +108,7 @@ final class EmailReportsViewModel: ObservableObject {
     guard !isLoadingMore, hasMorePages,
       !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     else { return }
+    
     isLoadingMore = true
     error = nil
 
@@ -110,7 +116,7 @@ final class EmailReportsViewModel: ObservableObject {
 
     do {
       let nextPage = currentPage + 1
-      let newReports = try await service.getAllAsync(
+      let newReports = try await service.searchReportsAsync(
         page: nextPage,
         pageSize: pageSize,
         query: searchText
@@ -134,7 +140,7 @@ final class EmailReportsViewModel: ObservableObject {
     error = nil
 
     guard let index = reports.firstIndex(where: { $0.email == report.email }) else {
-      error = "Report not found."
+      error = "Report not found"
       return
     }
 
