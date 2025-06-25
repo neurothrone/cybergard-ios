@@ -76,8 +76,8 @@ struct EmailLookupPage: View {
               )
             )
           ) {
-            Label("Report Email", systemImage: "flag")
-              .foregroundColor(.red)
+            Image(systemName: "flag")
+              .foregroundStyle(.red)
           }
         }
       }
