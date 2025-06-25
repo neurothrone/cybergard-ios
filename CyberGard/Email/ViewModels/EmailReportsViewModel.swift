@@ -88,7 +88,9 @@ final class EmailReportsViewModel: ObservableObject {
     error = nil
 
     // TODO: Remove this delay in production code
-    try? await Task.sleep(for: .seconds(1))  // Simulate network delay
+    if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+      try? await Task.sleep(for: .seconds(1))  // Simulate network delay only in Previews
+    }
 
     do {
       let newReports = try await service.searchReportsAsync(
@@ -116,7 +118,9 @@ final class EmailReportsViewModel: ObservableObject {
     error = nil
 
     // TODO: Remove this delay in production code
-    try? await Task.sleep(for: .seconds(1))  // Simulate network delay
+    if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+      try? await Task.sleep(for: .seconds(1))  // Simulate network delay only in Previews
+    }
 
     do {
       let nextPage = currentPage + 1
