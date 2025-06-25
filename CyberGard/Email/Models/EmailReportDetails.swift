@@ -38,7 +38,7 @@ extension EmailReportDetails {
 
   static var samples: [EmailReportDetails] {
     [.sample]
-      + (1...5).map { index in
+      + (1...50).map { index in
         let comments = (1...index).map { cIndex in
           Comment(
             text: "Comment #\(cIndex) for user\(index)",
