@@ -13,7 +13,7 @@ struct LookupPlaceholderView: View {
       Text(title)
         .foregroundColor(.secondary)
         .font(.title3)
-      
+
       if let subtitle = subtitle {
         Text(subtitle)
           .foregroundColor(.secondary)
@@ -29,7 +29,7 @@ struct LookupPlaceholderView: View {
 #Preview {
   LookupPlaceholderView(
     icon: "envelope.open",
-    title: "No email reports yet",
-    subtitle: "Start by searching or reporting a suspicious email."
+    title: "Search or report a suspicious email",
+    subtitle: "Use the search bar above or tap the flag to report a new email."
   )
 }
