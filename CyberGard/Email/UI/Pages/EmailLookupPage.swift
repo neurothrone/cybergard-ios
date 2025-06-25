@@ -50,6 +50,12 @@ struct EmailLookupPage: View {
             .refreshable {
               await viewModel.loadReports(reset: true)
             }
+          } else {
+            LookupPlaceholderView(
+              icon: "envelope.open",
+              title: "Search or report a suspicious email",
+              subtitle: "Use the search bar above or tap the flag to report a new email."
+            )
           }
         }
       }
@@ -70,8 +76,8 @@ struct EmailLookupPage: View {
               )
             )
           ) {
-            Label("Report Email", systemImage: "flag")
-              .foregroundColor(.red)
+            Image(systemName: "flag")
+              .foregroundStyle(.red)
           }
         }
       }

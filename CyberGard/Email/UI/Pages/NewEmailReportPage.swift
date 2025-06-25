@@ -65,7 +65,7 @@ struct NewEmailReportPage: View {
         .disabled(!viewModel.isValid || viewModel.isLoading)
       }
     }
-    .navigationTitle("Add New Email Report")
+    .navigationTitle("Report Email")
     .navigationBarTitleDisplayMode(.inline)
     .alert(alertTitle, isPresented: $showAlert) {
       Button("OK", role: .cancel) {

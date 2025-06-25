@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
   @Environment(\.emailReportService) private var emailReportService
 
-  @StateObject private var viewModel: NavigationViewModel = .init()
+  @StateObject private var viewModel: TabNavigationViewModel = .init()
 
   var body: some View {
     TabView(selection: $viewModel.selectedTab) {

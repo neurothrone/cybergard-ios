@@ -1,6 +1,6 @@
 import Foundation
 
-final class NavigationViewModel: ObservableObject {
+final class TabNavigationViewModel: ObservableObject {
   @Published var selectedTab: AppTab = .home
 
   func selectTab(_ tab: AppTab) {
