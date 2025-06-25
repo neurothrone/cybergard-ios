@@ -20,6 +20,10 @@ final class EmailReportsViewModel: ObservableObject {
   let reportCreateSubject = PassthroughSubject<EmailReportDetails, Never>()
   let reportUpdateSubject = PassthroughSubject<EmailReportDetails, Never>()
   private var cancellables = Set<AnyCancellable>()
+  
+  var shouldShowNoResults: Bool {
+    hasSearched && !isLoading && !isLoadingMore && reports.isEmpty && !searchText.isEmpty
+  }
 
   init(service: EmailReportHandling) {
     self.service = service

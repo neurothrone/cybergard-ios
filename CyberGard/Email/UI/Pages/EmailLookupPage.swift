@@ -22,7 +22,7 @@ struct EmailLookupPage: View {
             .foregroundColor(.red)
             .padding()
         } else {
-          if viewModel.hasSearched && !viewModel.isLoading && !viewModel.isLoadingMore && !viewModel.reports.isEmpty == false && !viewModel.searchText.isEmpty {
+          if viewModel.shouldShowNoResults {
             Spacer()
             VStack(spacing: 16) {
               Image(systemName: "magnifyingglass")
