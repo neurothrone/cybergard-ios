@@ -1,7 +1,8 @@
 protocol EmailReportHandling {
   func getAllAsync(
     page: Int,
-    pageSize: Int
+    pageSize: Int,
+    query: String?
   ) async throws -> [EmailReport]
   
   func getByEmailAsync(email: String) async throws -> EmailReportDetails?
