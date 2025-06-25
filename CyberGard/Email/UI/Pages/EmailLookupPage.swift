@@ -22,31 +22,42 @@ struct EmailLookupPage: View {
             .foregroundColor(.red)
             .padding()
         } else {
-          List {
-            ForEach(viewModel.filteredReports) { report in
-              NavigationLink {
-                EmailReportDetailPage(
-                  viewModel: EmailReportDetailViewModel(
-                    email: report.email,
-                    service: service,
-                    reportUpdateSubject: viewModel.reportUpdateSubject
-                  )
+          if viewModel.shouldShowNoResults {
+            NoSearchResultsView()
+          } else if !viewModel.reports.isEmpty {
+            List {
+              ForEach(viewModel.reports) { report in
+                EmailReportRowView(
+                  viewModel: viewModel,
+                  report: report,
+                  service: service
                 )
-              } label: {
-                EmailReportCellView(report: report)
+              }
+              if viewModel.hasMorePages {
+                HStack {
+                  Spacer()
+                  if viewModel.isLoadingMore {
+                    ProgressView()
+                  } else {
+                    Button("Load More") {
+                      Task { await viewModel.loadNextPage() }
+                    }
+                  }
+                  Spacer()
+                }
               }
             }
+            .refreshable {
+              await viewModel.loadReports(reset: true)
+            }
           }
-          .refreshable {
-            await viewModel.loadReports()
-          }
-          .searchable(
-            text: $viewModel.searchText,
-            placement: .navigationBarDrawer(displayMode: .always),
-            prompt: "Search by email, scam, or country"
-          )
         }
       }
+      .searchable(
+        text: $viewModel.searchText,
+        placement: .navigationBarDrawer(displayMode: .always),
+        prompt: "Search by email, scam, or country"
+      )
       .navigationTitle("Email Lookup")
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
@@ -69,6 +80,28 @@ struct EmailLookupPage: View {
           await viewModel.loadReports()
         }
       }
+    }
+  }
+}
+
+// Helper row view to reduce type-checking complexity
+private struct EmailReportRowView: View {
+  @ObservedObject var viewModel: EmailReportsViewModel
+
+  let report: EmailReport
+  let service: EmailReportHandling
+
+  var body: some View {
+    NavigationLink(
+      destination: EmailReportDetailPage(
+        viewModel: EmailReportDetailViewModel(
+          email: report.email,
+          service: service,
+          reportUpdateSubject: viewModel.reportUpdateSubject
+        )
+      )
+    ) {
+      EmailReportCellView(report: report)
     }
   }
 }

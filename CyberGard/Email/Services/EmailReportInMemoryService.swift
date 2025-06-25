@@ -3,13 +3,27 @@ import Foundation
 final class EmailReportInMemoryService: EmailReportHandling {
   private var reports: [EmailReportDetails] = EmailReportDetails.samples
 
-  func getAllAsync(
+  func searchReportsAsync(
     page: Int = 1,
-    pageSize: Int = 10
+    pageSize: Int = 10,
+    query: String? = nil
   ) async throws -> [EmailReport] {
+    var filtered = reports
+    
+    if let query = query, !query.isEmpty {
+      let lower = query.lowercased()
+      filtered = filtered.filter { r in
+        r.email.lowercased().contains(lower) ||
+        r.country.lowercased().contains(lower) ||
+        r.scamType.lowercased().contains(lower)
+      }
+    }
+    
     let startIndex = (page - 1) * pageSize
-    let endIndex = startIndex + pageSize
-    let paginatedReports = reports[startIndex..<min(endIndex, reports.count)]
+    guard startIndex < filtered.count else { return [] }
+    
+    let endIndex = min(startIndex + pageSize, filtered.count)
+    let paginatedReports = filtered[startIndex..<endIndex]
     
     return paginatedReports.map { report in
       EmailReport(

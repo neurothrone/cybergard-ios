@@ -19,23 +19,8 @@ struct EmailReportDetailPage: View {
           .padding()
       } else if let report = viewModel.report {
         List {
-          Section {
-            LabeledContent("Email", value: report.email)
-            LabeledContent("Scam", value: report.scamType)
-            LabeledContent("Country", value: report.country)
-            LabeledContent("Reports", value: report.commentsCount.description)
-          } header: {
-            Text("Details")
-          }
-
-          Section {
-            ForEach(report.comments, id: \.postedDate) { comment in
-              CommentCellView(comment: comment)
-                .listRowBackground(Color.blue.opacity(0.1))
-            }
-          } header: {
-            Text("Comments")
-          }
+          ReportDetailsSectionView(report: report)
+          CommentsSectionView(comments: report.comments)
         }
         .refreshable {
           viewModel.shouldRefresh = true
