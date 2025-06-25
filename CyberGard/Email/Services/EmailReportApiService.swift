@@ -7,17 +7,22 @@ final class EmailReportApiService: EmailReportHandling {
     self.baseURL = baseURL
   }
 
-  func getAllAsync(
+  func searchReportsAsync(
     page: Int = 1,
-    pageSize: Int = 10
+    pageSize: Int = 10,
+    query: String? = nil
   ) async throws -> [EmailReport] {
-    let url =
-      baseURL
-      .appendingPathComponent("email-reports")
-      .appending(queryItems: [
+    var queryItems: [URLQueryItem] = [
         URLQueryItem(name: "page", value: "\(page)"),
-        URLQueryItem(name: "pageSize", value: "\(pageSize)"),
-      ])
+        URLQueryItem(name: "pageSize", value: "\(pageSize)")
+    ]
+    if let query = query, !query.isEmpty {
+        queryItems.append(URLQueryItem(name: "query", value: query))
+    }
+    let url = baseURL
+        .appendingPathComponent("email-reports")
+        .appending(queryItems: queryItems)
+    
     let (data, response) = try await URLSession.shared.data(from: url)
     
     guard let httpResponse = response as? HTTPURLResponse,
