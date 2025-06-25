@@ -50,12 +50,11 @@ struct EmailLookupPage: View {
             .refreshable {
               await viewModel.loadReports(reset: true)
             }
-          }
-          else {
+          } else {
             LookupPlaceholderView(
               icon: "envelope.open",
-              title: "No email reports yet",
-              subtitle: "Start by searching or reporting a suspicious email."
+              title: "Search or report a suspicious email",
+              subtitle: "Use the search bar above or tap the flag to report a new email."
             )
           }
         }
