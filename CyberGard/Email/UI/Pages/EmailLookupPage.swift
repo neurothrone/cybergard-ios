@@ -35,13 +35,11 @@ struct EmailLookupPage: View {
             Spacer()
           } else if !viewModel.reports.isEmpty {
             List {
-              ForEach(Array(viewModel.reports.enumerated()), id: \.element.id) {
-                index,
-                report in
+              ForEach(viewModel.reports) { report in
                 EmailReportRowView(
                   viewModel: viewModel,
                   report: report,
-                  service: service,
+                  service: service
                 )
               }
               if viewModel.hasMorePages {
