@@ -7,10 +7,10 @@ final class EmailReportsViewModel: ObservableObject {
   @Published var error: String?
 
   @Published var reports: [EmailReport] = []
-  @Published private(set) var filteredReports: [EmailReport] = []
+  @Published var hasSearched: Bool = false
+  @Published var searchText: String = ""
 
   // Pagination state
-  @Published var searchText: String = ""
   @Published var isLoadingMore = false
   @Published var hasMorePages = true
   private(set) var currentPage = 1
@@ -34,9 +34,9 @@ final class EmailReportsViewModel: ObservableObject {
       .sink { [weak self] text in
         guard let self = self else { return }
         self.reports = []
-        self.filteredReports = []
         self.currentPage = 1
         self.hasMorePages = true
+        self.hasSearched = false
         if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
           Task { await self.loadReports(reset: true) }
         }
@@ -78,7 +78,6 @@ final class EmailReportsViewModel: ObservableObject {
       currentPage = 1
       hasMorePages = true
       reports = []
-      filteredReports = []
     }
 
     isLoading = true
@@ -92,11 +91,10 @@ final class EmailReportsViewModel: ObservableObject {
         pageSize: pageSize,
         query: searchText
       )
-      
       reports = newReports
-      filteredReports = newReports
       hasMorePages = newReports.count == pageSize
       currentPage = 1
+      hasSearched = true
     } catch {
       self.error = "Failed to load reports: \(error.localizedDescription)"
     }
@@ -125,7 +123,6 @@ final class EmailReportsViewModel: ObservableObject {
         hasMorePages = false
       } else {
         reports.append(contentsOf: newReports)
-        filteredReports.append(contentsOf: newReports)
         currentPage = nextPage
         hasMorePages = newReports.count == pageSize
       }

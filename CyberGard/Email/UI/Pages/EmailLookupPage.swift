@@ -22,7 +22,7 @@ struct EmailLookupPage: View {
             .foregroundColor(.red)
             .padding()
         } else {
-          if !viewModel.searchText.isEmpty && viewModel.filteredReports.isEmpty {
+          if viewModel.hasSearched && !viewModel.isLoading && !viewModel.isLoadingMore && !viewModel.reports.isEmpty == false && !viewModel.searchText.isEmpty {
             Spacer()
             VStack(spacing: 16) {
               Image(systemName: "magnifyingglass")
@@ -33,9 +33,9 @@ struct EmailLookupPage: View {
                 .font(.title3)
             }
             Spacer()
-          } else if !viewModel.filteredReports.isEmpty {
+          } else if !viewModel.reports.isEmpty {
             List {
-              ForEach(Array(viewModel.filteredReports.enumerated()), id: \.element.id) {
+              ForEach(Array(viewModel.reports.enumerated()), id: \.element.id) {
                 index,
                 report in
                 EmailReportRowView(
