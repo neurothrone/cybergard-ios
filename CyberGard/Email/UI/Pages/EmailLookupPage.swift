@@ -51,6 +51,13 @@ struct EmailLookupPage: View {
               await viewModel.loadReports(reset: true)
             }
           }
+          else {
+            LookupPlaceholderView(
+              icon: "envelope.open",
+              title: "No email reports yet",
+              subtitle: "Start by searching or reporting a suspicious email."
+            )
+          }
         }
       }
       .searchable(
