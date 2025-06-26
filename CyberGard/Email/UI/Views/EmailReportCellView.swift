@@ -2,12 +2,12 @@ import SwiftUI
 
 struct EmailReportCellView: View {
   let report: EmailReport
-  
+
   var body: some View {
     HStack {
       Image(systemName: "envelope")
         .foregroundColor(.blue)
-      
+
       VStack(alignment: .leading) {
         Text(report.email)
           .font(.headline)
@@ -16,9 +16,9 @@ struct EmailReportCellView: View {
           .truncationMode(.tail)
         Text(report.country)
       }
-      
+
       Spacer()
-      
+
       Text("\(report.commentsCount) reports")
         .fontWeight(.semibold)
         .foregroundColor(.primary)
