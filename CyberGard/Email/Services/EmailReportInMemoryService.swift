@@ -55,7 +55,7 @@ final class EmailReportInMemoryService: EmailReportHandling {
     country: String,
     comment: String
   ) async throws -> EmailReportDetails {
-    guard ReportValidator.isValidEmail(email) else {
+    guard EmailValidator.isValidEmail(email) else {
       throw ReportError.badRequest(message: "Invalid email address.")
     }
     
@@ -92,7 +92,7 @@ final class EmailReportInMemoryService: EmailReportHandling {
     email: String,
     comment: String
   ) async throws -> EmailReportDetails? {
-    guard ReportValidator.isValidEmail(email) else {
+    guard EmailValidator.isValidEmail(email) else {
       throw ReportError.badRequest(message: "Invalid email address.")
     }
     
@@ -113,7 +113,7 @@ final class EmailReportInMemoryService: EmailReportHandling {
   }
 
   func deleteReport(email: String) async throws -> Bool {
-    guard ReportValidator.isValidEmail(email) else {
+    guard EmailValidator.isValidEmail(email) else {
       throw ReportError.badRequest(message: "Invalid email address.")
     }
     

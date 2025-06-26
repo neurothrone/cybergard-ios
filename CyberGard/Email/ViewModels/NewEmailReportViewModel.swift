@@ -23,7 +23,7 @@ final class NewEmailReportViewModel: ObservableObject {
   }
 
   var isValid: Bool {
-    guard ReportValidator.isValidEmail(email) else {
+    guard EmailValidator.isValidEmail(email) else {
       return false
     }
 
