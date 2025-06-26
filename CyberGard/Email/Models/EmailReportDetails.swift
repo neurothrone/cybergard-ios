@@ -1,6 +1,6 @@
 import Foundation
 
-struct EmailReportDetails: Identifiable, Codable {
+struct EmailReportDetails: Identifiable, Decodable {
   var email: String
   var scamType: String
   var country: String
