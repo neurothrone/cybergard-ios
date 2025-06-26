@@ -46,6 +46,17 @@ struct EmailLookupPage: View {
                   Spacer()
                 }
               }
+              
+              // Show total results only if there are any
+              if viewModel.totalReports > 0 {
+                HStack {
+                  Spacer()
+                  Text("Showing \(viewModel.reports.count) of \(viewModel.totalReports) results")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                  Spacer()
+                }
+              }
             }
             .refreshable {
               await viewModel.loadReports(reset: true)
