@@ -1,15 +1,15 @@
 import SwiftUI
 
-struct EmailReportCellView: View {
-  let report: EmailReport
+struct PhoneReportCellView: View {
+  let report: PhoneReport
 
   var body: some View {
     HStack {
-      Image(systemName: "envelope")
+      Image(systemName: "phone")
         .foregroundColor(.blue)
 
       VStack(alignment: .leading) {
-        Text(report.email)
+        Text(report.phoneNumber)
           .font(.headline)
           .fontWeight(.semibold)
           .lineLimit(1)
@@ -31,8 +31,8 @@ struct EmailReportCellView: View {
 
 #Preview {
   List {
-    EmailReportCellView(
-      report: EmailReport.sample
+    PhoneReportCellView(
+      report: PhoneReport.sample
     )
   }
 }

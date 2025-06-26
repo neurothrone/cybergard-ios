@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct EmailReportDetailPage: View {
-  @StateObject private var viewModel: EmailReportDetailViewModel
+struct PhoneReportDetailPage: View {
+  @StateObject private var viewModel: PhoneReportDetailViewModel
   @State private var isReporting = false
 
-  init(viewModel: EmailReportDetailViewModel) {
+  init(viewModel: PhoneReportDetailViewModel) {
     _viewModel = StateObject(wrappedValue: viewModel)
   }
 
@@ -19,7 +19,7 @@ struct EmailReportDetailPage: View {
           .padding()
       } else if let report = viewModel.report {
         List {
-          ReportDetailsSectionView(report: report)
+          PhoneReportDetailsSectionView(report: report)
           CommentsSectionView(comments: report.comments)
         }
         .refreshable {
@@ -31,7 +31,7 @@ struct EmailReportDetailPage: View {
     .navigationBarTitleDisplayMode(.inline)
     .sheet(isPresented: $isReporting) {
       if viewModel.report != nil {
-        ReportEmailSheet(viewModel: viewModel)
+        ReportPhoneSheet(viewModel: viewModel)
       }
     }
     .toolbar {
@@ -55,15 +55,15 @@ struct EmailReportDetailPage: View {
 }
 
 #Preview {
-  let emailReport = EmailReportDetails.sample
-  let viewModel = EmailReportDetailViewModel(
-    email: emailReport.email,
-    service: EmailReportInMemoryService()
+  let phoneReport = PhoneReportDetails.sample
+  let viewModel = PhoneReportDetailViewModel(
+    phoneNumber: phoneReport.phoneNumber,
+    service: PhoneReportInMemoryService()
   )
-  viewModel.report = emailReport
+  viewModel.report = phoneReport
 
   return NavigationStack {
-    EmailReportDetailPage(
+    PhoneReportDetailPage(
       viewModel: viewModel
     )
   }
