@@ -1,6 +1,6 @@
 import Foundation
 
-struct PhoneReportDetails: Identifiable, Codable {
+struct PhoneReportDetails: Identifiable, Decodable {
   var phoneNumber: String
   var scamType: String
   var country: String
