@@ -23,7 +23,7 @@ final class NewEmailReportViewModel: ObservableObject {
   }
 
   var isValid: Bool {
-    guard ReportValidator.isValidEmail(email) else {
+    guard EmailValidator.isValidEmail(email) else {
       return false
     }
 
@@ -47,7 +47,7 @@ final class NewEmailReportViewModel: ObservableObject {
     }
 
     do {
-      let created = try await service.createEmailReportAsync(
+      let created = try await service.createReport(
         email: email,
         scamType: scamType == .other ? "Other" : scamType.title,
         country: country,

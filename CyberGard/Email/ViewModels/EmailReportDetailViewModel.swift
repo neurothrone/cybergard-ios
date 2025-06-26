@@ -38,7 +38,7 @@ final class EmailReportDetailViewModel: ObservableObject {
     error = nil
 
     do {
-      report = try await service.getByEmailAsync(email: email)
+      report = try await service.getBy(email: email)
     } catch {
       self.error = "Failed to load report: \(error.localizedDescription)"
     }
@@ -55,7 +55,7 @@ final class EmailReportDetailViewModel: ObservableObject {
     }
 
     do {
-      if let updated = try await service.addCommentToEmailReportAsync(
+      if let updated = try await service.addCommentToReport(
         email: email,
         comment: scamType == .other ? comment : scamType.title
       ) {

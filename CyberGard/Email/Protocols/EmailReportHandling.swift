@@ -1,23 +1,23 @@
 protocol EmailReportHandling {
-  func searchReportsAsync(
+  func searchReports(
     page: Int,
     pageSize: Int,
     query: String?
-  ) async throws -> [EmailReport]
-  
-  func getByEmailAsync(email: String) async throws -> EmailReportDetails?
+  ) async throws -> EmailReportResponse
 
-  func createEmailReportAsync(
+  func getBy(email: String) async throws -> EmailReportDetails?
+
+  func createReport(
     email: String,
     scamType: String,
     country: String,
     comment: String
   ) async throws -> EmailReportDetails
 
-  func addCommentToEmailReportAsync(
+  func addCommentToReport(
     email: String,
     comment: String
   ) async throws -> EmailReportDetails?
 
-  func deleteEmailReportAsync(email: String) async throws -> Bool
+  func deleteReport(email: String) async throws -> Bool
 }

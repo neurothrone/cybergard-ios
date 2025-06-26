@@ -15,6 +15,7 @@ final class EmailReportsViewModel: ObservableObject {
   @Published var hasMorePages = true
   private(set) var currentPage = 1
   private let pageSize = 10
+  private(set) var totalReports = 0
 
   private let service: EmailReportHandling
   let reportCreateSubject = PassthroughSubject<EmailReportDetails, Never>()
@@ -41,6 +42,7 @@ final class EmailReportsViewModel: ObservableObject {
         self.currentPage = 1
         self.hasMorePages = true
         self.hasSearched = false
+        self.totalReports = 0
         if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
           Task { await self.loadReports(reset: true) }
         }
@@ -63,6 +65,7 @@ final class EmailReportsViewModel: ObservableObject {
 
   private func addReport(_ report: EmailReportDetails) {
     reports.append(EmailReport.from(details: report))
+    totalReports += 1
   }
 
   private func updateReport(_ updatedReport: EmailReportDetails) {
@@ -82,6 +85,7 @@ final class EmailReportsViewModel: ObservableObject {
       currentPage = 1
       hasMorePages = true
       reports = []
+      totalReports = 0
     }
 
     isLoading = true
@@ -93,13 +97,14 @@ final class EmailReportsViewModel: ObservableObject {
     }
 
     do {
-      let newReports = try await service.searchReportsAsync(
+      let response: EmailReportResponse = try await service.searchReports(
         page: 1,
         pageSize: pageSize,
         query: searchText
       )
-      reports = newReports
-      hasMorePages = newReports.count == pageSize
+      reports = response.results
+      totalReports = response.total
+      hasMorePages = reports.count < totalReports
       currentPage = 1
       hasSearched = true
     } catch {
@@ -124,18 +129,15 @@ final class EmailReportsViewModel: ObservableObject {
 
     do {
       let nextPage = currentPage + 1
-      let newReports = try await service.searchReportsAsync(
+      let response: EmailReportResponse = try await service.searchReports(
         page: nextPage,
         pageSize: pageSize,
         query: searchText
       )
-      if newReports.isEmpty {
-        hasMorePages = false
-      } else {
-        reports.append(contentsOf: newReports)
-        currentPage = nextPage
-        hasMorePages = newReports.count == pageSize
-      }
+      reports.append(contentsOf: response.results)
+      totalReports = response.total
+      currentPage = nextPage
+      hasMorePages = reports.count < totalReports
     } catch {
       self.error = "Failed to load more reports: \(error.localizedDescription)"
     }
@@ -155,13 +157,15 @@ final class EmailReportsViewModel: ObservableObject {
     defer { isLoading = false }
 
     do {
-      let success = try await service.deleteEmailReportAsync(email: report.email)
+      let success = try await service.deleteReport(email: report.email)
       guard success else {
         error = "Failed to delete report"
         return
       }
 
       reports.remove(at: index)
+      totalReports = max(0, totalReports - 1)
+      hasMorePages = reports.count < totalReports
     } catch {
       self.error = "Failed to delete report: \(error.localizedDescription)"
     }

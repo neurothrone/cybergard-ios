@@ -1,65 +1,66 @@
 import Foundation
 
-final class EmailReportInMemoryService: EmailReportHandling {
-  private var reports: [EmailReportDetails] = EmailReportDetails.samples
+final class PhoneReportInMemoryService: PhoneReportHandling {
+  private var reports: [PhoneReportDetails] = PhoneReportDetails.samples
 
   func searchReports(
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
-  ) async throws -> EmailReportResponse {
+  ) async throws -> PhoneReportResponse {
     var filtered = reports
-    
+
     if let query = query, !query.isEmpty {
       let lower = query.lowercased()
       filtered = filtered.filter { r in
-        r.email.lowercased().contains(lower) ||
-        r.country.lowercased().contains(lower) ||
-        r.scamType.lowercased().contains(lower)
+        r.phoneNumber.lowercased().contains(lower)
+          || r.country.lowercased().contains(lower)
+          || r.scamType.lowercased().contains(lower)
       }
     }
-    
+
     let startIndex = (page - 1) * pageSize
     guard startIndex < filtered.count else {
-      return EmailReportResponse(
+      return PhoneReportResponse(
         results: [],
         total: filtered.count
       )
     }
-    
+
     let endIndex = min(startIndex + pageSize, filtered.count)
     let paginatedReports = filtered[startIndex..<endIndex]
-    
+
     let results = paginatedReports.map { report in
-      EmailReport(
-        email: report.email,
+      PhoneReport(
+        phoneNumber: report.phoneNumber,
         scamType: report.scamType,
         country: report.country,
         reportedDate: report.reportedDate,
         commentsCount: report.comments.count
       )
     }
-    return EmailReportResponse(
+
+    return PhoneReportResponse(
       results: results,
       total: filtered.count
     )
   }
 
-  func getBy(email: String) async throws -> EmailReportDetails? {
-    reports.first { $0.email == email }
+  func getBy(phoneNumber: String) async throws -> PhoneReportDetails? {
+    reports.first { $0.phoneNumber == phoneNumber }
   }
-  
+
   func createReport(
-    email: String,
+    phoneNumber: String,
     scamType: String,
     country: String,
     comment: String
-  ) async throws -> EmailReportDetails {
-    guard EmailValidator.isValidEmail(email) else {
-      throw ReportError.badRequest(message: "Invalid email address.")
+  ) async throws -> PhoneReportDetails {
+    guard PhoneValidator.isValidPhoneNumber(phoneNumber) else {
+      throw ReportError.badRequest(message: "Invalid phone number.")
     }
-    
-    if let index = reports.firstIndex(where: { $0.email == email }) {
+
+    if let index = reports.firstIndex(where: { $0.phoneNumber == phoneNumber }) {
       var existingReport = reports[index]
       existingReport.comments.append(
         Comment(
@@ -71,8 +72,8 @@ final class EmailReportInMemoryService: EmailReportHandling {
       return existingReport
     } else {
       let timeOfReport: Date = .now
-      let report = EmailReportDetails(
-        email: email,
+      let report = PhoneReportDetails(
+        phoneNumber: phoneNumber,
         scamType: scamType,
         country: country,
         reportedDate: timeOfReport,
@@ -89,17 +90,17 @@ final class EmailReportInMemoryService: EmailReportHandling {
   }
 
   func addCommentToReport(
-    email: String,
+    phoneNumber: String,
     comment: String
-  ) async throws -> EmailReportDetails? {
-    guard EmailValidator.isValidEmail(email) else {
-      throw ReportError.badRequest(message: "Invalid email address.")
+  ) async throws -> PhoneReportDetails? {
+    guard PhoneValidator.isValidPhoneNumber(phoneNumber) else {
+      throw ReportError.badRequest(message: "Invalid phone number.")
     }
-    
-    guard let index = reports.firstIndex(where: { $0.email == email }) else {
+
+    guard let index = reports.firstIndex(where: { $0.phoneNumber == phoneNumber }) else {
       return nil
     }
-    
+
     var updatedReport = reports[index]
     updatedReport.comments.append(
       Comment(
@@ -108,16 +109,16 @@ final class EmailReportInMemoryService: EmailReportHandling {
       )
     )
     reports[index] = updatedReport
-    
+
     return updatedReport
   }
 
-  func deleteReport(email: String) async throws -> Bool {
-    guard EmailValidator.isValidEmail(email) else {
-      throw ReportError.badRequest(message: "Invalid email address.")
+  func deleteReport(phoneNumber: String) async throws -> Bool {
+    guard PhoneValidator.isValidPhoneNumber(phoneNumber) else {
+      throw ReportError.badRequest(message: "Invalid phone number.")
     }
-    
-    if let index = reports.firstIndex(where: { $0.email == email }) {
+
+    if let index = reports.firstIndex(where: { $0.phoneNumber == phoneNumber }) {
       reports.remove(at: index)
       return true
     }
