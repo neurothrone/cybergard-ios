@@ -31,6 +31,8 @@ struct EmailReportCellView: View {
 
 #Preview {
   List {
-    EmailReportCellView(report: EmailReport.sample)
+    EmailReportCellView(
+      report: EmailReport.sample
+    )
   }
 }

@@ -63,6 +63,8 @@ struct EmailReportDetailPage: View {
   viewModel.report = emailReport
 
   return NavigationStack {
-    EmailReportDetailPage(viewModel: viewModel)
+    EmailReportDetailPage(
+      viewModel: viewModel
+    )
   }
 }

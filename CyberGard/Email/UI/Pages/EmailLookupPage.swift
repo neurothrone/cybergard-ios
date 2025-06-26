@@ -124,5 +124,7 @@ private struct EmailReportRowView: View {
 }
 
 #Preview {
-  EmailLookupPage(service: EmailReportInMemoryService())
+  EmailLookupPage(
+    service: EmailReportInMemoryService()
+  )
 }
