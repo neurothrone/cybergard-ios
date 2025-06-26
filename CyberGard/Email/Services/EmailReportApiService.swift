@@ -11,7 +11,7 @@ final class EmailReportApiService: EmailReportHandling {
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
-  ) async throws -> [EmailReport] {
+  ) async throws -> EmailReportResponse {
     var queryItems: [URLQueryItem] = [
         URLQueryItem(name: "page", value: "\(page)"),
         URLQueryItem(name: "pageSize", value: "\(pageSize)")
@@ -33,7 +33,7 @@ final class EmailReportApiService: EmailReportHandling {
     do {
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode([EmailReport].self, from: data)
+      return try decoder.decode(EmailReportResponse.self, from: data)
     } catch {
       throw ReportError.decodingFailed
     }
