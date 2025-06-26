@@ -19,5 +19,5 @@ protocol PhoneReportHandling {
     comment: String
   ) async throws -> PhoneReportDetails?
 
-  func deleteReport(phoneNumber: String) async throws -> Bool
+  func deleteReportBy(phoneNumber: String) async throws -> Bool
 }

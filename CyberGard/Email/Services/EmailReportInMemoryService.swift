@@ -112,7 +112,7 @@ final class EmailReportInMemoryService: EmailReportHandling {
     return updatedReport
   }
 
-  func deleteReport(email: String) async throws -> Bool {
+  func deleteReportBy(email: String) async throws -> Bool {
     guard EmailValidator.isValidEmail(email) else {
       throw ReportError.badRequest(message: "Invalid email address.")
     }

@@ -40,8 +40,8 @@ final class PhoneReportApiService: PhoneReportHandling {
   }
   
   func getBy(phoneNumber: String) async throws -> PhoneReportDetails? {
-    let url = baseURL.appendingPathComponent("phone-reports/\(phoneNumber)")
-    let (data, response) = try await URLSession.shared.data(from: url)
+    let apiUrl = baseURL.appendingPathComponent("phone-reports/\(phoneNumber)")
+    let (data, response) = try await URLSession.shared.data(from: apiUrl)
 
     guard let httpResponse = response as? HTTPURLResponse else {
       throw ReportError.serverError
@@ -65,8 +65,8 @@ final class PhoneReportApiService: PhoneReportHandling {
     country: String,
     comment: String
   ) async throws -> PhoneReportDetails {
-    let url = baseURL.appendingPathComponent("phone-reports")
-    var request = URLRequest(url: url)
+    let apiUrl = baseURL.appendingPathComponent("phone-reports")
+    var request = URLRequest(url: apiUrl)
     request.httpMethod = "POST"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -100,8 +100,8 @@ final class PhoneReportApiService: PhoneReportHandling {
     phoneNumber: String,
     comment: String
   ) async throws -> PhoneReportDetails? {
-    let url = baseURL.appendingPathComponent("phone-reports/\(phoneNumber)/comments")
-    var request = URLRequest(url: url)
+    let apiUrl = baseURL.appendingPathComponent("phone-reports/\(phoneNumber)/comments")
+    var request = URLRequest(url: apiUrl)
     request.httpMethod = "PUT"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -126,9 +126,9 @@ final class PhoneReportApiService: PhoneReportHandling {
     }
   }
 
-  func deleteReport(phoneNumber: String) async throws -> Bool {
-    let url = baseURL.appendingPathComponent("phone-reports/\(phoneNumber)")
-    var request = URLRequest(url: url)
+  func deleteReportBy(phoneNumber: String) async throws -> Bool {
+    let apiUrl = baseURL.appendingPathComponent("phone-reports/\(phoneNumber)")
+    var request = URLRequest(url: apiUrl)
     request.httpMethod = "DELETE"
 
     let (_, response) = try await URLSession.shared.data(for: request)

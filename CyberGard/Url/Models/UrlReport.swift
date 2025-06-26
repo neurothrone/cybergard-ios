@@ -1,16 +1,16 @@
 import Foundation
 
-struct PhoneReport: Identifiable, Equatable, Decodable {
-  var phoneNumber: String
+struct UrlReport: Identifiable, Equatable, Decodable {
+  var url: String
   var scamType: String
   var country: String
   var reportedDate: Date
   var commentsCount: Int
 
-  var id: String { phoneNumber }
+  var id: String { url }
 
   enum CodingKeys: String, CodingKey {
-    case phoneNumber = "phone-number"
+    case url = "url"
     case scamType = "scam-type"
     case country
     case reportedDate = "reported-date"
@@ -18,10 +18,10 @@ struct PhoneReport: Identifiable, Equatable, Decodable {
   }
 }
 
-extension PhoneReport {
-  static func from(details: EmailReportDetails) -> PhoneReport {
-    PhoneReport(
-      phoneNumber: details.email,
+extension UrlReport {
+  static func from(details: UrlReportDetails) -> UrlReport {
+    UrlReport(
+      url: details.url,
       scamType: details.scamType,
       country: details.country,
       reportedDate: details.reportedDate,
@@ -30,10 +30,10 @@ extension PhoneReport {
   }
 }
 
-extension PhoneReport {
-  static var sample: PhoneReport {
-    PhoneReport(
-      phoneNumber: "+1234567890",
+extension UrlReport {
+  static var sample: UrlReport {
+    UrlReport(
+      url: "http://www.scam.com",
       scamType: "Phishing",
       country: "US",
       reportedDate: .now,
@@ -41,17 +41,17 @@ extension PhoneReport {
     )
   }
 
-  static var samples: [PhoneReport] {
+  static var samples: [UrlReport] {
     [sample]
       + (1...5).compactMap { index in
-        let phoneNumber = "+123456789\(index)"
+        let url = "http://www.scam\(index).com"
         let scamType = index.isMultiple(of: 2) ? "Phishing" : "Malware"
         let country = index.isMultiple(of: 2) ? "SE" : "DE"
         let reportedDate = Calendar.current.date(byAdding: .day, value: -index, to: .now) ?? .now
         let commentsCount = Int.random(in: 1...6)
 
-        return PhoneReport(
-          phoneNumber: phoneNumber,
+        return UrlReport(
+          url: url,
           scamType: scamType,
           country: country,
           reportedDate: reportedDate,

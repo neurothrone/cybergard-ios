@@ -19,5 +19,5 @@ protocol EmailReportHandling {
     comment: String
   ) async throws -> EmailReportDetails?
 
-  func deleteReport(email: String) async throws -> Bool
+  func deleteReportBy(email: String) async throws -> Bool
 }

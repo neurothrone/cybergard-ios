@@ -1,19 +1,19 @@
 import Foundation
 
-final class PhoneReportInMemoryService: PhoneReportHandling {
-  private var reports: [PhoneReportDetails] = PhoneReportDetails.samples
+final class UrlReportInMemoryService: UrlReportHandling {
+  private var reports: [UrlReportDetails] = UrlReportDetails.samples
 
   func searchReports(
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
-  ) async throws -> PhoneReportResponse {
+  ) async throws -> UrlReportResponse {
     var filtered = reports
 
     if let query = query, !query.isEmpty {
       let lower = query.lowercased()
       filtered = filtered.filter { r in
-        r.phoneNumber.lowercased().contains(lower)
+        r.url.lowercased().contains(lower)
           || r.country.lowercased().contains(lower)
           || r.scamType.lowercased().contains(lower)
       }
@@ -21,7 +21,7 @@ final class PhoneReportInMemoryService: PhoneReportHandling {
 
     let startIndex = (page - 1) * pageSize
     guard startIndex < filtered.count else {
-      return PhoneReportResponse(
+      return UrlReportResponse(
         results: [],
         total: filtered.count
       )
@@ -31,8 +31,8 @@ final class PhoneReportInMemoryService: PhoneReportHandling {
     let paginatedReports = filtered[startIndex..<endIndex]
 
     let results = paginatedReports.map { report in
-      PhoneReport(
-        phoneNumber: report.phoneNumber,
+      UrlReport(
+        url: report.url,
         scamType: report.scamType,
         country: report.country,
         reportedDate: report.reportedDate,
@@ -40,27 +40,27 @@ final class PhoneReportInMemoryService: PhoneReportHandling {
       )
     }
 
-    return PhoneReportResponse(
+    return UrlReportResponse(
       results: results,
       total: filtered.count
     )
   }
 
-  func getBy(phoneNumber: String) async throws -> PhoneReportDetails? {
-    reports.first { $0.phoneNumber == phoneNumber }
+  func getBy(url: String) async throws -> UrlReportDetails? {
+    reports.first { $0.url == url }
   }
 
   func createReport(
-    phoneNumber: String,
+    url: String,
     scamType: String,
     country: String,
     comment: String
-  ) async throws -> PhoneReportDetails {
-    guard PhoneValidator.isValidPhoneNumber(phoneNumber) else {
-      throw ReportError.badRequest(message: "Invalid phone number.")
+  ) async throws -> UrlReportDetails {
+    guard UrlValidator.isValidUrl(url) else {
+      throw ReportError.badRequest(message: "Invalid url.")
     }
 
-    if let index = reports.firstIndex(where: { $0.phoneNumber == phoneNumber }) {
+    if let index = reports.firstIndex(where: { $0.url == url }) {
       var existingReport = reports[index]
       existingReport.comments.append(
         Comment(
@@ -72,8 +72,8 @@ final class PhoneReportInMemoryService: PhoneReportHandling {
       return existingReport
     } else {
       let timeOfReport: Date = .now
-      let report = PhoneReportDetails(
-        phoneNumber: phoneNumber,
+      let report = UrlReportDetails(
+        url: url,
         scamType: scamType,
         country: country,
         reportedDate: timeOfReport,
@@ -90,14 +90,14 @@ final class PhoneReportInMemoryService: PhoneReportHandling {
   }
 
   func addCommentToReport(
-    phoneNumber: String,
+    url: String,
     comment: String
-  ) async throws -> PhoneReportDetails? {
-    guard PhoneValidator.isValidPhoneNumber(phoneNumber) else {
-      throw ReportError.badRequest(message: "Invalid phone number.")
+  ) async throws -> UrlReportDetails? {
+    guard UrlValidator.isValidUrl(url) else {
+      throw ReportError.badRequest(message: "Invalid url.")
     }
 
-    guard let index = reports.firstIndex(where: { $0.phoneNumber == phoneNumber }) else {
+    guard let index = reports.firstIndex(where: { $0.url == url }) else {
       return nil
     }
 
@@ -113,12 +113,12 @@ final class PhoneReportInMemoryService: PhoneReportHandling {
     return updatedReport
   }
 
-  func deleteReportBy(phoneNumber: String) async throws -> Bool {
-    guard PhoneValidator.isValidPhoneNumber(phoneNumber) else {
-      throw ReportError.badRequest(message: "Invalid phone number.")
+  func deleteReportBy(url: String) async throws -> Bool {
+    guard UrlValidator.isValidUrl(url) else {
+      throw ReportError.badRequest(message: "Invalid url.")
     }
 
-    if let index = reports.firstIndex(where: { $0.phoneNumber == phoneNumber }) {
+    if let index = reports.firstIndex(where: { $0.url == url }) {
       reports.remove(at: index)
       return true
     }

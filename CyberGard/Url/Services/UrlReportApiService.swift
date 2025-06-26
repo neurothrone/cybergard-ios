@@ -1,6 +1,6 @@
 import Foundation
 
-final class EmailReportApiService: EmailReportHandling {
+final class UrlReportApiService: UrlReportHandling {
   private let baseURL: URL
 
   init(baseURL: URL = URL(string: "http://localhost:5001/api")!) {
@@ -11,7 +11,7 @@ final class EmailReportApiService: EmailReportHandling {
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
-  ) async throws -> EmailReportResponse {
+  ) async throws -> UrlReportResponse {
     var queryItems: [URLQueryItem] = [
         URLQueryItem(name: "page", value: "\(page)"),
         URLQueryItem(name: "pageSize", value: "\(pageSize)")
@@ -20,7 +20,7 @@ final class EmailReportApiService: EmailReportHandling {
         queryItems.append(URLQueryItem(name: "query", value: query))
     }
     let apiUrl = baseURL
-        .appendingPathComponent("email-reports")
+        .appendingPathComponent("url-reports")
         .appending(queryItems: queryItems)
     
     let (data, response) = try await URLSession.shared.data(from: apiUrl)
@@ -33,15 +33,15 @@ final class EmailReportApiService: EmailReportHandling {
     do {
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(EmailReportResponse.self, from: data)
+      return try decoder.decode(UrlReportResponse.self, from: data)
     } catch {
       throw ReportError.decodingFailed
     }
   }
   
-  func getBy(email: String) async throws -> EmailReportDetails? {
-    let apiUrl = baseURL.appendingPathComponent("email-reports/\(email)")
-    let (data, response) = try await URLSession.shared.data(from: apiUrl)
+  func getBy(url: String) async throws -> UrlReportDetails? {
+    let url = baseURL.appendingPathComponent("url-reports/\(url)")
+    let (data, response) = try await URLSession.shared.data(from: url)
 
     guard let httpResponse = response as? HTTPURLResponse else {
       throw ReportError.serverError
@@ -51,7 +51,7 @@ final class EmailReportApiService: EmailReportHandling {
     case 200:
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(EmailReportDetails.self, from: data)
+      return try decoder.decode(UrlReportDetails.self, from: data)
     case 404:
       return nil
     default:
@@ -60,18 +60,18 @@ final class EmailReportApiService: EmailReportHandling {
   }
 
   func createReport(
-    email: String,
+    url: String,
     scamType: String,
     country: String,
     comment: String
-  ) async throws -> EmailReportDetails {
-    let apiUrl = baseURL.appendingPathComponent("email-reports")
+  ) async throws -> UrlReportDetails {
+    let apiUrl = baseURL.appendingPathComponent("url-reports")
     var request = URLRequest(url: apiUrl)
     request.httpMethod = "POST"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
     let body: [String: String] = [
-      "email": email,
+      "url": url,
       "scam-type": scamType,
       "country": country,
       "comment": comment
@@ -93,14 +93,14 @@ final class EmailReportApiService: EmailReportHandling {
 
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .formatted(.apiFormat)
-    return try decoder.decode(EmailReportDetails.self, from: data)
+    return try decoder.decode(UrlReportDetails.self, from: data)
   }
 
   func addCommentToReport(
-    email: String,
+    url: String,
     comment: String
-  ) async throws -> EmailReportDetails? {
-    let apiUrl = baseURL.appendingPathComponent("email-reports/\(email)/comments")
+  ) async throws -> UrlReportDetails? {
+    let apiUrl = baseURL.appendingPathComponent("url-reports/\(url)/comments")
     var request = URLRequest(url: apiUrl)
     request.httpMethod = "PUT"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -118,7 +118,7 @@ final class EmailReportApiService: EmailReportHandling {
     case 200:
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(EmailReportDetails.self, from: data)
+      return try decoder.decode(UrlReportDetails.self, from: data)
     case 404:
       return nil
     default:
@@ -126,8 +126,8 @@ final class EmailReportApiService: EmailReportHandling {
     }
   }
 
-  func deleteReportBy(email: String) async throws -> Bool {
-    let apiUrl = baseURL.appendingPathComponent("email-reports/\(email)")
+  func deleteReportBy(url: String) async throws -> Bool {
+    let apiUrl = baseURL.appendingPathComponent("url-reports/\(url)")
     var request = URLRequest(url: apiUrl)
     request.httpMethod = "DELETE"
 
