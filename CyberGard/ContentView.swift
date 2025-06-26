@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
   @Environment(\.emailReportService) private var emailReportService
+  @Environment(\.phoneReportService) private var phoneReportService
 
   @StateObject private var viewModel: TabNavigationViewModel = .init()
 
@@ -19,7 +20,7 @@ struct ContentView: View {
         }
         .tag(AppTab.emailLookup)
 
-      PhoneLookupPage()
+      PhoneLookupPage(service: phoneReportService)
         .tabItem {
           Label(AppTab.phoneLookup.title, systemImage: "phone")
         }
@@ -43,4 +44,5 @@ struct ContentView: View {
 #Preview {
   ContentView()
     .environment(\.emailReportService, EmailReportInMemoryService())
+    .environment(\.phoneReportService, PhoneReportInMemoryService())
 }
