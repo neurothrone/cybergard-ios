@@ -1,23 +1,23 @@
 protocol PhoneReportHandling {
-  func searchReportsAsync(
+  func searchReports(
     page: Int,
     pageSize: Int,
     query: String?
-  ) async throws -> [PhoneReport]
+  ) async throws -> PhoneReportResponse
 
-  func getByPhoneNumberAsync(phoneNumber: String) async throws -> PhoneReportDetails?
+  func getBy(phoneNumber: String) async throws -> PhoneReportDetails?
 
-  func createReportAsync(
+  func createReport(
     phoneNumber: String,
     scamType: String,
     country: String,
     comment: String
   ) async throws -> PhoneReportDetails
 
-  func addCommentToReportAsync(
+  func addCommentToReport(
     phoneNumber: String,
     comment: String
   ) async throws -> PhoneReportDetails?
 
-  func deleteReportAsync(phoneNumber: String) async throws -> Bool
+  func deleteReport(phoneNumber: String) async throws -> Bool
 }
