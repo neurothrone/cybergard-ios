@@ -7,7 +7,7 @@ final class EmailReportInMemoryService: EmailReportHandling {
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
-  ) async throws -> [EmailReport] {
+  ) async throws -> EmailReportResponse {
     var filtered = reports
     
     if let query = query, !query.isEmpty {
@@ -20,12 +20,17 @@ final class EmailReportInMemoryService: EmailReportHandling {
     }
     
     let startIndex = (page - 1) * pageSize
-    guard startIndex < filtered.count else { return [] }
+    guard startIndex < filtered.count else {
+      return EmailReportResponse(
+        results: [],
+        total: filtered.count
+      )
+    }
     
     let endIndex = min(startIndex + pageSize, filtered.count)
     let paginatedReports = filtered[startIndex..<endIndex]
     
-    return paginatedReports.map { report in
+    let results = paginatedReports.map { report in
       EmailReport(
         email: report.email,
         scamType: report.scamType,
@@ -34,6 +39,10 @@ final class EmailReportInMemoryService: EmailReportHandling {
         commentsCount: report.comments.count
       )
     }
+    return EmailReportResponse(
+      results: results,
+      total: filtered.count
+    )
   }
 
   func getByEmailAsync(email: String) async throws -> EmailReportDetails? {
