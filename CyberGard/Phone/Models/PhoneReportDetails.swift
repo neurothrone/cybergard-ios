@@ -38,7 +38,7 @@ extension PhoneReportDetails {
 
   static var samples: [PhoneReportDetails] {
     [.sample]
-      + (1...50).map { index in
+      + (1...23).map { index in
         let comments = (1...index).map { cIndex in
           Comment(
             text: "Comment #\(cIndex) for user\(index)",
