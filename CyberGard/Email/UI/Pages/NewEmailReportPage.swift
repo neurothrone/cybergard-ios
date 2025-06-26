@@ -2,7 +2,7 @@ import SwiftUI
 
 struct NewEmailReportPage: View {
   @Environment(\.dismiss) private var dismiss
-  
+
   @StateObject private var viewModel: NewEmailReportViewModel
 
   @State private var showAlert = false
@@ -21,18 +21,15 @@ struct NewEmailReportPage: View {
           .autocapitalization(.none)
           .disableAutocorrection(true)
           .textContentType(.emailAddress)
-        
+
         TextField("Country", text: $viewModel.country)
           .disableAutocorrection(true)
           .textContentType(.countryName)
 
-        Picker("Scam Type", selection: $viewModel.scamType) {
-          ForEach(ScamType.allCases) { scamType in
-            Text(scamType.title)
-              .tag(scamType)
-          }
-        }
-        .pickerStyle(.menu)
+        ScamTypePickerView(
+          scamType: $viewModel.scamType,
+          scamTypeChoices: ScamType.emailOnlyCases
+        )
       }
 
       if viewModel.scamType == .other {
@@ -80,7 +77,7 @@ struct NewEmailReportPage: View {
 
   private func reportEmail() async {
     let success = await viewModel.addNewReport()
-    
+
     if success {
       alertTitle = "Success"
       alertMessage = "Email reported successfully."

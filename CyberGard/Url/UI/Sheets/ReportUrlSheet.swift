@@ -16,13 +16,10 @@ struct ReportUrlSheet: View {
   var body: some View {
     Form {
       Section(header: Text("Report Url")) {
-        Picker("Scam Type", selection: $viewModel.scamType) {
-          ForEach(ScamType.allCases) { scamType in
-            Text(scamType.title)
-              .tag(scamType)
-          }
-        }
-        .pickerStyle(.menu)
+        ScamTypePickerView(
+          scamType: $viewModel.scamType,
+          scamTypeChoices: ScamType.urlOnlyCases
+        )
       }
 
       if viewModel.scamType == .other {

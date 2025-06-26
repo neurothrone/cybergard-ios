@@ -26,13 +26,10 @@ struct NewPhoneReportPage: View {
           .disableAutocorrection(true)
           .textContentType(.countryName)
 
-        Picker("Scam Type", selection: $viewModel.scamType) {
-          ForEach(ScamType.allCases) { scamType in
-            Text(scamType.title)
-              .tag(scamType)
-          }
-        }
-        .pickerStyle(.menu)
+        ScamTypePickerView(
+          scamType: $viewModel.scamType,
+          scamTypeChoices: ScamType.phoneOnlyCases
+        )
       }
 
       if viewModel.scamType == .other {

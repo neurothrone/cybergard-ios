@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ReportPhoneSheet: View {
   @Environment(\.dismiss) private var dismiss
-  
+
   @StateObject private var viewModel: PhoneReportDetailViewModel
 
   @State private var showAlert = false
@@ -16,13 +16,10 @@ struct ReportPhoneSheet: View {
   var body: some View {
     Form {
       Section(header: Text("Report Phone")) {
-        Picker("Scam Type", selection: $viewModel.scamType) {
-          ForEach(ScamType.allCases) { scamType in
-            Text(scamType.title)
-              .tag(scamType)
-          }
-        }
-        .pickerStyle(.menu)
+        ScamTypePickerView(
+          scamType: $viewModel.scamType,
+          scamTypeChoices: ScamType.phoneOnlyCases
+        )
       }
 
       if viewModel.scamType == .other {
@@ -68,7 +65,7 @@ struct ReportPhoneSheet: View {
 
   private func reportPhone() async {
     let success = await viewModel.addComment()
-    
+
     if success {
       alertTitle = "Success"
       alertMessage = "Phone reported successfully."
@@ -76,7 +73,7 @@ struct ReportPhoneSheet: View {
       alertTitle = "Error"
       alertMessage = viewModel.error ?? "Unknown error."
     }
-    
+
     showAlert = true
   }
 }
