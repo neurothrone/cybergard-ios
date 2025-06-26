@@ -19,9 +19,9 @@ struct PhoneReport: Identifiable, Equatable, Decodable {
 }
 
 extension PhoneReport {
-  static func from(details: EmailReportDetails) -> PhoneReport {
+  static func from(details: PhoneReportDetails) -> PhoneReport {
     PhoneReport(
-      phoneNumber: details.email,
+      phoneNumber: details.phoneNumber,
       scamType: details.scamType,
       country: details.country,
       reportedDate: details.reportedDate,

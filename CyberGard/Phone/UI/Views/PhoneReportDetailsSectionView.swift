@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct ReportDetailsSectionView: View {
-  let report: EmailReportDetails
+struct PhoneReportDetailsSectionView: View {
+  let report: PhoneReportDetails
 
   var body: some View {
     Section {
-      LabeledContent("Email", value: report.email)
+      LabeledContent("Phone number", value: report.phoneNumber)
       LabeledContent("Scam", value: report.scamType)
       LabeledContent("Country", value: report.country)
       LabeledContent("Reports", value: report.commentsCount.description)
@@ -17,7 +17,7 @@ struct ReportDetailsSectionView: View {
 
 #Preview {
   List {
-    ReportDetailsSectionView(
+    PhoneReportDetailsSectionView(
       report: .sample
     )
   }
