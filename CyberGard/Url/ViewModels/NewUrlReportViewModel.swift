@@ -9,7 +9,7 @@ final class NewUrlReportViewModel: ObservableObject {
   @Published var url: String = ""
   @Published var country: String = ""
   @Published var comment: String = ""
-  @Published var scamType: ScamType = .spamOrTelemarketing
+  @Published var scamType: ScamType = .default
 
   private let service: UrlReportHandling
   private let reportCreateSubject: PassthroughSubject<UrlReportDetails, Never>?

@@ -9,7 +9,7 @@ final class UrlReportDetailViewModel: ObservableObject {
 
   @Published var report: UrlReportDetails?
   @Published var comment: String = ""
-  @Published var scamType: ScamType = .spamOrTelemarketing
+  @Published var scamType: ScamType = .default
 
   private let url: String
   private let service: UrlReportHandling

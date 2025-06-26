@@ -9,7 +9,7 @@ final class NewEmailReportViewModel: ObservableObject {
   @Published var email: String = ""
   @Published var country: String = ""
   @Published var comment: String = ""
-  @Published var scamType: ScamType = .spamOrTelemarketing
+  @Published var scamType: ScamType = .default
 
   private let service: EmailReportHandling
   private let reportCreateSubject: PassthroughSubject<EmailReportDetails, Never>?

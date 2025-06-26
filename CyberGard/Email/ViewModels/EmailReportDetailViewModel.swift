@@ -9,7 +9,7 @@ final class EmailReportDetailViewModel: ObservableObject {
 
   @Published var report: EmailReportDetails?
   @Published var comment: String = ""
-  @Published var scamType: ScamType = .spamOrTelemarketing
+  @Published var scamType: ScamType = .default
 
   private let email: String
   private let service: EmailReportHandling

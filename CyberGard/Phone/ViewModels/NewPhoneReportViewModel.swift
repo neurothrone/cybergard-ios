@@ -9,7 +9,7 @@ final class NewPhoneReportViewModel: ObservableObject {
   @Published var phoneNumber: String = ""
   @Published var country: String = ""
   @Published var comment: String = ""
-  @Published var scamType: ScamType = .spamOrTelemarketing
+  @Published var scamType: ScamType = .default
 
   private let service: PhoneReportHandling
   private let reportCreateSubject: PassthroughSubject<PhoneReportDetails, Never>?
