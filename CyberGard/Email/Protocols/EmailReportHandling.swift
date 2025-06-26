@@ -3,8 +3,8 @@ protocol EmailReportHandling {
     page: Int,
     pageSize: Int,
     query: String?
-  ) async throws -> [EmailReport]
-  
+  ) async throws -> EmailReportResponse
+
   func getByEmailAsync(email: String) async throws -> EmailReportDetails?
 
   func createEmailReportAsync(
