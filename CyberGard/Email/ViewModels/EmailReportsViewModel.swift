@@ -157,7 +157,7 @@ final class EmailReportsViewModel: ObservableObject {
     defer { isLoading = false }
 
     do {
-      let success = try await service.deleteReport(email: report.email)
+      let success = try await service.deleteReportBy(email: report.email)
       guard success else {
         error = "Failed to delete report"
         return

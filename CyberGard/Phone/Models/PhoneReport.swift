@@ -44,14 +44,14 @@ extension PhoneReport {
   static var samples: [PhoneReport] {
     [sample]
       + (1...5).compactMap { index in
-        let email = "+123456789\(index)"
+        let phoneNumber = "+123456789\(index)"
         let scamType = index.isMultiple(of: 2) ? "Phishing" : "Malware"
         let country = index.isMultiple(of: 2) ? "SE" : "DE"
         let reportedDate = Calendar.current.date(byAdding: .day, value: -index, to: .now) ?? .now
         let commentsCount = Int.random(in: 1...6)
 
         return PhoneReport(
-          phoneNumber: email,
+          phoneNumber: phoneNumber,
           scamType: scamType,
           country: country,
           reportedDate: reportedDate,

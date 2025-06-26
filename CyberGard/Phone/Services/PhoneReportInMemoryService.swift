@@ -113,7 +113,7 @@ final class PhoneReportInMemoryService: PhoneReportHandling {
     return updatedReport
   }
 
-  func deleteReport(phoneNumber: String) async throws -> Bool {
+  func deleteReportBy(phoneNumber: String) async throws -> Bool {
     guard PhoneValidator.isValidPhoneNumber(phoneNumber) else {
       throw ReportError.badRequest(message: "Invalid phone number.")
     }

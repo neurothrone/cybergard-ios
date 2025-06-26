@@ -19,11 +19,11 @@ final class EmailReportApiService: EmailReportHandling {
     if let query = query, !query.isEmpty {
         queryItems.append(URLQueryItem(name: "query", value: query))
     }
-    let url = baseURL
+    let apiUrl = baseURL
         .appendingPathComponent("email-reports")
         .appending(queryItems: queryItems)
     
-    let (data, response) = try await URLSession.shared.data(from: url)
+    let (data, response) = try await URLSession.shared.data(from: apiUrl)
     
     guard let httpResponse = response as? HTTPURLResponse,
           200..<300 ~= httpResponse.statusCode else {
@@ -40,8 +40,8 @@ final class EmailReportApiService: EmailReportHandling {
   }
   
   func getBy(email: String) async throws -> EmailReportDetails? {
-    let url = baseURL.appendingPathComponent("email-reports/\(email)")
-    let (data, response) = try await URLSession.shared.data(from: url)
+    let apiUrl = baseURL.appendingPathComponent("email-reports/\(email)")
+    let (data, response) = try await URLSession.shared.data(from: apiUrl)
 
     guard let httpResponse = response as? HTTPURLResponse else {
       throw ReportError.serverError
@@ -65,8 +65,8 @@ final class EmailReportApiService: EmailReportHandling {
     country: String,
     comment: String
   ) async throws -> EmailReportDetails {
-    let url = baseURL.appendingPathComponent("email-reports")
-    var request = URLRequest(url: url)
+    let apiUrl = baseURL.appendingPathComponent("email-reports")
+    var request = URLRequest(url: apiUrl)
     request.httpMethod = "POST"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -100,8 +100,8 @@ final class EmailReportApiService: EmailReportHandling {
     email: String,
     comment: String
   ) async throws -> EmailReportDetails? {
-    let url = baseURL.appendingPathComponent("email-reports/\(email)/comments")
-    var request = URLRequest(url: url)
+    let apiUrl = baseURL.appendingPathComponent("email-reports/\(email)/comments")
+    var request = URLRequest(url: apiUrl)
     request.httpMethod = "PUT"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -126,9 +126,9 @@ final class EmailReportApiService: EmailReportHandling {
     }
   }
 
-  func deleteReport(email: String) async throws -> Bool {
-    let url = baseURL.appendingPathComponent("email-reports/\(email)")
-    var request = URLRequest(url: url)
+  func deleteReportBy(email: String) async throws -> Bool {
+    let apiUrl = baseURL.appendingPathComponent("email-reports/\(email)")
+    var request = URLRequest(url: apiUrl)
     request.httpMethod = "DELETE"
 
     let (_, response) = try await URLSession.shared.data(for: request)
