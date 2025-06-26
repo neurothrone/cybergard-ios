@@ -97,7 +97,7 @@ final class EmailReportsViewModel: ObservableObject {
     }
 
     do {
-      let response: EmailReportResponse = try await service.searchReportsAsync(
+      let response: EmailReportResponse = try await service.searchReports(
         page: 1,
         pageSize: pageSize,
         query: searchText
@@ -129,7 +129,7 @@ final class EmailReportsViewModel: ObservableObject {
 
     do {
       let nextPage = currentPage + 1
-      let response: EmailReportResponse = try await service.searchReportsAsync(
+      let response: EmailReportResponse = try await service.searchReports(
         page: nextPage,
         pageSize: pageSize,
         query: searchText
@@ -157,7 +157,7 @@ final class EmailReportsViewModel: ObservableObject {
     defer { isLoading = false }
 
     do {
-      let success = try await service.deleteEmailReportAsync(email: report.email)
+      let success = try await service.deleteReport(email: report.email)
       guard success else {
         error = "Failed to delete report"
         return

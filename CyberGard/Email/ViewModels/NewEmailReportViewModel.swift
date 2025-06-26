@@ -47,7 +47,7 @@ final class NewEmailReportViewModel: ObservableObject {
     }
 
     do {
-      let created = try await service.createEmailReportAsync(
+      let created = try await service.createReport(
         email: email,
         scamType: scamType == .other ? "Other" : scamType.title,
         country: country,

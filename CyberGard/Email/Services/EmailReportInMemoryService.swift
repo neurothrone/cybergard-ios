@@ -3,7 +3,7 @@ import Foundation
 final class EmailReportInMemoryService: EmailReportHandling {
   private var reports: [EmailReportDetails] = EmailReportDetails.samples
 
-  func searchReportsAsync(
+  func searchReports(
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
@@ -45,11 +45,11 @@ final class EmailReportInMemoryService: EmailReportHandling {
     )
   }
 
-  func getByEmailAsync(email: String) async throws -> EmailReportDetails? {
+  func getBy(email: String) async throws -> EmailReportDetails? {
     reports.first { $0.email == email }
   }
   
-  func createEmailReportAsync(
+  func createReport(
     email: String,
     scamType: String,
     country: String,
@@ -88,7 +88,7 @@ final class EmailReportInMemoryService: EmailReportHandling {
     }
   }
 
-  func addCommentToEmailReportAsync(
+  func addCommentToReport(
     email: String,
     comment: String
   ) async throws -> EmailReportDetails? {
@@ -112,7 +112,7 @@ final class EmailReportInMemoryService: EmailReportHandling {
     return updatedReport
   }
 
-  func deleteEmailReportAsync(email: String) async throws -> Bool {
+  func deleteReport(email: String) async throws -> Bool {
     guard ReportValidator.isValidEmail(email) else {
       throw ReportError.badRequest(message: "Invalid email address.")
     }

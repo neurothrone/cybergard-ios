@@ -7,7 +7,7 @@ final class EmailReportApiService: EmailReportHandling {
     self.baseURL = baseURL
   }
 
-  func searchReportsAsync(
+  func searchReports(
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
@@ -39,7 +39,7 @@ final class EmailReportApiService: EmailReportHandling {
     }
   }
   
-  func getByEmailAsync(email: String) async throws -> EmailReportDetails? {
+  func getBy(email: String) async throws -> EmailReportDetails? {
     let url = baseURL.appendingPathComponent("email-reports/\(email)")
     let (data, response) = try await URLSession.shared.data(from: url)
 
@@ -59,7 +59,7 @@ final class EmailReportApiService: EmailReportHandling {
     }
   }
 
-  func createEmailReportAsync(
+  func createReport(
     email: String,
     scamType: String,
     country: String,
@@ -96,7 +96,7 @@ final class EmailReportApiService: EmailReportHandling {
     return try decoder.decode(EmailReportDetails.self, from: data)
   }
 
-  func addCommentToEmailReportAsync(
+  func addCommentToReport(
     email: String,
     comment: String
   ) async throws -> EmailReportDetails? {
@@ -126,7 +126,7 @@ final class EmailReportApiService: EmailReportHandling {
     }
   }
 
-  func deleteEmailReportAsync(email: String) async throws -> Bool {
+  func deleteReport(email: String) async throws -> Bool {
     let url = baseURL.appendingPathComponent("email-reports/\(email)")
     var request = URLRequest(url: url)
     request.httpMethod = "DELETE"
