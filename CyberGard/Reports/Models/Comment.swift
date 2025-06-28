@@ -1,6 +1,6 @@
 import Foundation
 
-struct Comment: Codable {
+struct Comment: Decodable {
   var text: String
   var postedDate: Date
 
