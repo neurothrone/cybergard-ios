@@ -2,20 +2,15 @@ import Foundation
 
 final class ReportPreviewService: ReportHandling {
   private var reports: [ReportDetails]
-  private let validator: (String) -> Bool
-  private let reportType: ReportType
 
   init(
-    reportType: ReportType,
-    validator: @escaping (String) -> Bool,
     initialReports: [ReportDetails] = []
   ) {
-    self.reportType = reportType
-    self.validator = validator
     self.reports = initialReports
   }
 
   func searchReports(
+    type: ReportType,
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
@@ -25,7 +20,8 @@ final class ReportPreviewService: ReportHandling {
     if let query = query, !query.isEmpty {
       let lower = query.lowercased()
       filtered = filtered.filter { r in
-        r.identifier.lowercased().contains(lower)
+        r.reportType == type
+          && r.identifier.lowercased().contains(lower)
           || r.country.lowercased().contains(lower)
           || r.scamType.rawValue.lowercased().contains(lower)
       }
@@ -44,7 +40,7 @@ final class ReportPreviewService: ReportHandling {
 
     let results = paginatedReports.map { report in
       ReportItem(
-        reportType: report.reportType,
+        reportType: type,
         identifier: report.identifier,
         scamType: report.scamType,
         country: report.country,
@@ -58,18 +54,22 @@ final class ReportPreviewService: ReportHandling {
     )
   }
 
-  func getBy(identifier: String) async throws -> ReportDetails? {
+  func getBy(
+    type: ReportType,
+    identifier: String
+  ) async throws -> ReportDetails? {
     reports.first { $0.identifier == identifier }
   }
 
   func createReport(
+    type: ReportType,
     identifier: String,
     scamType: String,
     country: String,
     comment: String
   ) async throws -> ReportDetails {
-    guard validator(identifier) else {
-      throw ReportError.badRequest(message: "Invalid \(reportType).")
+    guard type.isValid(identifier) else {
+      throw ReportError.badRequest(message: "Invalid \(type).")
     }
 
     if let index = reports.firstIndex(where: { $0.identifier == identifier }) {
@@ -85,7 +85,7 @@ final class ReportPreviewService: ReportHandling {
     } else {
       let timeOfReport: Date = .now
       let report = ReportDetails(
-        reportType: reportType,
+        reportType: type,
         identifier: identifier,
         scamType: ScamType(rawValue: scamType) ?? .other,
         country: country,
@@ -103,11 +103,12 @@ final class ReportPreviewService: ReportHandling {
   }
 
   func addCommentToReport(
+    type: ReportType,
     identifier: String,
     comment: String
   ) async throws -> ReportDetails? {
-    guard validator(identifier) else {
-      throw ReportError.badRequest(message: "Invalid \(reportType).")
+    guard type.isValid(identifier) else {
+      throw ReportError.badRequest(message: "Invalid \(type).")
     }
 
     guard let index = reports.firstIndex(where: { $0.identifier == identifier }) else {
@@ -126,9 +127,12 @@ final class ReportPreviewService: ReportHandling {
     return updatedReport
   }
 
-  func deleteReportBy(identifier: String) async throws -> Bool {
-    guard validator(identifier) else {
-      throw ReportError.badRequest(message: "Invalid \(reportType).")
+  func deleteReportBy(
+    type: ReportType,
+    identifier: String
+  ) async throws -> Bool {
+    guard type.isValid(identifier) else {
+      throw ReportError.badRequest(message: "Invalid \(type).")
     }
 
     if let index = reports.firstIndex(where: { $0.identifier == identifier }) {
