@@ -1,6 +1,7 @@
 [
   {
-    "url": "https://caldwell-elliott.com/blog/posts",
+    "identifier": "https://caldwell-elliott.com/blog/posts",
+    "report-type": "url",
     "scam-type": "Fake Support",
     "country": "Finland",
     "reported-date": "2025-06-08T20:44:24Z",
@@ -12,7 +13,8 @@
     ]
   },
   {
-    "url": "https://obrien.com/category",
+    "identifier": "https://obrien.com/category",
+    "report-type": "url",
     "scam-type": "Fake Support",
     "country": "Finland",
     "reported-date": "2025-06-04T21:44:24Z",
@@ -32,7 +34,8 @@
     ]
   },
   {
-    "url": "https://lane.org/list/category/explore",
+    "identifier": "https://lane.org/list/category/explore",
+    "report-type": "url",
     "scam-type": "Fake Support",
     "country": "Denmark",
     "reported-date": "2025-05-21T17:44:24Z",
@@ -48,7 +51,8 @@
     ]
   },
   {
-    "url": "https://jones.com/explore",
+    "identifier": "https://jones.com/explore",
+    "report-type": "url",
     "scam-type": "Scam / Fraud",
     "country": "Germany",
     "reported-date": "2025-06-11T17:44:24Z",
@@ -64,7 +68,8 @@
     ]
   },
   {
-    "url": "https://jefferson-burke.com/posts/category/tag",
+    "identifier": "https://jefferson-burke.com/posts/category/tag",
+    "report-type": "url",
     "scam-type": "Impersonation",
     "country": "Germany",
     "reported-date": "2025-06-15T01:44:24Z",
@@ -84,7 +89,8 @@
     ]
   },
   {
-    "url": "https://jones-holland.com/posts/main",
+    "identifier": "https://jones-holland.com/posts/main",
+    "report-type": "url",
     "scam-type": "Scam / Fraud",
     "country": "Germany",
     "reported-date": "2025-06-12T02:44:24Z",
@@ -104,7 +110,8 @@
     ]
   },
   {
-    "url": "https://reid-poole.com/wp-content/categories",
+    "identifier": "https://reid-poole.com/wp-content/categories",
+    "report-type": "url",
     "scam-type": "Scam / Fraud",
     "country": "Germany",
     "reported-date": "2025-06-01T04:44:24Z",
@@ -120,7 +127,8 @@
     ]
   },
   {
-    "url": "https://nelson.info/tag/blog",
+    "identifier": "https://nelson.info/tag/blog",
+    "report-type": "url",
     "scam-type": "Phishing",
     "country": "Denmark",
     "reported-date": "2025-05-26T15:44:24Z",
@@ -132,7 +140,8 @@
     ]
   },
   {
-    "url": "https://morris-sanchez.com/list/wp-content",
+    "identifier": "https://morris-sanchez.com/list/wp-content",
+    "report-type": "url",
     "scam-type": "Scam / Fraud",
     "country": "Denmark",
     "reported-date": "2025-05-30T18:44:24Z",
@@ -152,7 +161,8 @@
     ]
   },
   {
-    "url": "https://hudson-barnett.com/tags",
+    "identifier": "https://hudson-barnett.com/tags",
+    "report-type": "url",
     "scam-type": "Impersonation",
     "country": "Norway",
     "reported-date": "2025-05-27T08:44:24Z",
@@ -164,7 +174,8 @@
     ]
   },
   {
-    "url": "https://white-lewis.com/search/tags",
+    "identifier": "https://white-lewis.com/search/tags",
+    "report-type": "url",
     "scam-type": "Phishing",
     "country": "Finland",
     "reported-date": "2025-06-02T12:44:24Z",
@@ -180,7 +191,8 @@
     ]
   },
   {
-    "url": "https://peters-black.com/search",
+    "identifier": "https://peters-black.com/search",
+    "report-type": "url",
     "scam-type": "Phishing",
     "country": "Sweden",
     "reported-date": "2025-06-09T07:44:24Z",
@@ -192,7 +204,8 @@
     ]
   },
   {
-    "url": "https://russell.info/blog/tag/app",
+    "identifier": "https://russell.info/blog/tag/app",
+    "report-type": "url",
     "scam-type": "Other (please specify)",
     "country": "Germany",
     "reported-date": "2025-05-25T11:44:24Z",
@@ -208,7 +221,8 @@
     ]
   },
   {
-    "url": "https://walker-holt.com/categories/tag/categories",
+    "identifier": "https://walker-holt.com/categories/tag/categories",
+    "report-type": "url",
     "scam-type": "Phishing",
     "country": "Finland",
     "reported-date": "2025-06-19T21:44:24Z",
@@ -220,7 +234,8 @@
     ]
   },
   {
-    "url": "https://barajas-pierce.com/tag/search/wp-content",
+    "identifier": "https://barajas-pierce.com/tag/search/wp-content",
+    "report-type": "url",
     "scam-type": "Impersonation",
     "country": "Finland",
     "reported-date": "2025-05-27T00:44:24Z",
@@ -240,7 +255,8 @@
     ]
   },
   {
-    "url": "https://lee.com/search",
+    "identifier": "https://lee.com/search",
+    "report-type": "url",
     "scam-type": "Scam / Fraud",
     "country": "Finland",
     "reported-date": "2025-05-25T15:44:24Z",
@@ -260,7 +276,8 @@
     ]
   },
   {
-    "url": "https://washington.net/search/main/wp-content",
+    "identifier": "https://washington.net/search/main/wp-content",
+    "report-type": "url",
     "scam-type": "Malicious Content",
     "country": "Norway",
     "reported-date": "2025-05-28T07:44:24Z",
@@ -280,7 +297,8 @@
     ]
   },
   {
-    "url": "https://ward.com/categories/search/explore",
+    "identifier": "https://ward.com/categories/search/explore",
+    "report-type": "url",
     "scam-type": "Malicious Content",
     "country": "Sweden",
     "reported-date": "2025-06-07T12:44:24Z",
@@ -300,7 +318,8 @@
     ]
   },
   {
-    "url": "https://carter.info/app",
+    "identifier": "https://carter.info/app",
+    "report-type": "url",
     "scam-type": "Impersonation",
     "country": "Sweden",
     "reported-date": "2025-06-17T07:44:24Z",
@@ -316,7 +335,8 @@
     ]
   },
   {
-    "url": "https://mitchell.com/explore/tag",
+    "identifier": "https://mitchell.com/explore/tag",
+    "report-type": "url",
     "scam-type": "Phishing",
     "country": "Finland",
     "reported-date": "2025-06-08T04:44:24Z",
@@ -336,7 +356,8 @@
     ]
   },
   {
-    "url": "https://morales.org/blog/main/posts",
+    "identifier": "https://morales.org/blog/main/posts",
+    "report-type": "url",
     "scam-type": "Other (please specify)",
     "country": "Germany",
     "reported-date": "2025-06-02T16:44:24Z",
@@ -348,7 +369,8 @@
     ]
   },
   {
-    "url": "https://miller-wright.net/tags/posts",
+    "identifier": "https://miller-wright.net/tags/posts",
+    "report-type": "url",
     "scam-type": "Phishing",
     "country": "Germany",
     "reported-date": "2025-06-06T14:44:24Z",
@@ -364,7 +386,8 @@
     ]
   },
   {
-    "url": "https://rowe.info/search/tags",
+    "identifier": "https://rowe.info/search/tags",
+    "report-type": "url",
     "scam-type": "Suspicious Link / Domain",
     "country": "Finland",
     "reported-date": "2025-05-28T21:44:24Z",

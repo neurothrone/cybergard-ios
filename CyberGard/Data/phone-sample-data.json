@@ -1,6 +1,7 @@
 [
   {
-    "phone-number": "+49788834863",
+    "identifier": "+49788834863",
+    "report-type": "phone",
     "scam-type": "Scam / Fraud",
     "country": "Germany",
     "reported-date": "2025-05-29T23:44:24Z",
@@ -12,7 +13,8 @@
     ]
   },
   {
-    "phone-number": "+46777736262",
+    "identifier": "+46777736262",
+    "report-type": "phone",
     "scam-type": "Harassment / Threats",
     "country": "Sweden",
     "reported-date": "2025-05-28T21:44:24Z",
@@ -24,7 +26,8 @@
     ]
   },
   {
-    "phone-number": "+46778406989",
+    "identifier": "+46778406989",
+    "report-type": "phone",
     "scam-type": "Fake Support",
     "country": "Sweden",
     "reported-date": "2025-06-05T22:44:24Z",
@@ -44,7 +47,8 @@
     ]
   },
   {
-    "phone-number": "+49709121552",
+    "identifier": "+49709121552",
+    "report-type": "phone",
     "scam-type": "Fake Support",
     "country": "Germany",
     "reported-date": "2025-05-31T07:44:24Z",
@@ -60,7 +64,8 @@
     ]
   },
   {
-    "phone-number": "+46783131979",
+    "identifier": "+46783131979",
+    "report-type": "phone",
     "scam-type": "Spam / Telemarketing",
     "country": "Sweden",
     "reported-date": "2025-06-19T01:44:24Z",
@@ -80,7 +85,8 @@
     ]
   },
   {
-    "phone-number": "+45732035886",
+    "identifier": "+45732035886",
+    "report-type": "phone",
     "scam-type": "Harassment / Threats",
     "country": "Denmark",
     "reported-date": "2025-06-13T02:44:24Z",
@@ -92,7 +98,8 @@
     ]
   },
   {
-    "phone-number": "+358742436584",
+    "identifier": "+358742436584",
+    "report-type": "phone",
     "scam-type": "Impersonation",
     "country": "Finland",
     "reported-date": "2025-05-23T12:44:24Z",
@@ -104,7 +111,8 @@
     ]
   },
   {
-    "phone-number": "+46709832887",
+    "identifier": "+46709832887",
+    "report-type": "phone",
     "scam-type": "Spam / Telemarketing",
     "country": "Sweden",
     "reported-date": "2025-06-04T08:44:24Z",
@@ -124,7 +132,8 @@
     ]
   },
   {
-    "phone-number": "+45738250360",
+    "identifier": "+45738250360",
+    "report-type": "phone",
     "scam-type": "Harassment / Threats",
     "country": "Denmark",
     "reported-date": "2025-06-16T00:44:24Z",
@@ -144,7 +153,8 @@
     ]
   },
   {
-    "phone-number": "+49740181935",
+    "identifier": "+49740181935",
+    "report-type": "phone",
     "scam-type": "Fake Support",
     "country": "Germany",
     "reported-date": "2025-05-22T17:44:24Z",
@@ -156,7 +166,8 @@
     ]
   },
   {
-    "phone-number": "+46714366125",
+    "identifier": "+46714366125",
+    "report-type": "phone",
     "scam-type": "Impersonation",
     "country": "Sweden",
     "reported-date": "2025-05-28T21:44:24Z",
@@ -168,7 +179,8 @@
     ]
   },
   {
-    "phone-number": "+47796316277",
+    "identifier": "+47796316277",
+    "report-type": "phone",
     "scam-type": "Spam / Telemarketing",
     "country": "Norway",
     "reported-date": "2025-06-11T08:44:24Z",
@@ -188,7 +200,8 @@
     ]
   },
   {
-    "phone-number": "+358737135391",
+    "identifier": "+358737135391",
+    "report-type": "phone",
     "scam-type": "Fake Support",
     "country": "Finland",
     "reported-date": "2025-06-20T14:44:24Z",
@@ -204,7 +217,8 @@
     ]
   },
   {
-    "phone-number": "+358774045292",
+    "identifier": "+358774045292",
+    "report-type": "phone",
     "scam-type": "Harassment / Threats",
     "country": "Finland",
     "reported-date": "2025-05-30T01:44:24Z",
@@ -224,7 +238,8 @@
     ]
   },
   {
-    "phone-number": "+46749555330",
+    "identifier": "+46749555330",
+    "report-type": "phone",
     "scam-type": "Spam / Telemarketing",
     "country": "Sweden",
     "reported-date": "2025-06-02T21:44:24Z",
@@ -236,7 +251,8 @@
     ]
   },
   {
-    "phone-number": "+45748942697",
+    "identifier": "+45748942697",
+    "report-type": "phone",
     "scam-type": "Fake Support",
     "country": "Denmark",
     "reported-date": "2025-05-24T13:44:24Z",
@@ -252,7 +268,8 @@
     ]
   },
   {
-    "phone-number": "+45775146293",
+    "identifier": "+45775146293",
+    "report-type": "phone",
     "scam-type": "Fake Support",
     "country": "Denmark",
     "reported-date": "2025-05-24T01:44:24Z",
@@ -272,7 +289,8 @@
     ]
   },
   {
-    "phone-number": "+358703326769",
+    "identifier": "+358703326769",
+    "report-type": "phone",
     "scam-type": "Harassment / Threats",
     "country": "Finland",
     "reported-date": "2025-06-15T15:44:24Z",
@@ -288,7 +306,8 @@
     ]
   },
   {
-    "phone-number": "+47735810056",
+    "identifier": "+47735810056",
+    "report-type": "phone",
     "scam-type": "Other (please specify)",
     "country": "Norway",
     "reported-date": "2025-06-15T16:44:24Z",
@@ -300,7 +319,8 @@
     ]
   },
   {
-    "phone-number": "+47726786211",
+    "identifier": "+47726786211",
+    "report-type": "phone",
     "scam-type": "Scam / Fraud",
     "country": "Norway",
     "reported-date": "2025-05-26T00:44:24Z",
@@ -316,7 +336,8 @@
     ]
   },
   {
-    "phone-number": "+46788588154",
+    "identifier": "+46788588154",
+    "report-type": "phone",
     "scam-type": "Harassment / Threats",
     "country": "Sweden",
     "reported-date": "2025-06-15T02:44:24Z",
@@ -332,7 +353,8 @@
     ]
   },
   {
-    "phone-number": "+49753643924",
+    "identifier": "+49753643924",
+    "report-type": "phone",
     "scam-type": "Impersonation",
     "country": "Germany",
     "reported-date": "2025-05-30T21:44:24Z",
@@ -348,7 +370,8 @@
     ]
   },
   {
-    "phone-number": "+49735630292",
+    "identifier": "+49735630292",
+    "report-type": "phone",
     "scam-type": "Harassment / Threats",
     "country": "Germany",
     "reported-date": "2025-06-20T11:44:24Z",

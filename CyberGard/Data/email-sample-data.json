@@ -1,6 +1,7 @@
 [
   {
-    "email": "justin69@pena.com",
+    "identifier": "justin69@pena.com",
+    "report-type": "email",
     "scam-type": "Malicious Content",
     "country": "Germany",
     "reported-date": "2025-06-17T07:44:24Z",
@@ -20,7 +21,8 @@
     ]
   },
   {
-    "email": "donnacampbell@hotmail.com",
+    "identifier": "donnacampbell@hotmail.com",
+    "report-type": "email",
     "scam-type": "Scam / Fraud",
     "country": "Sweden",
     "reported-date": "2025-06-10T07:44:24Z",
@@ -32,7 +34,8 @@
     ]
   },
   {
-    "email": "cardenaskaren@hotmail.com",
+    "identifier": "cardenaskaren@hotmail.com",
+    "report-type": "email",
     "scam-type": "Fake Support",
     "country": "Finland",
     "reported-date": "2025-05-25T11:44:24Z",
@@ -44,7 +47,8 @@
     ]
   },
   {
-    "email": "lindsayhernandez@gmail.com",
+    "identifier": "lindsayhernandez@gmail.com",
+    "report-type": "email",
     "scam-type": "Extortion / Blackmail",
     "country": "Sweden",
     "reported-date": "2025-06-09T02:44:24Z",
@@ -64,7 +68,8 @@
     ]
   },
   {
-    "email": "xcarr@gibson.org",
+    "identifier": "xcarr@gibson.org",
+    "report-type": "email",
     "scam-type": "Other (please specify)",
     "country": "Sweden",
     "reported-date": "2025-05-28T06:44:24Z",
@@ -84,7 +89,8 @@
     ]
   },
   {
-    "email": "psnyder@douglas.com",
+    "identifier": "psnyder@douglas.com",
+    "report-type": "email",
     "scam-type": "Malicious Content",
     "country": "Germany",
     "reported-date": "2025-06-05T09:44:24Z",
@@ -104,7 +110,8 @@
     ]
   },
   {
-    "email": "gregoryrubio@hotmail.com",
+    "identifier": "gregoryrubio@hotmail.com",
+    "report-type": "email",
     "scam-type": "Impersonation",
     "country": "Germany",
     "reported-date": "2025-06-17T03:44:24Z",
@@ -116,7 +123,8 @@
     ]
   },
   {
-    "email": "grantsamantha@gmail.com",
+    "identifier": "grantsamantha@gmail.com",
+    "report-type": "email",
     "scam-type": "Fake Support",
     "country": "Denmark",
     "reported-date": "2025-06-02T04:44:24Z",
@@ -132,7 +140,8 @@
     ]
   },
   {
-    "email": "lauriecontreras@hotmail.com",
+    "identifier": "lauriecontreras@hotmail.com",
+    "report-type": "email",
     "scam-type": "Impersonation",
     "country": "Sweden",
     "reported-date": "2025-06-20T07:44:24Z",
@@ -152,7 +161,8 @@
     ]
   },
   {
-    "email": "usalazar@hotmail.com",
+    "identifier": "usalazar@hotmail.com",
+    "report-type": "email",
     "scam-type": "Other (please specify)",
     "country": "Germany",
     "reported-date": "2025-05-28T10:44:24Z",
@@ -164,7 +174,8 @@
     ]
   },
   {
-    "email": "vmerritt@yahoo.com",
+    "identifier": "vmerritt@yahoo.com",
+    "report-type": "email",
     "scam-type": "Harassment / Threats",
     "country": "Norway",
     "reported-date": "2025-06-12T22:44:24Z",
@@ -184,7 +195,8 @@
     ]
   },
   {
-    "email": "karen48@yahoo.com",
+    "identifier": "karen48@yahoo.com",
+    "report-type": "email",
     "scam-type": "Malicious Content",
     "country": "Norway",
     "reported-date": "2025-06-08T17:44:24Z",
@@ -204,7 +216,8 @@
     ]
   },
   {
-    "email": "scott43@rogers-orozco.com",
+    "identifier": "scott43@rogers-orozco.com",
+    "report-type": "email",
     "scam-type": "Impersonation",
     "country": "Norway",
     "reported-date": "2025-06-19T04:44:24Z",
@@ -216,7 +229,8 @@
     ]
   },
   {
-    "email": "jessebenson@lewis.info",
+    "identifier": "jessebenson@lewis.info",
+    "report-type": "email",
     "scam-type": "Impersonation",
     "country": "Denmark",
     "reported-date": "2025-06-21T12:44:24Z",
@@ -236,7 +250,8 @@
     ]
   },
   {
-    "email": "clarkrobert@hotmail.com",
+    "identifier": "clarkrobert@hotmail.com",
+    "report-type": "email",
     "scam-type": "Extortion / Blackmail",
     "country": "Norway",
     "reported-date": "2025-06-05T07:44:24Z",
@@ -252,7 +267,8 @@
     ]
   },
   {
-    "email": "wwoods@molina-castaneda.biz",
+    "identifier": "wwoods@molina-castaneda.biz",
+    "report-type": "email",
     "scam-type": "Spam / Telemarketing",
     "country": "Finland",
     "reported-date": "2025-06-13T23:44:24Z",
@@ -268,7 +284,8 @@
     ]
   },
   {
-    "email": "brobinson@johnson-rogers.biz",
+    "identifier": "brobinson@johnson-rogers.biz",
+    "report-type": "email",
     "scam-type": "Phishing",
     "country": "Sweden",
     "reported-date": "2025-06-08T01:44:24Z",
@@ -284,7 +301,8 @@
     ]
   },
   {
-    "email": "ncalhoun@johnson.com",
+    "identifier": "ncalhoun@johnson.com",
+    "report-type": "email",
     "scam-type": "Fake Support",
     "country": "Norway",
     "reported-date": "2025-06-08T15:44:24Z",
@@ -300,7 +318,8 @@
     ]
   },
   {
-    "email": "dtaylor@williams.com",
+    "identifier": "dtaylor@williams.com",
+    "report-type": "email",
     "scam-type": "Impersonation",
     "country": "Denmark",
     "reported-date": "2025-06-04T00:44:24Z",
@@ -312,7 +331,8 @@
     ]
   },
   {
-    "email": "wmurphy@ramirez-bean.biz",
+    "identifier": "wmurphy@ramirez-bean.biz",
+    "report-type": "email",
     "scam-type": "Spam / Telemarketing",
     "country": "Sweden",
     "reported-date": "2025-06-14T12:44:24Z",
@@ -328,7 +348,8 @@
     ]
   },
   {
-    "email": "ruizkaitlyn@gmail.com",
+    "identifier": "ruizkaitlyn@gmail.com",
+    "report-type": "email",
     "scam-type": "Fake Support",
     "country": "Norway",
     "reported-date": "2025-05-31T21:44:24Z",
@@ -340,7 +361,8 @@
     ]
   },
   {
-    "email": "debraharrington@hotmail.com",
+    "identifier": "debraharrington@hotmail.com",
+    "report-type": "email",
     "scam-type": "Harassment / Threats",
     "country": "Sweden",
     "reported-date": "2025-06-07T23:44:24Z",
@@ -356,7 +378,8 @@
     ]
   },
   {
-    "email": "herringjames@howell.com",
+    "identifier": "herringjames@howell.com",
+    "report-type": "email",
     "scam-type": "Harassment / Threats",
     "country": "Finland",
     "reported-date": "2025-06-09T14:44:24Z",
