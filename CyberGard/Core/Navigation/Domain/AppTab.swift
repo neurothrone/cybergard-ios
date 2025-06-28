@@ -2,6 +2,7 @@ import Foundation
 
 enum AppTab: Identifiable, CaseIterable {
   case home
+  case reports
   case emailLookup
   case phoneLookup
   case urlLookup
@@ -11,16 +12,12 @@ enum AppTab: Identifiable, CaseIterable {
 
   var title: String {
     switch self {
-    case .home:
-      return "Home"
-    case .emailLookup:
-      return "Email"
-    case .phoneLookup:
-      return "Phone"
-    case .urlLookup:
-      return "URL"
-    case .settings:
-      return "Settings"
+    case .home: "Home"
+    case .reports: "Reports"
+    case .emailLookup: "Email"
+    case .phoneLookup: "Phone"
+    case .urlLookup: "URL"
+    case .settings: "Settings"
     }
   }
 }
