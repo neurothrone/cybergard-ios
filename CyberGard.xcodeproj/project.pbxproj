@@ -33,6 +33,11 @@
 			path = Charts;
 			sourceTree = "<group>";
 		};
+		2F6C639A2E10669700D3276C /* Reports */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Reports;
+			sourceTree = "<group>";
+		};
 		2FED3CD92E08FE0A00F7473C /* Core */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Core;
@@ -100,6 +105,7 @@
 				2F6C61B12E0F651600D3276C /* ChartsSandbox.swift */,
 				2FED3CBD2E07B1F900F7473C /* Assets.xcassets */,
 				2FED3CBF2E07B1F900F7473C /* Info.plist */,
+				2F6C639A2E10669700D3276C /* Reports */,
 				2F6C61BA2E0F68B500D3276C /* Charts */,
 				2F6C61B32E0F686000D3276C /* Data */,
 				2FED3CD92E08FE0A00F7473C /* Core */,
@@ -130,6 +136,7 @@
 			fileSystemSynchronizedGroups = (
 				2F6C61B32E0F686000D3276C /* Data */,
 				2F6C61BA2E0F68B500D3276C /* Charts */,
+				2F6C639A2E10669700D3276C /* Reports */,
 				2FED3CD92E08FE0A00F7473C /* Core */,
 				2FED3CDA2E08FE1100F7473C /* Home */,
 				2FED3CDB2E08FE1F00F7473C /* Email */,
