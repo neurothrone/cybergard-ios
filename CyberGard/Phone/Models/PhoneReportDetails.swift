@@ -21,6 +21,29 @@ struct PhoneReportDetails: Identifiable, Decodable {
 }
 
 extension PhoneReportDetails {
+  /// Loads sample email reports from a JSON file in the app bundle.
+  /// - Parameter filename: The name of the JSON file (without extension). Defaults to "phone-sample-data".
+  /// - Returns: An array of `PhoneReportDetails` decoded from the JSON, or an empty array on failure.
+  static func loadSampleReports(
+    from filename: String = "phone-sample-data"
+  ) -> [PhoneReportDetails] {
+    guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
+      print("❌ Failed to locate \(filename).json in bundle.")
+      return []
+    }
+    do {
+      let data = try Data(contentsOf: url)
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .iso8601
+      return try decoder.decode([PhoneReportDetails].self, from: data)
+    } catch {
+      print("❌ Failed to decode \(filename).json: \(error)")
+      return []
+    }
+  }
+}
+
+extension PhoneReportDetails {
   static var sample: PhoneReportDetails {
     PhoneReportDetails(
       phoneNumber: "+1234567890",

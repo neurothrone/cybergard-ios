@@ -21,6 +21,29 @@ struct UrlReportDetails: Identifiable, Decodable {
 }
 
 extension UrlReportDetails {
+  /// Loads sample email reports from a JSON file in the app bundle.
+  /// - Parameter filename: The name of the JSON file (without extension). Defaults to "url-sample-data".
+  /// - Returns: An array of `UrlReportDetails` decoded from the JSON, or an empty array on failure.
+  static func loadSampleReports(
+    from filename: String = "url-sample-data"
+  ) -> [UrlReportDetails] {
+    guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
+      print("❌ Failed to locate \(filename).json in bundle.")
+      return []
+    }
+    do {
+      let data = try Data(contentsOf: url)
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .iso8601
+      return try decoder.decode([UrlReportDetails].self, from: data)
+    } catch {
+      print("❌ Failed to decode \(filename).json: \(error)")
+      return []
+    }
+  }
+}
+
+extension UrlReportDetails {
   static var sample: UrlReportDetails {
     UrlReportDetails(
       url: "http://www.scam.com",

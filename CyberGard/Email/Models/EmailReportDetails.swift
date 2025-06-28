@@ -8,7 +8,7 @@ struct EmailReportDetails: Identifiable, Decodable {
   var comments: [Comment]
 
   var id: String { email }
-  
+
   var commentsCount: Int { comments.count }
 
   enum CodingKeys: String, CodingKey {
@@ -17,6 +17,29 @@ struct EmailReportDetails: Identifiable, Decodable {
     case country
     case reportedDate = "reported-date"
     case comments
+  }
+}
+
+extension EmailReportDetails {
+  /// Loads sample email reports from a JSON file in the app bundle.
+  /// - Parameter filename: The name of the JSON file (without extension). Defaults to "email-sample-data".
+  /// - Returns: An array of `EmailReportDetails` decoded from the JSON, or an empty array on failure.
+  static func loadSampleReports(
+    from filename: String = "email-sample-data"
+  ) -> [EmailReportDetails] {
+    guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
+      print("❌ Failed to locate \(filename).json in bundle.")
+      return []
+    }
+    do {
+      let data = try Data(contentsOf: url)
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .iso8601
+      return try decoder.decode([EmailReportDetails].self, from: data)
+    } catch {
+      print("❌ Failed to decode \(filename).json: \(error)")
+      return []
+    }
   }
 }
 
