@@ -3,7 +3,7 @@ import Foundation
 final class EmailReportApiService: EmailReportHandling {
   private let baseURL: URL
 
-  init(baseURL: URL = URL(string: "http://localhost:5001/api")!) {
+  init(baseURL: URL = URL(string: "http://localhost:5001/api/v1")!) {
     self.baseURL = baseURL
   }
 
@@ -31,9 +31,7 @@ final class EmailReportApiService: EmailReportHandling {
     }
 
     do {
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(EmailReportResponse.self, from: data)
+      return try JSONDecoder.decodeWithFlexibleISO8601(EmailReportResponse.self, from: data)
     } catch {
       throw ReportError.decodingFailed
     }
@@ -49,9 +47,7 @@ final class EmailReportApiService: EmailReportHandling {
 
     switch httpResponse.statusCode {
     case 200:
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(EmailReportDetails.self, from: data)
+      return try JSONDecoder.decodeWithFlexibleISO8601(EmailReportDetails.self, from: data)
     case 404:
       return nil
     default:
@@ -91,9 +87,7 @@ final class EmailReportApiService: EmailReportHandling {
       throw ReportError.createFailed
     }
 
-    let decoder = JSONDecoder()
-    decoder.dateDecodingStrategy = .formatted(.apiFormat)
-    return try decoder.decode(EmailReportDetails.self, from: data)
+    return try JSONDecoder.decodeWithFlexibleISO8601(EmailReportDetails.self, from: data)
   }
 
   func addCommentToReport(
@@ -116,9 +110,7 @@ final class EmailReportApiService: EmailReportHandling {
 
     switch httpResponse.statusCode {
     case 200:
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(EmailReportDetails.self, from: data)
+      return try JSONDecoder.decodeWithFlexibleISO8601(EmailReportDetails.self, from: data)
     case 404:
       return nil
     default:

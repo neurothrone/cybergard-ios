@@ -3,7 +3,7 @@ import Foundation
 final class UrlReportApiService: UrlReportHandling {
   private let baseURL: URL
 
-  init(baseURL: URL = URL(string: "http://localhost:5001/api")!) {
+  init(baseURL: URL = URL(string: "http://localhost:5001/api/v1")!) {
     self.baseURL = baseURL
   }
 
@@ -31,17 +31,17 @@ final class UrlReportApiService: UrlReportHandling {
     }
 
     do {
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(UrlReportResponse.self, from: data)
+      return try JSONDecoder.decodeWithFlexibleISO8601(UrlReportResponse.self, from: data)
     } catch {
       throw ReportError.decodingFailed
     }
   }
   
   func getBy(url: String) async throws -> UrlReportDetails? {
-    let url = baseURL.appendingPathComponent("url-reports/\(url)")
-    let (data, response) = try await URLSession.shared.data(from: url)
+    let apiUrl = baseURL
+        .appendingPathComponent("url-reports")
+        .appending(queryItems: [URLQueryItem(name: "url", value: url)])
+    let (data, response) = try await URLSession.shared.data(from: apiUrl)
 
     guard let httpResponse = response as? HTTPURLResponse else {
       throw ReportError.serverError
@@ -49,9 +49,7 @@ final class UrlReportApiService: UrlReportHandling {
 
     switch httpResponse.statusCode {
     case 200:
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(UrlReportDetails.self, from: data)
+      return try JSONDecoder.decodeWithFlexibleISO8601(UrlReportDetails.self, from: data)
     case 404:
       return nil
     default:
@@ -91,9 +89,7 @@ final class UrlReportApiService: UrlReportHandling {
       throw ReportError.createFailed
     }
 
-    let decoder = JSONDecoder()
-    decoder.dateDecodingStrategy = .formatted(.apiFormat)
-    return try decoder.decode(UrlReportDetails.self, from: data)
+    return try JSONDecoder.decodeWithFlexibleISO8601(UrlReportDetails.self, from: data)
   }
 
   func addCommentToReport(
@@ -116,9 +112,7 @@ final class UrlReportApiService: UrlReportHandling {
 
     switch httpResponse.statusCode {
     case 200:
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .formatted(.apiFormat)
-      return try decoder.decode(UrlReportDetails.self, from: data)
+      return try JSONDecoder.decodeWithFlexibleISO8601(UrlReportDetails.self, from: data)
     case 404:
       return nil
     default:
