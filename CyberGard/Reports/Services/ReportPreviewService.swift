@@ -10,7 +10,6 @@ final class ReportPreviewService: ReportHandling {
   }
 
   func searchReports(
-    type: ReportType,
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
@@ -20,8 +19,7 @@ final class ReportPreviewService: ReportHandling {
     if let query = query, !query.isEmpty {
       let lower = query.lowercased()
       filtered = filtered.filter { r in
-        r.reportType == type
-          && r.identifier.lowercased().contains(lower)
+        r.identifier.lowercased().contains(lower)
           || r.country.lowercased().contains(lower)
           || r.scamType.rawValue.lowercased().contains(lower)
       }
@@ -40,7 +38,7 @@ final class ReportPreviewService: ReportHandling {
 
     let results = paginatedReports.map { report in
       ReportItem(
-        reportType: type,
+        reportType: report.reportType,
         identifier: report.identifier,
         scamType: report.scamType,
         country: report.country,

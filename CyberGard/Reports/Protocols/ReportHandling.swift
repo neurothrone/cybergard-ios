@@ -1,6 +1,5 @@
 protocol ReportHandling {
   func searchReports(
-    type: ReportType,
     page: Int,
     pageSize: Int,
     query: String?

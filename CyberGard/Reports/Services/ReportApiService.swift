@@ -24,7 +24,6 @@ final class ReportApiService: ReportHandling {
   }
 
   func searchReports(
-    type: ReportType,
     page: Int = 1,
     pageSize: Int = 10,
     query: String? = nil
@@ -38,7 +37,8 @@ final class ReportApiService: ReportHandling {
     }
     let apiUrl =
       baseURL
-      .appendingPathComponent(resourcePath(for: type))
+      //      .appendingPathComponent(resourcePath(for: type))
+      .appendingPathComponent("reports")
       .appending(queryItems: queryItems)
 
     let (data, response) = try await URLSession.shared.data(from: apiUrl)
