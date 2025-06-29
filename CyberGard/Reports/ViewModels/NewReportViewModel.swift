@@ -6,21 +6,19 @@ final class NewReportViewModel: ObservableObject {
   @Published var isLoading = false
   @Published var error: String?
 
+  @Published var reportType: ReportType = .email
   @Published var identifier: String = ""
   @Published var country: String = ""
   @Published var comment: String = ""
   @Published var scamType: ScamType = .default
 
-  private let reportType: ReportType
   private let service: ReportHandling
   private let reportCreateSubject: PassthroughSubject<ReportDetails, Never>?
 
   init(
-    reportType: ReportType,
     service: ReportHandling,
     reportCreateSubject: PassthroughSubject<ReportDetails, Never>? = nil
   ) {
-    self.reportType = reportType
     self.service = service
     self.reportCreateSubject = reportCreateSubject
   }

@@ -9,24 +9,23 @@ struct NewReportPage: View {
   @State private var alertTitle = ""
   @State private var alertMessage = ""
 
-  private let reportType: ReportType
-
-  init(
-    reportType: ReportType,
-    viewModel: NewReportViewModel
-  ) {
-    self.reportType = reportType
+  init(viewModel: NewReportViewModel) {
     _viewModel = StateObject(wrappedValue: viewModel)
   }
 
   var body: some View {
     Form {
       Section(header: Text("Report details")) {
-        TextField(reportType.rawValue.capitalized, text: $viewModel.identifier)
-          .autocapitalization(.none)
-          .disableAutocorrection(true)
-          .keyboardType(reportType.keyboardType)
-          .textContentType(reportType.textContentType)
+        ReportTypePickerView(reportType: $viewModel.reportType)
+
+        TextField(
+          viewModel.reportType.rawValue.capitalized,
+          text: $viewModel.identifier
+        )
+        .autocapitalization(.none)
+        .disableAutocorrection(true)
+        .keyboardType(viewModel.reportType.keyboardType)
+        .textContentType(viewModel.reportType.textContentType)
 
         TextField("Country", text: $viewModel.country)
           .disableAutocorrection(true)
@@ -34,7 +33,7 @@ struct NewReportPage: View {
 
         ScamTypePickerView(
           scamType: $viewModel.scamType,
-          scamTypeChoices: ScamType.emailOnlyCases
+          scamTypeChoices: ScamType.casesFor(viewModel.reportType)
         )
       }
 
@@ -61,7 +60,7 @@ struct NewReportPage: View {
           if viewModel.isLoading {
             ProgressView()
           } else {
-            Text("Report \(reportType.rawValue.capitalized)")
+            Text("Report \(viewModel.reportType.rawValue.capitalized)")
               .foregroundColor(viewModel.isValid ? .red : .gray)
           }
         }
@@ -86,7 +85,7 @@ struct NewReportPage: View {
 
     if success {
       alertTitle = "Success"
-      alertMessage = "\(reportType.rawValue.capitalized) reported successfully."
+      alertMessage = "\(viewModel.reportType.rawValue.capitalized) reported successfully."
     } else {
       alertTitle = "Error"
       alertMessage = viewModel.error ?? "Unknown error."
@@ -99,9 +98,7 @@ struct NewReportPage: View {
 #Preview {
   NavigationStack {
     NewReportPage(
-      reportType: .email,
       viewModel: NewReportViewModel(
-        reportType: .email,
         service: ReportPreviewService()
       )
     )
