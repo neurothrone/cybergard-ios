@@ -21,44 +21,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F6C61B32E0F686000D3276C /* Data */ = {
+		2F6C65E02E10C8B800D3276C /* Features */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Data;
+			path = Features;
 			sourceTree = "<group>";
 		};
-		2F6C639A2E10669700D3276C /* Reports */ = {
+		2F6C669F2E10C9F400D3276C /* Development Assets */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Reports;
+			path = "Development Assets";
 			sourceTree = "<group>";
 		};
 		2FED3CD92E08FE0A00F7473C /* Core */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Core;
-			sourceTree = "<group>";
-		};
-		2FED3CDA2E08FE1100F7473C /* Home */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Home;
-			sourceTree = "<group>";
-		};
-		2FED3CDB2E08FE1F00F7473C /* Email */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Email;
-			sourceTree = "<group>";
-		};
-		2FED3D0F2E08FED600F7473C /* Phone */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Phone;
-			sourceTree = "<group>";
-		};
-		2FED3D102E08FEDB00F7473C /* Url */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Url;
-			sourceTree = "<group>";
-		};
-		2FED3D1D2E09006A00F7473C /* Settings */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -97,14 +72,9 @@
 				2FED3CBE2E07B1F900F7473C /* ContentView.swift */,
 				2FED3CBD2E07B1F900F7473C /* Assets.xcassets */,
 				2FED3CBF2E07B1F900F7473C /* Info.plist */,
-				2F6C61B32E0F686000D3276C /* Data */,
-				2F6C639A2E10669700D3276C /* Reports */,
 				2FED3CD92E08FE0A00F7473C /* Core */,
-				2FED3CDA2E08FE1100F7473C /* Home */,
-				2FED3CDB2E08FE1F00F7473C /* Email */,
-				2FED3D0F2E08FED600F7473C /* Phone */,
-				2FED3D102E08FEDB00F7473C /* Url */,
-				2FED3D1D2E09006A00F7473C /* Settings */,
+				2F6C65E02E10C8B800D3276C /* Features */,
+				2F6C669F2E10C9F400D3276C /* Development Assets */,
 			);
 			path = CyberGard;
 			sourceTree = "<group>";
@@ -125,14 +95,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2F6C61B32E0F686000D3276C /* Data */,
-				2F6C639A2E10669700D3276C /* Reports */,
+				2F6C65E02E10C8B800D3276C /* Features */,
+				2F6C669F2E10C9F400D3276C /* Development Assets */,
 				2FED3CD92E08FE0A00F7473C /* Core */,
-				2FED3CDA2E08FE1100F7473C /* Home */,
-				2FED3CDB2E08FE1F00F7473C /* Email */,
-				2FED3D0F2E08FED600F7473C /* Phone */,
-				2FED3D102E08FEDB00F7473C /* Url */,
-				2FED3D1D2E09006A00F7473C /* Settings */,
 			);
 			name = CyberGard;
 			packageProductDependencies = (
