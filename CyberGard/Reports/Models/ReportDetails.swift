@@ -22,10 +22,10 @@ struct ReportDetails: Decodable, Identifiable {
 
 extension ReportDetails {
   /// Loads sample email reports from a JSON file in the app bundle.
-  /// - Parameter filename: The name of the JSON file (without extension). Defaults to "email-sample-data".
+  /// - Parameter filename: The name of the JSON file (without extension). Defaults to "all-sample-data".
   /// - Returns: An array of `ReportDetails` decoded from the JSON, or an empty array on failure.
   static func loadSampleReports(
-    from filename: String = "email-sample-data"
+    from filename: String = "all-sample-data"
   ) -> [ReportDetails] {
     guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
       print("❌ Failed to locate \(filename).json in bundle.")
@@ -34,7 +34,7 @@ extension ReportDetails {
     do {
       let data = try Data(contentsOf: url)
       let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .iso8601
+      decoder.dateDecodingStrategy = .flexibleISO8601
       return try decoder.decode([ReportDetails].self, from: data)
     } catch {
       print("❌ Failed to decode \(filename).json: \(error)")
