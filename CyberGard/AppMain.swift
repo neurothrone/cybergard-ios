@@ -7,12 +7,7 @@ struct AppMain: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environment(
-          \.reportService,
-          ReportApiService(
-            baseURL: environment.baseURL
-          )
-        )
+        .environment(\.reportService, ReportApiService(baseURL: environment.baseURL))
     }
   }
 }
