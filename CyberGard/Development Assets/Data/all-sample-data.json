@@ -1,0 +1,1195 @@
+[
+  {
+    "identifier": "justin69@pena.com",
+    "report-type": "email",
+    "scam-type": "Malicious Content",
+    "country": "Germany",
+    "reported-date": "2025-06-17T07:44:24Z",
+    "comments": [
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-17T07:09:24Z"
+      },
+      {
+        "text": "Claims to offer a refund, but it's a trap.",
+        "posted-date": "2025-06-17T07:28:24Z"
+      },
+      {
+        "text": "Scam pretending to be a package delivery service.",
+        "posted-date": "2025-06-17T07:07:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+49788834863",
+    "report-type": "phone",
+    "scam-type": "Scam / Fraud",
+    "country": "Germany",
+    "reported-date": "2025-05-29T23:44:24Z",
+    "comments": [
+      {
+        "text": "Fake debt collection agency.",
+        "posted-date": "2025-05-29T23:32:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://caldwell-elliott.com/blog/posts",
+    "report-type": "url",
+    "scam-type": "Fake Support",
+    "country": "Finland",
+    "reported-date": "2025-06-08T20:44:24Z",
+    "comments": [
+      {
+        "text": "This URL is a phishing site. Do not visit.",
+        "posted-date": "2025-06-08T20:28:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "donnacampbell@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Scam / Fraud",
+    "country": "Sweden",
+    "reported-date": "2025-06-10T07:44:24Z",
+    "comments": [
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-06-10T07:12:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+46777736262",
+    "report-type": "phone",
+    "scam-type": "Harassment / Threats",
+    "country": "Sweden",
+    "reported-date": "2025-05-28T21:44:24Z",
+    "comments": [
+      {
+        "text": "Keeps calling and asking for personal information.",
+        "posted-date": "2025-05-28T20:57:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://obrien.com/category",
+    "report-type": "url",
+    "scam-type": "Fake Support",
+    "country": "Finland",
+    "reported-date": "2025-06-04T21:44:24Z",
+    "comments": [
+      {
+        "text": "Fake support site asking for remote access.",
+        "posted-date": "2025-06-04T20:58:24Z"
+      },
+      {
+        "text": "This URL mimics a bank login page.",
+        "posted-date": "2025-06-04T20:57:24Z"
+      },
+      {
+        "text": "Claims to offer free rewards. Total scam.",
+        "posted-date": "2025-06-04T21:32:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "cardenaskaren@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Fake Support",
+    "country": "Finland",
+    "reported-date": "2025-05-25T11:44:24Z",
+    "comments": [
+      {
+        "text": "I received this today pretending to be my bank.",
+        "posted-date": "2025-05-25T11:04:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+46778406989",
+    "report-type": "phone",
+    "scam-type": "Fake Support",
+    "country": "Sweden",
+    "reported-date": "2025-06-05T22:44:24Z",
+    "comments": [
+      {
+        "text": "Spammers. Just block it.",
+        "posted-date": "2025-06-05T22:34:24Z"
+      },
+      {
+        "text": "This phone number is still active and dangerous.",
+        "posted-date": "2025-06-05T22:12:24Z"
+      },
+      {
+        "text": "Called multiple times with threats.",
+        "posted-date": "2025-06-05T21:50:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://lane.org/list/category/explore",
+    "report-type": "url",
+    "scam-type": "Fake Support",
+    "country": "Denmark",
+    "reported-date": "2025-05-21T17:44:24Z",
+    "comments": [
+      {
+        "text": "Claims to offer free rewards. Total scam.",
+        "posted-date": "2025-05-21T17:05:24Z"
+      },
+      {
+        "text": "This site installs malware.",
+        "posted-date": "2025-05-21T17:02:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "lindsayhernandez@gmail.com",
+    "report-type": "email",
+    "scam-type": "Extortion / Blackmail",
+    "country": "Sweden",
+    "reported-date": "2025-06-09T02:44:24Z",
+    "comments": [
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-09T02:15:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-09T02:28:24Z"
+      },
+      {
+        "text": "This is a phishing email. Do not click any links.",
+        "posted-date": "2025-06-09T01:49:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+49709121552",
+    "report-type": "phone",
+    "scam-type": "Fake Support",
+    "country": "Germany",
+    "reported-date": "2025-05-31T07:44:24Z",
+    "comments": [
+      {
+        "text": "Claims to be from my bank. It's not.",
+        "posted-date": "2025-05-31T07:37:24Z"
+      },
+      {
+        "text": "Claims to be from my bank. It's not.",
+        "posted-date": "2025-05-31T07:29:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://jones.com/explore",
+    "report-type": "url",
+    "scam-type": "Scam / Fraud",
+    "country": "Germany",
+    "reported-date": "2025-06-11T17:44:24Z",
+    "comments": [
+      {
+        "text": "Malicious scripts running on this page.",
+        "posted-date": "2025-06-11T17:24:24Z"
+      },
+      {
+        "text": "This link redirects to suspicious domains.",
+        "posted-date": "2025-06-11T17:00:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "xcarr@gibson.org",
+    "report-type": "email",
+    "scam-type": "Other (please specify)",
+    "country": "Sweden",
+    "reported-date": "2025-05-28T06:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-05-28T06:23:24Z"
+      },
+      {
+        "text": "Scam pretending to be a package delivery service.",
+        "posted-date": "2025-05-28T06:26:24Z"
+      },
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-05-28T06:34:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+46783131979",
+    "report-type": "phone",
+    "scam-type": "Spam / Telemarketing",
+    "country": "Sweden",
+    "reported-date": "2025-06-19T01:44:24Z",
+    "comments": [
+      {
+        "text": "Claims to be from my bank. It's not.",
+        "posted-date": "2025-06-19T01:07:24Z"
+      },
+      {
+        "text": "Keeps calling and asking for personal information.",
+        "posted-date": "2025-06-19T01:11:24Z"
+      },
+      {
+        "text": "Fake debt collection agency.",
+        "posted-date": "2025-06-19T00:45:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://jefferson-burke.com/posts/category/tag",
+    "report-type": "url",
+    "scam-type": "Impersonation",
+    "country": "Germany",
+    "reported-date": "2025-06-15T01:44:24Z",
+    "comments": [
+      {
+        "text": "Malicious scripts running on this page.",
+        "posted-date": "2025-06-15T00:44:24Z"
+      },
+      {
+        "text": "Fake support site asking for remote access.",
+        "posted-date": "2025-06-15T01:01:24Z"
+      },
+      {
+        "text": "Looks like a fake login page.",
+        "posted-date": "2025-06-15T00:47:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "psnyder@douglas.com",
+    "report-type": "email",
+    "scam-type": "Malicious Content",
+    "country": "Germany",
+    "reported-date": "2025-06-05T09:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-05T08:46:24Z"
+      },
+      {
+        "text": "This email came with threats if I didn't respond.",
+        "posted-date": "2025-06-05T08:49:24Z"
+      },
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-05T09:25:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+45732035886",
+    "report-type": "phone",
+    "scam-type": "Harassment / Threats",
+    "country": "Denmark",
+    "reported-date": "2025-06-13T02:44:24Z",
+    "comments": [
+      {
+        "text": "Threatened legal action if I didn't pay.",
+        "posted-date": "2025-06-13T02:02:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://jones-holland.com/posts/main",
+    "report-type": "url",
+    "scam-type": "Scam / Fraud",
+    "country": "Germany",
+    "reported-date": "2025-06-12T02:44:24Z",
+    "comments": [
+      {
+        "text": "This URL is a phishing site. Do not visit.",
+        "posted-date": "2025-06-12T01:51:24Z"
+      },
+      {
+        "text": "This link redirects to suspicious domains.",
+        "posted-date": "2025-06-12T02:25:24Z"
+      },
+      {
+        "text": "Malicious scripts running on this page.",
+        "posted-date": "2025-06-12T02:31:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "gregoryrubio@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Germany",
+    "reported-date": "2025-06-17T03:44:24Z",
+    "comments": [
+      {
+        "text": "Urgent tone demanding immediate payment'beware.",
+        "posted-date": "2025-06-17T03:10:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+358742436584",
+    "report-type": "phone",
+    "scam-type": "Impersonation",
+    "country": "Finland",
+    "reported-date": "2025-05-23T12:44:24Z",
+    "comments": [
+      {
+        "text": "Claims to be from my bank. It's not.",
+        "posted-date": "2025-05-23T12:15:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://reid-poole.com/wp-content/categories",
+    "report-type": "url",
+    "scam-type": "Scam / Fraud",
+    "country": "Germany",
+    "reported-date": "2025-06-01T04:44:24Z",
+    "comments": [
+      {
+        "text": "I received this link via email, very sketchy.",
+        "posted-date": "2025-06-01T04:16:24Z"
+      },
+      {
+        "text": "Pretending to be a government website.",
+        "posted-date": "2025-06-01T04:01:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "grantsamantha@gmail.com",
+    "report-type": "email",
+    "scam-type": "Fake Support",
+    "country": "Denmark",
+    "reported-date": "2025-06-02T04:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-02T04:43:24Z"
+      },
+      {
+        "text": "The attachment contains malware. Avoid opening it.",
+        "posted-date": "2025-06-02T03:45:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+46709832887",
+    "report-type": "phone",
+    "scam-type": "Spam / Telemarketing",
+    "country": "Sweden",
+    "reported-date": "2025-06-04T08:44:24Z",
+    "comments": [
+      {
+        "text": "Called multiple times with threats.",
+        "posted-date": "2025-06-04T08:28:24Z"
+      },
+      {
+        "text": "Keeps calling and asking for personal information.",
+        "posted-date": "2025-06-04T07:45:24Z"
+      },
+      {
+        "text": "This phone number is still active and dangerous.",
+        "posted-date": "2025-06-04T07:48:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://nelson.info/tag/blog",
+    "report-type": "url",
+    "scam-type": "Phishing",
+    "country": "Denmark",
+    "reported-date": "2025-05-26T15:44:24Z",
+    "comments": [
+      {
+        "text": "This site installs malware.",
+        "posted-date": "2025-05-26T15:02:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "lauriecontreras@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Sweden",
+    "reported-date": "2025-06-20T07:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-20T06:44:24Z"
+      },
+      {
+        "text": "Claims to offer a refund, but it's a trap.",
+        "posted-date": "2025-06-20T07:39:24Z"
+      },
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-20T07:13:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+45738250360",
+    "report-type": "phone",
+    "scam-type": "Harassment / Threats",
+    "country": "Denmark",
+    "reported-date": "2025-06-16T00:44:24Z",
+    "comments": [
+      {
+        "text": "Fake debt collection agency.",
+        "posted-date": "2025-06-15T23:59:24Z"
+      },
+      {
+        "text": "Scam pretending to be a government agency.",
+        "posted-date": "2025-06-16T00:05:24Z"
+      },
+      {
+        "text": "Sounds like a robocall. Hung up immediately.",
+        "posted-date": "2025-06-16T00:03:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://morris-sanchez.com/list/wp-content",
+    "report-type": "url",
+    "scam-type": "Scam / Fraud",
+    "country": "Denmark",
+    "reported-date": "2025-05-30T18:44:24Z",
+    "comments": [
+      {
+        "text": "This site installs malware.",
+        "posted-date": "2025-05-30T18:23:24Z"
+      },
+      {
+        "text": "Tries to install fake antivirus software.",
+        "posted-date": "2025-05-30T17:52:24Z"
+      },
+      {
+        "text": "This URL mimics a bank login page.",
+        "posted-date": "2025-05-30T18:29:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "usalazar@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Other (please specify)",
+    "country": "Germany",
+    "reported-date": "2025-05-28T10:44:24Z",
+    "comments": [
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-05-28T10:02:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+49740181935",
+    "report-type": "phone",
+    "scam-type": "Fake Support",
+    "country": "Germany",
+    "reported-date": "2025-05-22T17:44:24Z",
+    "comments": [
+      {
+        "text": "Called multiple times with threats.",
+        "posted-date": "2025-05-22T16:44:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://hudson-barnett.com/tags",
+    "report-type": "url",
+    "scam-type": "Impersonation",
+    "country": "Norway",
+    "reported-date": "2025-05-27T08:44:24Z",
+    "comments": [
+      {
+        "text": "This URL is a phishing site. Do not visit.",
+        "posted-date": "2025-05-27T08:43:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "vmerritt@yahoo.com",
+    "report-type": "email",
+    "scam-type": "Harassment / Threats",
+    "country": "Norway",
+    "reported-date": "2025-06-12T22:44:24Z",
+    "comments": [
+      {
+        "text": "Looks like a support scam. Be careful!",
+        "posted-date": "2025-06-12T22:17:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-12T21:45:24Z"
+      },
+      {
+        "text": "Claims to offer a refund, but it's a trap.",
+        "posted-date": "2025-06-12T21:56:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+46714366125",
+    "report-type": "phone",
+    "scam-type": "Impersonation",
+    "country": "Sweden",
+    "reported-date": "2025-05-28T21:44:24Z",
+    "comments": [
+      {
+        "text": "Fake debt collection agency.",
+        "posted-date": "2025-05-28T21:27:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://white-lewis.com/search/tags",
+    "report-type": "url",
+    "scam-type": "Phishing",
+    "country": "Finland",
+    "reported-date": "2025-06-02T12:44:24Z",
+    "comments": [
+      {
+        "text": "This URL mimics a bank login page.",
+        "posted-date": "2025-06-02T12:18:24Z"
+      },
+      {
+        "text": "Pretending to be a government website.",
+        "posted-date": "2025-06-02T12:08:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "karen48@yahoo.com",
+    "report-type": "email",
+    "scam-type": "Malicious Content",
+    "country": "Norway",
+    "reported-date": "2025-06-08T17:44:24Z",
+    "comments": [
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-06-08T17:21:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-08T16:47:24Z"
+      },
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-08T17:16:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+47796316277",
+    "report-type": "phone",
+    "scam-type": "Spam / Telemarketing",
+    "country": "Norway",
+    "reported-date": "2025-06-11T08:44:24Z",
+    "comments": [
+      {
+        "text": "Fake debt collection agency.",
+        "posted-date": "2025-06-11T08:04:24Z"
+      },
+      {
+        "text": "Unsolicited calls every day.",
+        "posted-date": "2025-06-11T08:12:24Z"
+      },
+      {
+        "text": "Spammers. Just block it.",
+        "posted-date": "2025-06-11T08:28:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://peters-black.com/search",
+    "report-type": "url",
+    "scam-type": "Phishing",
+    "country": "Sweden",
+    "reported-date": "2025-06-09T07:44:24Z",
+    "comments": [
+      {
+        "text": "Fake support site asking for remote access.",
+        "posted-date": "2025-06-09T07:03:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "scott43@rogers-orozco.com",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Norway",
+    "reported-date": "2025-06-19T04:44:24Z",
+    "comments": [
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-19T04:07:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+358737135391",
+    "report-type": "phone",
+    "scam-type": "Fake Support",
+    "country": "Finland",
+    "reported-date": "2025-06-20T14:44:24Z",
+    "comments": [
+      {
+        "text": "Called multiple times with threats.",
+        "posted-date": "2025-06-20T13:55:24Z"
+      },
+      {
+        "text": "Fake debt collection agency.",
+        "posted-date": "2025-06-20T14:04:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://russell.info/blog/tag/app",
+    "report-type": "url",
+    "scam-type": "Other (please specify)",
+    "country": "Germany",
+    "reported-date": "2025-05-25T11:44:24Z",
+    "comments": [
+      {
+        "text": "Looks like a fake login page.",
+        "posted-date": "2025-05-25T11:30:24Z"
+      },
+      {
+        "text": "Fake support site asking for remote access.",
+        "posted-date": "2025-05-25T10:53:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "jessebenson@lewis.info",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Denmark",
+    "reported-date": "2025-06-21T12:44:24Z",
+    "comments": [
+      {
+        "text": "This is a phishing email. Do not click any links.",
+        "posted-date": "2025-06-21T12:04:24Z"
+      },
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-21T12:30:24Z"
+      },
+      {
+        "text": "This is a phishing email. Do not click any links.",
+        "posted-date": "2025-06-21T11:47:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+358774045292",
+    "report-type": "phone",
+    "scam-type": "Harassment / Threats",
+    "country": "Finland",
+    "reported-date": "2025-05-30T01:44:24Z",
+    "comments": [
+      {
+        "text": "This phone number is still active and dangerous.",
+        "posted-date": "2025-05-30T01:44:24Z"
+      },
+      {
+        "text": "Annoying telemarketing, calls every evening.",
+        "posted-date": "2025-05-30T01:40:24Z"
+      },
+      {
+        "text": "Called multiple times with threats.",
+        "posted-date": "2025-05-30T00:47:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://walker-holt.com/categories/tag/categories",
+    "report-type": "url",
+    "scam-type": "Phishing",
+    "country": "Finland",
+    "reported-date": "2025-06-19T21:44:24Z",
+    "comments": [
+      {
+        "text": "This site installs malware.",
+        "posted-date": "2025-06-19T20:46:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "clarkrobert@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Extortion / Blackmail",
+    "country": "Norway",
+    "reported-date": "2025-06-05T07:44:24Z",
+    "comments": [
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-06-05T07:02:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-05T07:31:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+46749555330",
+    "report-type": "phone",
+    "scam-type": "Spam / Telemarketing",
+    "country": "Sweden",
+    "reported-date": "2025-06-02T21:44:24Z",
+    "comments": [
+      {
+        "text": "Called multiple times with threats.",
+        "posted-date": "2025-06-02T21:17:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://barajas-pierce.com/tag/search/wp-content",
+    "report-type": "url",
+    "scam-type": "Impersonation",
+    "country": "Finland",
+    "reported-date": "2025-05-27T00:44:24Z",
+    "comments": [
+      {
+        "text": "Avoid clicking. My browser warned me immediately.",
+        "posted-date": "2025-05-27T00:11:24Z"
+      },
+      {
+        "text": "Claims to offer free rewards. Total scam.",
+        "posted-date": "2025-05-27T00:06:24Z"
+      },
+      {
+        "text": "Tries to install fake antivirus software.",
+        "posted-date": "2025-05-26T23:44:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "wwoods@molina-castaneda.biz",
+    "report-type": "email",
+    "scam-type": "Spam / Telemarketing",
+    "country": "Finland",
+    "reported-date": "2025-06-13T23:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-13T23:32:24Z"
+      },
+      {
+        "text": "This email came with threats if I didn't respond.",
+        "posted-date": "2025-06-13T23:38:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+45748942697",
+    "report-type": "phone",
+    "scam-type": "Fake Support",
+    "country": "Denmark",
+    "reported-date": "2025-05-24T13:44:24Z",
+    "comments": [
+      {
+        "text": "Threatened legal action if I didn't pay.",
+        "posted-date": "2025-05-24T13:31:24Z"
+      },
+      {
+        "text": "Threatened legal action if I didn't pay.",
+        "posted-date": "2025-05-24T13:29:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://lee.com/search",
+    "report-type": "url",
+    "scam-type": "Scam / Fraud",
+    "country": "Finland",
+    "reported-date": "2025-05-25T15:44:24Z",
+    "comments": [
+      {
+        "text": "Avoid clicking. My browser warned me immediately.",
+        "posted-date": "2025-05-25T15:17:24Z"
+      },
+      {
+        "text": "Looks like a fake login page.",
+        "posted-date": "2025-05-25T15:16:24Z"
+      },
+      {
+        "text": "I received this link via email, very sketchy.",
+        "posted-date": "2025-05-25T14:57:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "brobinson@johnson-rogers.biz",
+    "report-type": "email",
+    "scam-type": "Phishing",
+    "country": "Sweden",
+    "reported-date": "2025-06-08T01:44:24Z",
+    "comments": [
+      {
+        "text": "Claims to offer a refund, but it's a trap.",
+        "posted-date": "2025-06-08T00:49:24Z"
+      },
+      {
+        "text": "This email came with threats if I didn't respond.",
+        "posted-date": "2025-06-08T01:41:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+45775146293",
+    "report-type": "phone",
+    "scam-type": "Fake Support",
+    "country": "Denmark",
+    "reported-date": "2025-05-24T01:44:24Z",
+    "comments": [
+      {
+        "text": "Called multiple times with threats.",
+        "posted-date": "2025-05-24T00:57:24Z"
+      },
+      {
+        "text": "Pretending to be from tech support.",
+        "posted-date": "2025-05-24T00:45:24Z"
+      },
+      {
+        "text": "Called multiple times with threats.",
+        "posted-date": "2025-05-24T00:49:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://washington.net/search/main/wp-content",
+    "report-type": "url",
+    "scam-type": "Malicious Content",
+    "country": "Norway",
+    "reported-date": "2025-05-28T07:44:24Z",
+    "comments": [
+      {
+        "text": "Tries to install fake antivirus software.",
+        "posted-date": "2025-05-28T07:27:24Z"
+      },
+      {
+        "text": "Avoid clicking. My browser warned me immediately.",
+        "posted-date": "2025-05-28T06:55:24Z"
+      },
+      {
+        "text": "This URL mimics a bank login page.",
+        "posted-date": "2025-05-28T07:13:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "ncalhoun@johnson.com",
+    "report-type": "email",
+    "scam-type": "Fake Support",
+    "country": "Norway",
+    "reported-date": "2025-06-08T15:44:24Z",
+    "comments": [
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-08T14:53:24Z"
+      },
+      {
+        "text": "Looks like a support scam. Be careful!",
+        "posted-date": "2025-06-08T15:38:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+358703326769",
+    "report-type": "phone",
+    "scam-type": "Harassment / Threats",
+    "country": "Finland",
+    "reported-date": "2025-06-15T15:44:24Z",
+    "comments": [
+      {
+        "text": "Tried to scam me over the phone.",
+        "posted-date": "2025-06-15T14:54:24Z"
+      },
+      {
+        "text": "Threatened legal action if I didn't pay.",
+        "posted-date": "2025-06-15T14:53:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://ward.com/categories/search/explore",
+    "report-type": "url",
+    "scam-type": "Malicious Content",
+    "country": "Sweden",
+    "reported-date": "2025-06-07T12:44:24Z",
+    "comments": [
+      {
+        "text": "Pretending to be a government website.",
+        "posted-date": "2025-06-07T12:26:24Z"
+      },
+      {
+        "text": "Claims to offer free rewards. Total scam.",
+        "posted-date": "2025-06-07T12:27:24Z"
+      },
+      {
+        "text": "Avoid clicking. My browser warned me immediately.",
+        "posted-date": "2025-06-07T12:24:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "dtaylor@williams.com",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Denmark",
+    "reported-date": "2025-06-04T00:44:24Z",
+    "comments": [
+      {
+        "text": "I received this today pretending to be my bank.",
+        "posted-date": "2025-06-04T00:17:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+47735810056",
+    "report-type": "phone",
+    "scam-type": "Other (please specify)",
+    "country": "Norway",
+    "reported-date": "2025-06-15T16:44:24Z",
+    "comments": [
+      {
+        "text": "Spammers. Just block it.",
+        "posted-date": "2025-06-15T16:20:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://carter.info/app",
+    "report-type": "url",
+    "scam-type": "Impersonation",
+    "country": "Sweden",
+    "reported-date": "2025-06-17T07:44:24Z",
+    "comments": [
+      {
+        "text": "Looks like a fake login page.",
+        "posted-date": "2025-06-17T07:00:24Z"
+      },
+      {
+        "text": "Pretending to be a government website.",
+        "posted-date": "2025-06-17T06:59:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "wmurphy@ramirez-bean.biz",
+    "report-type": "email",
+    "scam-type": "Spam / Telemarketing",
+    "country": "Sweden",
+    "reported-date": "2025-06-14T12:44:24Z",
+    "comments": [
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-14T11:53:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-14T11:50:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+47726786211",
+    "report-type": "phone",
+    "scam-type": "Scam / Fraud",
+    "country": "Norway",
+    "reported-date": "2025-05-26T00:44:24Z",
+    "comments": [
+      {
+        "text": "Scam pretending to be a government agency.",
+        "posted-date": "2025-05-26T00:25:24Z"
+      },
+      {
+        "text": "Pretending to be from tech support.",
+        "posted-date": "2025-05-25T23:49:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://mitchell.com/explore/tag",
+    "report-type": "url",
+    "scam-type": "Phishing",
+    "country": "Finland",
+    "reported-date": "2025-06-08T04:44:24Z",
+    "comments": [
+      {
+        "text": "Malicious scripts running on this page.",
+        "posted-date": "2025-06-08T04:15:24Z"
+      },
+      {
+        "text": "Pretending to be a government website.",
+        "posted-date": "2025-06-08T04:41:24Z"
+      },
+      {
+        "text": "Malicious scripts running on this page.",
+        "posted-date": "2025-06-08T03:51:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "ruizkaitlyn@gmail.com",
+    "report-type": "email",
+    "scam-type": "Fake Support",
+    "country": "Norway",
+    "reported-date": "2025-05-31T21:44:24Z",
+    "comments": [
+      {
+        "text": "Multiple typos and odd formatting, definitely fake.",
+        "posted-date": "2025-05-31T21:39:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+46788588154",
+    "report-type": "phone",
+    "scam-type": "Harassment / Threats",
+    "country": "Sweden",
+    "reported-date": "2025-06-15T02:44:24Z",
+    "comments": [
+      {
+        "text": "This phone number is still active and dangerous.",
+        "posted-date": "2025-06-15T02:27:24Z"
+      },
+      {
+        "text": "Fake debt collection agency.",
+        "posted-date": "2025-06-15T01:55:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://morales.org/blog/main/posts",
+    "report-type": "url",
+    "scam-type": "Other (please specify)",
+    "country": "Germany",
+    "reported-date": "2025-06-02T16:44:24Z",
+    "comments": [
+      {
+        "text": "Tries to install fake antivirus software.",
+        "posted-date": "2025-06-02T15:50:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "debraharrington@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Harassment / Threats",
+    "country": "Sweden",
+    "reported-date": "2025-06-07T23:44:24Z",
+    "comments": [
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-07T23:31:24Z"
+      },
+      {
+        "text": "Multiple typos and odd formatting, definitely fake.",
+        "posted-date": "2025-06-07T23:19:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+49753643924",
+    "report-type": "phone",
+    "scam-type": "Impersonation",
+    "country": "Germany",
+    "reported-date": "2025-05-30T21:44:24Z",
+    "comments": [
+      {
+        "text": "Spammers. Just block it.",
+        "posted-date": "2025-05-30T20:44:24Z"
+      },
+      {
+        "text": "Fake debt collection agency.",
+        "posted-date": "2025-05-30T21:37:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://miller-wright.net/tags/posts",
+    "report-type": "url",
+    "scam-type": "Phishing",
+    "country": "Germany",
+    "reported-date": "2025-06-06T14:44:24Z",
+    "comments": [
+      {
+        "text": "Tries to install fake antivirus software.",
+        "posted-date": "2025-06-06T14:25:24Z"
+      },
+      {
+        "text": "Malicious scripts running on this page.",
+        "posted-date": "2025-06-06T14:20:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "herringjames@howell.com",
+    "report-type": "email",
+    "scam-type": "Harassment / Threats",
+    "country": "Finland",
+    "reported-date": "2025-06-09T14:44:24Z",
+    "comments": [
+      {
+        "text": "Multiple typos and odd formatting, definitely fake.",
+        "posted-date": "2025-06-09T14:28:24Z"
+      },
+      {
+        "text": "Urgent tone demanding immediate payment, beware.",
+        "posted-date": "2025-06-09T13:54:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "+49735630292",
+    "report-type": "phone",
+    "scam-type": "Harassment / Threats",
+    "country": "Germany",
+    "reported-date": "2025-06-20T11:44:24Z",
+    "comments": [
+      {
+        "text": "Keeps calling and asking for personal information.",
+        "posted-date": "2025-06-20T11:17:24Z"
+      },
+      {
+        "text": "Scam pretending to be a government agency.",
+        "posted-date": "2025-06-20T10:58:24Z"
+      },
+      {
+        "text": "Tried to scam me over the phone.",
+        "posted-date": "2025-06-20T11:24:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "https://rowe.info/search/tags",
+    "report-type": "url",
+    "scam-type": "Suspicious Link / Domain",
+    "country": "Finland",
+    "reported-date": "2025-05-28T21:44:24Z",
+    "comments": [
+      {
+        "text": "Pretending to be a government website.",
+        "posted-date": "2025-05-28T20:47:24Z"
+      },
+      {
+        "text": "Pretending to be a government website.",
+        "posted-date": "2025-05-28T21:13:24Z"
+      },
+      {
+        "text": "Malicious scripts running on this page.",
+        "posted-date": "2025-05-28T21:27:24Z"
+      }
+    ]
+  }
+]

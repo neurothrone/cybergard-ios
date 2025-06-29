@@ -18,7 +18,7 @@ struct CommentsSectionView: View {
 #Preview {
   List {
     CommentsSectionView(
-      comments: EmailReportDetails.sample.comments
+      comments: ReportDetails.sample.comments
     )
   }
 }

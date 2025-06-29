@@ -1,0 +1,397 @@
+[
+  {
+    "identifier": "justin69@pena.com",
+    "report-type": "email",
+    "scam-type": "Malicious Content",
+    "country": "Germany",
+    "reported-date": "2025-06-17T07:44:24Z",
+    "comments": [
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-17T07:09:24Z"
+      },
+      {
+        "text": "Claims to offer a refund, but it's a trap.",
+        "posted-date": "2025-06-17T07:28:24Z"
+      },
+      {
+        "text": "Scam pretending to be a package delivery service.",
+        "posted-date": "2025-06-17T07:07:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "donnacampbell@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Scam / Fraud",
+    "country": "Sweden",
+    "reported-date": "2025-06-10T07:44:24Z",
+    "comments": [
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-06-10T07:12:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "cardenaskaren@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Fake Support",
+    "country": "Finland",
+    "reported-date": "2025-05-25T11:44:24Z",
+    "comments": [
+      {
+        "text": "I received this today pretending to be my bank.",
+        "posted-date": "2025-05-25T11:04:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "lindsayhernandez@gmail.com",
+    "report-type": "email",
+    "scam-type": "Extortion / Blackmail",
+    "country": "Sweden",
+    "reported-date": "2025-06-09T02:44:24Z",
+    "comments": [
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-09T02:15:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-09T02:28:24Z"
+      },
+      {
+        "text": "This is a phishing email. Do not click any links.",
+        "posted-date": "2025-06-09T01:49:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "xcarr@gibson.org",
+    "report-type": "email",
+    "scam-type": "Other (please specify)",
+    "country": "Sweden",
+    "reported-date": "2025-05-28T06:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-05-28T06:23:24Z"
+      },
+      {
+        "text": "Scam pretending to be a package delivery service.",
+        "posted-date": "2025-05-28T06:26:24Z"
+      },
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-05-28T06:34:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "psnyder@douglas.com",
+    "report-type": "email",
+    "scam-type": "Malicious Content",
+    "country": "Germany",
+    "reported-date": "2025-06-05T09:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-05T08:46:24Z"
+      },
+      {
+        "text": "This email came with threats if I didn't respond.",
+        "posted-date": "2025-06-05T08:49:24Z"
+      },
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-05T09:25:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "gregoryrubio@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Germany",
+    "reported-date": "2025-06-17T03:44:24Z",
+    "comments": [
+      {
+        "text": "Urgent tone demanding immediate payment'beware.",
+        "posted-date": "2025-06-17T03:10:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "grantsamantha@gmail.com",
+    "report-type": "email",
+    "scam-type": "Fake Support",
+    "country": "Denmark",
+    "reported-date": "2025-06-02T04:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-02T04:43:24Z"
+      },
+      {
+        "text": "The attachment contains malware. Avoid opening it.",
+        "posted-date": "2025-06-02T03:45:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "lauriecontreras@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Sweden",
+    "reported-date": "2025-06-20T07:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-20T06:44:24Z"
+      },
+      {
+        "text": "Claims to offer a refund, but it's a trap.",
+        "posted-date": "2025-06-20T07:39:24Z"
+      },
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-20T07:13:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "usalazar@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Other (please specify)",
+    "country": "Germany",
+    "reported-date": "2025-05-28T10:44:24Z",
+    "comments": [
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-05-28T10:02:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "vmerritt@yahoo.com",
+    "report-type": "email",
+    "scam-type": "Harassment / Threats",
+    "country": "Norway",
+    "reported-date": "2025-06-12T22:44:24Z",
+    "comments": [
+      {
+        "text": "Looks like a support scam. Be careful!",
+        "posted-date": "2025-06-12T22:17:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-12T21:45:24Z"
+      },
+      {
+        "text": "Claims to offer a refund, but it's a trap.",
+        "posted-date": "2025-06-12T21:56:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "karen48@yahoo.com",
+    "report-type": "email",
+    "scam-type": "Malicious Content",
+    "country": "Norway",
+    "reported-date": "2025-06-08T17:44:24Z",
+    "comments": [
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-06-08T17:21:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-08T16:47:24Z"
+      },
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-08T17:16:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "scott43@rogers-orozco.com",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Norway",
+    "reported-date": "2025-06-19T04:44:24Z",
+    "comments": [
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-19T04:07:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "jessebenson@lewis.info",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Denmark",
+    "reported-date": "2025-06-21T12:44:24Z",
+    "comments": [
+      {
+        "text": "This is a phishing email. Do not click any links.",
+        "posted-date": "2025-06-21T12:04:24Z"
+      },
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-21T12:30:24Z"
+      },
+      {
+        "text": "This is a phishing email. Do not click any links.",
+        "posted-date": "2025-06-21T11:47:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "clarkrobert@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Extortion / Blackmail",
+    "country": "Norway",
+    "reported-date": "2025-06-05T07:44:24Z",
+    "comments": [
+      {
+        "text": "Asks for personal info, very suspicious.",
+        "posted-date": "2025-06-05T07:02:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-05T07:31:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "wwoods@molina-castaneda.biz",
+    "report-type": "email",
+    "scam-type": "Spam / Telemarketing",
+    "country": "Finland",
+    "reported-date": "2025-06-13T23:44:24Z",
+    "comments": [
+      {
+        "text": "This email is still active and dangerous.",
+        "posted-date": "2025-06-13T23:32:24Z"
+      },
+      {
+        "text": "This email came with threats if I didn't respond.",
+        "posted-date": "2025-06-13T23:38:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "brobinson@johnson-rogers.biz",
+    "report-type": "email",
+    "scam-type": "Phishing",
+    "country": "Sweden",
+    "reported-date": "2025-06-08T01:44:24Z",
+    "comments": [
+      {
+        "text": "Claims to offer a refund, but it's a trap.",
+        "posted-date": "2025-06-08T00:49:24Z"
+      },
+      {
+        "text": "This email came with threats if I didn't respond.",
+        "posted-date": "2025-06-08T01:41:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "ncalhoun@johnson.com",
+    "report-type": "email",
+    "scam-type": "Fake Support",
+    "country": "Norway",
+    "reported-date": "2025-06-08T15:44:24Z",
+    "comments": [
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-08T14:53:24Z"
+      },
+      {
+        "text": "Looks like a support scam. Be careful!",
+        "posted-date": "2025-06-08T15:38:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "dtaylor@williams.com",
+    "report-type": "email",
+    "scam-type": "Impersonation",
+    "country": "Denmark",
+    "reported-date": "2025-06-04T00:44:24Z",
+    "comments": [
+      {
+        "text": "I received this today pretending to be my bank.",
+        "posted-date": "2025-06-04T00:17:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "wmurphy@ramirez-bean.biz",
+    "report-type": "email",
+    "scam-type": "Spam / Telemarketing",
+    "country": "Sweden",
+    "reported-date": "2025-06-14T12:44:24Z",
+    "comments": [
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-14T11:53:24Z"
+      },
+      {
+        "text": "Classic spam email, reported multiple times.",
+        "posted-date": "2025-06-14T11:50:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "ruizkaitlyn@gmail.com",
+    "report-type": "email",
+    "scam-type": "Fake Support",
+    "country": "Norway",
+    "reported-date": "2025-05-31T21:44:24Z",
+    "comments": [
+      {
+        "text": "Multiple typos and odd formatting, definitely fake.",
+        "posted-date": "2025-05-31T21:39:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "debraharrington@hotmail.com",
+    "report-type": "email",
+    "scam-type": "Harassment / Threats",
+    "country": "Sweden",
+    "reported-date": "2025-06-07T23:44:24Z",
+    "comments": [
+      {
+        "text": "They spoofed the sender's email address.",
+        "posted-date": "2025-06-07T23:31:24Z"
+      },
+      {
+        "text": "Multiple typos and odd formatting, definitely fake.",
+        "posted-date": "2025-06-07T23:19:24Z"
+      }
+    ]
+  },
+  {
+    "identifier": "herringjames@howell.com",
+    "report-type": "email",
+    "scam-type": "Harassment / Threats",
+    "country": "Finland",
+    "reported-date": "2025-06-09T14:44:24Z",
+    "comments": [
+      {
+        "text": "Multiple typos and odd formatting, definitely fake.",
+        "posted-date": "2025-06-09T14:28:24Z"
+      },
+      {
+        "text": "Urgent tone demanding immediate payment, beware.",
+        "posted-date": "2025-06-09T13:54:24Z"
+      }
+    ]
+  }
+]

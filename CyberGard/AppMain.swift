@@ -2,12 +2,12 @@ import SwiftUI
 
 @main
 struct AppMain: App {
-  private let emailReportService: EmailReportHandling = EmailReportApiService()
-  
+  let environment: ApiEnvironment = .development
+
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environment(\.emailReportService, emailReportService)
+        .environment(\.reportService, ReportApiService(baseURL: environment.baseURL))
     }
   }
 }
