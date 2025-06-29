@@ -1,8 +1,16 @@
 import Foundation
 
 struct UrlValidator {
-  static func isValidUrl(_ url: String) -> Bool {
-    guard let url = URL(string: url) else { return false }
-    return ["http", "https", "ftp"].contains(url.scheme?.lowercased() ?? "")
+  static func isValidUrl(_ urlString: String) -> Bool {
+    guard let components = URLComponents(string: urlString),
+      let scheme = components.scheme?.lowercased(),
+      ["http", "https", "ftp"].contains(scheme),
+      let host = components.host,
+      !host.isEmpty
+    else {
+      return false
+    }
+
+    return true
   }
 }
