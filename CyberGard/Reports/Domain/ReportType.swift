@@ -9,6 +9,8 @@ enum ReportType: String, Identifiable, Decodable, CaseIterable {
 }
 
 extension ReportType {
+  static var `default`: Self { .email }
+
   func isValid(_ input: String) -> Bool {
     switch self {
     case .email: EmailValidator.isValidEmail(input)
@@ -19,34 +21,25 @@ extension ReportType {
 
   var keyboardType: UIKeyboardType {
     switch self {
-    case .email:
-      return .emailAddress
-    case .phone:
-      return .phonePad
-    case .url:
-      return .URL
+    case .email: .emailAddress
+    case .phone: .phonePad
+    case .url: .URL
     }
   }
 
   var textContentType: UITextContentType {
     switch self {
-    case .email:
-      return .emailAddress
-    case .phone:
-      return .telephoneNumber
-    case .url:
-      return .URL
+    case .email: .emailAddress
+    case .phone: .telephoneNumber
+    case .url: .URL
     }
   }
 
   var systemImage: String {
     switch self {
-    case .email:
-      return "envelope"
-    case .phone:
-      return "phone"
-    case .url:
-      return "link"
+    case .email: "envelope"
+    case .phone: "phone"
+    case .url: "link"
     }
   }
 }
