@@ -103,7 +103,6 @@ final class ReportsViewModel: ObservableObject {
 
     do {
       let response: SearchReportResponse = try await service.searchReports(
-        type: reportType,
         page: 1,
         pageSize: pageSize,
         query: searchText
@@ -136,7 +135,6 @@ final class ReportsViewModel: ObservableObject {
     do {
       let nextPage = currentPage + 1
       let response: SearchReportResponse = try await service.searchReports(
-        type: reportType,
         page: nextPage,
         pageSize: pageSize,
         query: searchText

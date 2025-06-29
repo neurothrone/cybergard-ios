@@ -81,16 +81,15 @@ struct ReportLookupPage: View {
         ToolbarItem(placement: .topBarTrailing) {
           NavigationLink(
             destination: NewReportPage(
-              reportType: .email,
               viewModel: NewReportViewModel(
-                reportType: .email,
                 service: service,
                 reportCreateSubject: viewModel.reportCreateSubject
               )
             )
           ) {
-            Image(systemName: "flag")
-              .foregroundStyle(.red)
+            Label("New Report", systemImage: "plus.circle")
+              .labelStyle(.titleAndIcon)
+              .foregroundColor(.blue)
           }
         }
       }
