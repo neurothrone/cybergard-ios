@@ -11,15 +11,13 @@ enum ScamType: String, Identifiable, CaseIterable, Decodable {
   case other = "Other (please specify)"
 
   var id: Self { self }
-
-  static var `default`: Self {
-    return .fakeSupport
-  }
 }
 
 extension ScamType {
+  static var `default`: Self { .fakeSupport }
+
   var title: String {
-    return switch self {
+    switch self {
     case .extortionOrBlackmail:
       "Extortion / Blackmail"
     case .fakeSupport:
@@ -45,8 +43,16 @@ extension ScamType {
 }
 
 extension ScamType {
+  static func casesFor(_ type: ReportType) -> [ScamType] {
+    switch type {
+    case .email: emailOnlyCases
+    case .phone: phoneOnlyCases
+    case .url: urlOnlyCases
+    }
+  }
+
   static var emailOnlyCases: [ScamType] {
-    return [
+    [
       .fakeSupport,
       .extortionOrBlackmail,
       .harassmentOrThreats,
@@ -60,7 +66,7 @@ extension ScamType {
   }
 
   static var phoneOnlyCases: [ScamType] {
-    return [
+    [
       .fakeSupport,
       .harassmentOrThreats,
       .impersonation,
@@ -71,7 +77,7 @@ extension ScamType {
   }
 
   static var urlOnlyCases: [ScamType] {
-    return [
+    [
       .fakeSupport,
       .impersonation,
       .maliciousContent,
